@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html
+  class="no-legacy-ie no-js"
+  lang="es"
+  itemscope
+  itemtype="http://schema.org/Organization"
+>
+  <module href="/components/_layout/_head.html"> </module>
+  <body>
+    <div class="wrapper">
+      <main class="main">
+        <module href="/components/_organisms/_header/_header.html">
+          <div>Hello, i'm a header!</div>
+        </module>
+
+        <div class="container-grid">
+          <module
+            href="/components/_molecules/_alert/_alert.html"
+            locals='{
+              "text":"Congratulations, you are our number one customer!",
+              "variant":"alert--info"
+              }'
+          ></module>
+
+          <module href="/components/_cell/_card/_card.html">
+            <span class="h1">Welcome!</span>
+            <span class="h5">This is BaseCore Kitchen Sink</span>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi
+              dolorum ea iusto possimus dolores tenetur? Vitae odit, modi nemo
+              nobis, voluptatibus molestiae fugiat est quisquam pariatur
+              molestias, commodi totam tempora!
+              <strong>
+                <module
+                  href="/components/_molecules/_tooltip/_tooltip.html"
+                  locals='{
+                    "id":"tooltip",
+                    "button_text":"Hi, am a tooltip",
+                    "variant":"tooltip--bottom"}'
+                >
+                  Text inside the tooltip
+                </module>
+              </strong>
+            </p>
+
+            <div>
+              <module
+                href="/components/_atoms/_btn-simple/_btn-simple-group.html"
+              >
+                <module
+                  href="/components/_atoms/_btn-simple/_btn-simple.html"
+                  locals='{
+                    "button_aria_label": "",
+                    "button_variant": "btn-simple--1",
+                    "button_size": "",
+                    "button_text": "Read"            
+                  }'
+                ></module>
+                <module
+                  href="/components/_atoms/_btn-simple/_btn-simple.html"
+                  locals='{
+                    "button_aria_label": "",
+                    "button_variant": "btn-simple--2",
+                    "button_size": "",
+                    "button_text": "Download"            
+                  }'
+                ></module>
+              </module>
+            </div>
+          </module>
+
+        </div>
+        <div class="container-grid">
+          <module href="/components/_molecules/_breadcrumb/_breadcrumb.html">
+            <li><a href="./">Home</a></li>
+            <li><a href="./">Library</a></li>
+            <li class="breadcrumb__active" aria-current="page">
+              <a href="./">Data</a>
+            </li>
+          </module>          
+            <module href="/components/_molecules/_tabs/_tabs_header.html">
+              <module
+                href="/components/_molecules/_tabs/_tabs_button.html"
+                locals='{
+                    "id":"tab-1",
+                    "text":"Tab 1",
+                    "active":"is-active"
+                    }'
+              >
+              </module>
+              <module
+                href="/components/_molecules/_tabs/_tabs_button.html"
+                locals='{
+                    "id":"tab-2",
+                    "text":"Tab 2",
+                    "active":""
+                    }'
+              >
+              </module>
+              <module
+                href="/components/_molecules/_tabs/_tabs_button.html"
+                locals='{
+                    "id":"tab-3",
+                    "text":"Tab 3",
+                    "active":""                    
+                    }'
+              >
+              </module>
+            </module>
+
+            <module href="/components/_molecules/_tabs/_tabs_body.html">
+              <module
+                href="/components/_molecules/_tabs/_tabs_panel.html"
+                locals='{
+                    "id":"tab-1",
+                    "active":"is-active"}'
+              >
+                <span class="h4">Super Nice Content 1</span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aperiam praesentium non, neque facere, maiores doloremque
+                  aliquid illo eum ipsa officia placeat sapiente aspernatur
+                  numquam minus autem ea minima deleniti voluptate?
+                </p>
+                <module
+                  href="/components/_atoms/_btn-simple/_btn-simple.html"
+                  locals='{
+                    "button_aria_label": "",
+                    "button_variant": "btn-simple--1",
+                    "button_size": "",
+                    "button_text": "Read more"            
+                  }'
+                ></module>
+              </module>
+              <module
+                href="/components/_molecules/_tabs/_tabs_panel.html"
+                locals='{
+                    "id":"tab-2","active":""}'
+              >
+                <span class="h4">Super Nice Content 2</span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aperiam praesentium non, neque facere, maiores doloremque
+                  aliquid illo eum ipsa officia placeat sapiente aspernatur
+                  numquam minus autem ea minima deleniti voluptate?
+                </p>
+                <module
+                  href="/components/_atoms/_btn-simple/_btn-simple.html"
+                  locals='{
+                    "button_aria_label": "",
+                    "button_variant": "btn-simple--1",
+                    "button_size": "",
+                    "button_text": "Read more"            
+                  }'
+                ></module>
+              </module>
+              <module
+                href="/components/_molecules/_tabs/_tabs_panel.html"
+                locals='{
+                    "id":"tab-3","active":""}'
+              >
+                <span class="h4">Super Nice Content 3</span>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aperiam praesentium non, neque facere, maiores doloremque
+                  aliquid illo eum ipsa officia placeat sapiente aspernatur
+                  numquam minus autem ea minima deleniti voluptate?
+                </p>
+                <module
+                  href="/components/_atoms/_btn-simple/_btn-simple.html"
+                  locals='{
+                    "button_aria_label": "",
+                    "button_variant": "btn-simple--1",
+                    "button_size": "",
+                    "button_text": "Read more"            
+                  }'
+                ></module>
+              </module>
+            </module>
+          </div>
+
+<div class="container-grid">
+  <span class="h3">Our products</span>
+</div>
+        <ul class="container-grid">
+
+          <li data-col-sm="4">
+            <module href="/components/_cell/_card/_card.html">
+              <img src="https://via.placeholder.com/300x200" alt="" />
+              <span class="h4">Super Nice Title</span>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+                praesentium non, neque facere, maiores doloremque aliquid illo
+                eum ipsa officia placeat sapiente aspernatur numquam minus autem
+                ea minima deleniti voluptate?
+              </p>
+              <module
+                href="/components/_atoms/_lists/_lists.html"
+                locals='{
+              "variant":"list--bullets"
+              }'
+              >
+                <li>Option</li>
+                <li>Option</li>
+              </module>
+
+              <module
+                href="/components/_atoms/_btn-simple/_btn-simple.html"
+                locals='{
+                    "button_aria_label": "",
+                    "button_variant": "btn-simple--1",
+                    "button_size": "",
+                    "button_text": "Read more"            
+                  }'
+              ></module>
+            </module>
+          </li>
+          <li data-col-sm="4">
+            <module href="/components/_cell/_card/_card.html">
+              <img src="https://via.placeholder.com/300x200" alt="" />
+              <span class="h4">Super Nice Title</span>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+                praesentium non, neque facere, maiores doloremque aliquid illo
+                eum ipsa officia placeat sapiente aspernatur numquam minus autem
+                ea minima deleniti voluptate?
+              </p>
+              <module
+                href="/components/_atoms/_lists/_lists.html"
+                locals='{
+              "variant":"list--bullets"
+              }'
+              >
+                <li>Option</li>
+                <li>Option</li>
+              </module>
+
+              <module
+                href="/components/_atoms/_btn-simple/_btn-simple.html"
+                locals='{
+                    "button_aria_label": "",
+                    "button_variant": "btn-simple--1",
+                    "button_size": "",
+                    "button_text": "Read more"            
+                  }'
+              ></module>
+            </module>
+          </li>
+          <li data-col-sm="4">
+            <module href="/components/_cell/_card/_card.html">
+              <img src="https://via.placeholder.com/300x200" alt="" />
+              <span class="h4">Super Nice Title</span>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
+                praesentium non, neque facere, maiores doloremque aliquid illo
+                eum ipsa officia placeat sapiente aspernatur numquam minus autem
+                ea minima deleniti voluptate?
+              </p>
+              <module
+                href="/components/_atoms/_lists/_lists.html"
+                locals='{
+              "variant":"list--bullets"
+              }'
+              >
+                <li>Option</li>
+                <li>Option</li>
+              </module>
+
+              <module
+                href="/components/_atoms/_btn-simple/_btn-simple.html"
+                locals='{
+                    "button_aria_label": "",
+                    "button_variant": "btn-simple--1",
+                    "button_size": "",
+                    "button_text": "Read more"            
+                  }'
+              ></module>
+            </module>
+          </li>
+          <li data-col-sm="12">
+            <module
+              href="/components/_atoms/_loader-circle/_loader-circle.html"
+              locals='{
+              "text":"Loading"
+              }'
+            ></module>
+          </li>
+        </ul>
+        <div class="container-grid">
+          <module
+            href="/components/_atoms/_pagination/_pagination.html"
+            locals='{
+              "button_id":"button",
+              "button_checked":"checked"
+              }'
+          >
+            <li class="is-active">
+              <a href="./" aria-label="Page 1">1</a>
+            </li>
+
+            <li>
+              <a href="./" aria-label="Page 2">2</a>
+            </li>
+          </module>
+
+          <module href="/components/_cell/_card/_card.html">
+            <span class="h3">Fill our survey</span>
+            <module
+              href="/components/_atoms/_progress-bar/_progress-bar.html"
+              locals='{
+              "variant":"progress--success",
+              "value":"20"
+              }'
+            ></module>
+
+            <div class="form form--simple">
+              <module
+                href="/components/_atoms/_form-input-simple/_form-input-simple.html"
+                locals='{
+              "id":"spamm",
+              "type":"text",
+              "text":"We will spam you for sure so..",
+              "placeholder":"Email address please"
+              }'
+              ></module>
+
+              <module
+                href="/components/_atoms/_form-input-simple/_form-input-simple-addon.html"
+                locals='{"placeholder":"placeholder",
+              "id":"input-id3",
+              "params":"button-checkbox",
+              "type":"password",
+              "text":"Input Label",
+              "icon":"form-warning",
+              "icon_size":"icon--xs",
+              "addon_params":"js-reveal-pass",
+              "addon_position":"right",
+              "addon_text":""
+            }'
+              ></module>
+
+              <module
+                href="/components/_atoms/_form-input-simple/_form-input-simple.html"
+                locals='{
+              "id":"button",
+              "type":"range",
+              "text":"label",
+              "placeholder":"Your text here"
+              }'
+              ></module>
+
+              <fieldset><legend class="h6">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</legend>
+              <div class="form__group">
+                <module
+                  href="/components/_atoms/_btn-switch/_btn-switch.html"
+                  locals='{
+                "button_id":"button-switch"                
+                }'
+                >
+                </module>
+              </div>
+
+              </fieldset><fieldset><legend class="h6">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</legend>
+
+              <div class="form__group">
+                <module
+                  href="/components/_atoms/_form-checkbox-simple/_form-checkbox-simple.html"
+                  locals='{
+                "id":"form-checkbox-simple",
+                "value":"1",
+                "text":"Checkbox A",
+                "name":"checkboxes"
+                }'
+                ></module>
+                <module
+                  href="/components/_atoms/_form-checkbox-simple/_form-checkbox-simple.html"
+                  locals='{
+                "id":"form-checkbox-simple-2",
+                "value":"1",
+                "text":"Checkbox B",
+                "name":"checkboxes"
+                }'
+                ></module>
+              </div>
+
+              </fieldset><fieldset><legend class="h6">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</legend>
+
+              <module
+                href="/components/_atoms/_btn-simple/_btn-simple-group.html"
+              >
+                <module
+                  href="/components/_atoms/_btn-simple/_btn-simple-toggle.html"
+                  locals='{
+              	"button_type":"radio",
+              	"button_id":"toggle-1",
+              	"button_name":"toggles",
+              	"button_variant":"btn-simple--1",
+              	"button_size":"",
+              	"button_text":"Option 1",
+              	"button_checked":"checked"
+                }'
+                ></module>
+                <module
+                  href="/components/_atoms/_btn-simple/_btn-simple-toggle.html"
+                  locals='{
+              	"button_type":"radio",
+              	"button_id":"toggle-2",
+              	"button_name":"toggles",
+              	"button_variant":"btn-simple--1",
+              	"button_size":"",
+              	"button_text":"Option 2",
+              	"button_checked":""
+                }'
+                ></module>
+              </module>
+
+              </fieldset><fieldset><legend class="h6">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</legend>
+
+              <div class="form__group">
+                <module
+                  href="/components/_atoms/_form-radio-simple/_form-radio-simple.html"
+                  locals='{
+              "id":"form-radio-simple",
+              "value":"1",
+              "text":"radio A",
+              "name":"radios"
+              }'
+                ></module>
+                <module
+                  href="/components/_atoms/_form-radio-simple/_form-radio-simple.html"
+                  locals='{
+              "id":"form-radio-simple-2",
+              "value":"2",
+              "text":"radio B",
+              "name":"radios"
+              }'
+                ></module>
+              </div>
+
+              </fieldset><fieldset><legend class="h6">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</legend>
+
+              <module
+                href="/components/_atoms/_form-input-simple/_form-input-simple-select.html"
+                locals='{
+              "id":"input-id4",
+              "params":"",
+              "text":"Input Label"}'
+              >
+                <option role="option" value="1">Option 1</option>
+                <option role="option" value="2">Option 2</option>
+                <option role="option" value="3">Option 3</option>
+              </module>
+              </fieldset><fieldset><legend class="h6">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</legend>
+
+              <module
+                href="/components/_atoms/_form-input-simple/_form-input-simple-textarea.html"
+                locals='{
+              "id":"input-id5",
+              "params":"",
+              "placeholder":"placeholder",
+              "text":"Input Label"}'
+              ></module>
+
+              <ul class="list list--inline">
+                <li>
+                  <button
+                    type="button"
+                    class="btn-simple btn-simple--1"
+                    data-toggle="modal"
+                    data-target="#modal"
+                  >
+                    Spam me Modal
+                  </button>
+
+                  <module
+                    href="/components/_molecules/_modal/_modal.html"
+                    locals='{
+                    "id":"modal",
+                    "aria_labelledby":"Aria description",
+                    "aria_label_close":"Modal Close"
+                    }'
+                  >
+                    <p>Modal content</p>
+                  </module>
+                </li>
+                <li>
+                  <module
+                    href="/components/_molecules/_dropdown/_dropdown.html"
+                    locals='{
+                      "id":"dropdown",
+                      "button_style":"btn-simple btn-simple--1",
+                      "button_text":"Show me other options"
+                      }'
+                  >
+                    <li role="presentation">
+                      <module
+                        href="/components/_atoms/_link-simple/_link-simple.html"
+                        locals='{
+                    "href":"button",
+                    "variant":"link-simple--1",
+                    "text":"Link simple module"
+                    }'
+                      ></module>
+                    </li>
+
+                    <li role="presentation">
+                      <module
+                        href="/components/_atoms/_link-simple/_link-simple.html"
+                        locals='{
+                    "href":"button",
+                    "variant":"link-simple--1",
+                    "text":"Another link simple module"
+                    }'
+                      ></module>
+                    </li>
+                  </module>
+                </li>
+              </ul>
+            </div>
+          </module>
+        </div>
+
+        <div class="container-grid">
+          <span class="h3">Read our FAQs</span>
+          <module
+            href="/components/_molecules/_accordion/_accordion.html"
+            locals='{"id_accordion":"accordion-example"}'
+          >
+            <module
+              href="/components/_molecules/_accordion/_accordion-item.html"
+              locals='{
+                "id_slide":"collapse1",
+                "id_accordion":"accordion-example",
+                "title": "Accordion button 1"
+                }'
+            >
+              Content inside Accordion Slide 1
+            </module>
+            <module
+              href="/components/_molecules/_accordion/_accordion-item.html"
+              locals='{
+                "id_slide":"collapse2",
+                "id_accordion":"accordion-example",
+                "title": "Accordion button 2"
+                }'
+            >
+              Content inside Accordion Slide 2
+            </module>
+          </module>
+        </div>
+        <module href="/components/_organisms/_footer/_footer.html">
+          <ul class="list" data-col-sm="4">
+            <li><span class="h5">Title</span></li>
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+            <li>Option 4</li>
+            <li>Option 5</li>
+          </ul>
+          <ul class="list" data-col-sm="4">
+            <li><span class="h5">Title</span></li>
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+            <li>Option 4</li>
+            <li>Option 5</li>
+          </ul>
+          <ul class="list" data-col-sm="4">
+            <li><span class="h5">Title</span></li>
+            <li>Option 1</li>
+            <li>Option 2</li>
+            <li>Option 3</li>
+            <li>Option 4</li>
+            <li>Option 5</li>
+          </ul>
+        </module>
+        <div class="container-grid">
+          <small class="small">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni rem,
+            aspernatur ullam fuga quisquam ex, excepturi, distinctio repellendus
+            accusamus nobis enim non natus tempore blanditiis perspiciatis eum
+            perferendis a unde.
+          </small>
+        </div>
+      </main>
+    </div>
+    <script defer src="../app/app.js"></script>
+  </body>
+</html>

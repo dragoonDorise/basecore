@@ -1,0 +1,46 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+@mixin generate-btn-simple(
+  $name,
+  $color,
+  $bg,
+  $color-hover,
+  $bg-hover,
+  $bg-active,
+  $color-disabled,
+  $bg-disabled
+) {
+  .btn-simple--#{$name} {
+    fill: $color;
+    color: $color;
+    background: $bg;
+
+    &:hover,
+    &:focus {
+      fill: $color-hover;
+      color: $color-hover;
+      background: $bg-hover;
+    }
+
+    &[disabled],
+    &.is-disabled {
+      fill: $color-disabled;
+      color: $color-disabled;
+      background: $bg-disabled;
+    }
+    //When used as a fake radio / checkbox
+
+    @at-root .btn-group input + label#{&} {
+      background: $bg;
+    }
+
+    @at-root .btn-group input:checked + label#{&} {
+      background: $bg-active;
+    }
+  }
+}
+

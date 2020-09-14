@@ -1,0 +1,52 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+.table {
+  width: 100%;
+  max-width: 100%;
+
+  caption {
+    @include show-sr();
+  }
+}
+
+.table-responsive {
+  overflow-x: auto;
+
+  @media screen and (max-width: $screen-xs-max) {
+    width: 100%;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+
+//Tablas con reflow
+.table-reflow {
+  table {
+    th {
+      display: none;
+    }
+
+    td {
+      display: block;
+
+      &:before {
+        content: attr(data-th) ": ";
+        display: inline-block;
+        @media (min-width: $screen-sm-max) {
+          display: none;
+        }
+      }
+    }
+
+    th,
+    td {
+      @media (min-width: $screen-sm-max) {
+        display: table-cell;
+      }
+    }
+  }
+}

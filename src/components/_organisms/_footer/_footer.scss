@@ -1,0 +1,21 @@
+/*doc
+---
+title: Footer
+name: block-footer
+category: Blocks
+---
+
+```html_example
+
+
+
+```
+*/
+footer {
+  background: var(--color-bg-primary);
+  padding: 20px;
+  margin-bottom: $margin2;
+  * {
+    color: #fff !important;
+  }
+}

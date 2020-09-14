@@ -1,0 +1,67 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+.modal-overlay {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: $zindex4;
+
+  &.is-hidden {
+    height: 0;
+    width: 0;
+  }
+}
+
+.modal {
+  //display: none;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -1;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
+
+  @media (max-width: $screen-xs-max) {
+    position: fixed;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    top: 0 !important;
+  }
+
+  &__description {
+    @include show-sr();
+  }
+
+  &__dialog {
+  }
+
+  &__close {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+  }
+}
+
+body.modal-is-visible {
+  overflow: hidden;
+}
+.modal-overlay.is-visible {
+  opacity: 1;
+}
+.modal.is-showing {
+  opacity: 1;
+  z-index: $zindex5;
+  //display: block;
+}

@@ -1,0 +1,219 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+
+// --------------------------------------------------
+//  Select
+// --------------------------------------------------
+
+.form {
+  input,
+  select,
+  [class*="btn"],
+  .form__addon {
+    height: $input-height;
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  &__group {
+    position: relative;
+    //Cortamos el margen en el último elemento
+    &:last-child:not(:only-child) {
+      margin-bottom: 0;
+    }
+    &__help {
+      flex-basis: 100%;
+    }
+  }
+
+  [class*="form__group--addon"] {
+    display: flex;
+    flex-wrap: wrap;
+
+    label {
+      flex: 1 1 100%;
+    }
+
+    input {
+      flex: 1 1 10%;
+    }
+    .form__addon {
+      align-self: flex-start;
+      flex: 0 1 auto;
+    }
+  }
+
+  .form__group--addon--right {
+    .form__addon {
+      align-self: flex-end;
+    }
+  }
+
+  .form__group--addon--left {
+    input {
+      order: 2;
+    }
+    .form__addon {
+      order: 1;
+    }
+  }
+
+  .form__group--addon {
+    input[type="number"] {
+      padding-left: 50px;
+      padding-right: 50px;
+      text-align: center;
+    }
+
+    input {
+      order: 2;
+    }
+    .form__addon {
+      order: 1;
+      &:last-child {
+        order: 3;
+      }
+    }
+
+    .form__addon {
+      &:last-of-type {
+        align-self: flex-end;
+      }
+    }
+  }
+
+  [class*="form__c"],
+  select,
+  textarea {
+    width: 100%;
+    font-size: inherit;
+    margin: 0;
+  }
+
+  input,
+  textarea {
+    &:disabled,
+    &:read-only {
+      cursor: not-allowed;
+    }
+  }
+
+  button {
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  [type="range"] {
+    cursor: col-resize !important;
+    border: 0px;
+    -webkit-appearance: none;
+    appearance: none;
+    &:focus {
+      border: 0;
+    }
+  }
+
+  label {
+    display: block;
+  }
+
+  //Quitamos el margin si el label está dentro de columnas
+  //[class*="col-"] label{
+  //  margin-bottom: 0;
+  //}
+
+  // --------------------------------------------------
+  //  Formulario inline
+  // --------------------------------------------------
+
+  &--inline {
+    .form__group {
+      margin-top: 0;
+      display: inline-block;
+      vertical-align: top;
+
+      //Les damos estilo en XS
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+        display: block;
+      }
+
+      label {
+        @media (max-width: $screen-xs-max) {
+          display: block;
+        }
+      }
+    }
+
+    [class*="form__c"] {
+      width: auto;
+      //Les damos estilo en XS
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+      }
+    }
+  }
+
+  //icono validaciones
+  .form__icon {
+    position: absolute;
+    right: 0;
+    width: $input-height;
+    height: $input-height;
+
+    svg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+
+  // --------------------------------------------------
+  //  Tamaños
+  // --------------------------------------------------
+
+  &--xs {
+    [class*="form__c"],
+    [class*="btn"],
+    select {
+      height: $input-height-xs;
+    }
+
+    .form__icon svg {
+      width: $input-height-xs;
+      height: $input-height-xs;
+    }
+  }
+
+  &--sm {
+    [class*="form__c"],
+    [class*="btn"],
+    select {
+      height: $input-height-sm;
+    }
+
+    .form__icon svg {
+      width: $input-height-sm;
+      height: $input-height-sm;
+    }
+  }
+
+  &--lg {
+    [class*="form__c"],
+    [class*="btn"],
+    select {
+      height: $input-height-lg;
+    }
+
+    .form__icon svg {
+      width: $input-height-lg;
+      height: $input-height-lg;
+    }
+  }
+}

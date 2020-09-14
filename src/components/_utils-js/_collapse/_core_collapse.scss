@@ -1,0 +1,15 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+.collapse,
+.accordion__collapse {
+  overflow: hidden;
+  max-height: 0;
+  &.is-visible {
+    display: block;
+    max-height: 2000px;
+  }
+}

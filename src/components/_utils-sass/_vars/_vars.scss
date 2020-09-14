@@ -1,0 +1,105 @@
+@import "~basecore/src/components/_utils-sass/_vars/_core_vars.scss";
+/*
+Media Queries
+*/
+
+//Mobile First (min)
+$screen-xs: 320px;
+$screen-sm: 768px;
+$screen-md: 992px;
+$screen-lg: 1200px;
+$screen-xl: 1440px;
+
+//Desktop First (max)
+$screen-xs-max: ($screen-sm - 1); // 767
+$screen-sm-max: ($screen-md - 1); // 991
+$screen-md-max: ($screen-lg - 1); // 1199
+$screen-lg-max: ($screen-xl - 1); // 1439
+
+// --------------------------------------------------
+//  Grid
+// --------------------------------------------------
+
+$grid-gutter: 32px;
+$grid-gutter-outside: 16px;
+$columns: 12;
+$columns-xs: 4;
+$container-sm: 720px;
+$container-md: 944px;
+$container-lg: 1136px;
+$container-xl: 1248px;
+
+$container-grid-mixed-width: 1600px;
+
+/*
+Margin Scale
+*/
+$margin1: 0.8rem;
+$margin2: 1.6rem;
+$margin3: 2.4rem;
+$margin4: 3.2rem;
+$margin5: 4rem;
+$margin6: 4.8rem;
+
+// --------------------------------------------------
+//  Tamaños de iconos
+// --------------------------------------------------
+$icon-xl: 128px;
+$icon-lg: 56px;
+$icon-md: 48px;
+$icon-sm: 32px;
+$icon-xs: 16px;
+
+// --------------------------------------------------
+//  Inputs & Buttons fixed height inside forms
+// --------------------------------------------------
+$input-height-xs: 24px;
+$input-height-sm: 32px;
+$input-height: 40px;
+$input-height-lg: 70px;
+
+// --------------------------------------------------
+// Colors - Global Palette
+// --------------------------------------------------
+
+//  Form validation
+
+:root {
+  --color-success: #99cc33;
+  --color-info: #6ea0c6;
+  --color-warning: #fb7d0c;
+  --color-danger: #ec3457;
+  --color-disabled: #afafaf;
+
+  --color-text-1: #404040;
+  --color-text-2: #444;
+
+  --color-bg-1: #fff;
+
+  --color-border-1: #e3e3e3;
+
+  --color-bg-primary: #404040;
+  --color-bg-secondary: #cf3476;
+}
+
+// --------------------------------------------------
+// Template variables para componentes
+// --------------------------------------------------
+
+//Variables para CSS habitual
+// $component-padding:
+// $component-mb:
+// $component-bg-color:
+// $component-color-text:
+// $component-border:
+// $component-border-radius:
+
+// $component-subcomponent-color:
+// $component-subcomponent-bg-color:
+// $component-subcomponent-padding:
+// $component-subcomponent-content:
+
+// $component-subcomponent-color-hover:
+// $component-subcomponent-bg-color-hover:
+
+// Variables opcionales como border, shadowbox han de tener un if porque no siempre se usará

@@ -1,0 +1,128 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+.list {
+  li {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  //Con bullets
+  &--bullets {
+    li {
+      position: relative;
+    }
+    & li:before {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  //Con iconos
+  &--icons {
+    > * {
+      display: table;
+      position: relative;
+    }
+
+    &--xl > * {
+      padding-left: $icon-xl + 10px;
+      min-height: $icon-xl;
+      .icon {
+        @extend .icon--xl !optional;
+      }
+    }
+
+    &--lg > * {
+      padding-left: $icon-lg + 10px;
+      min-height: $icon-lg;
+      .icon {
+        @extend .icon--lg !optional;
+      }
+    }
+    &--md > * {
+      padding-left: $icon-md + 10px;
+      min-height: $icon-md;
+      .icon {
+        @extend .icon--md !optional;
+      }
+    }
+    &--sm > * {
+      padding-left: $icon-sm + 10px;
+      min-height: $icon-sm;
+      .icon {
+        @extend .icon--sm !optional;
+      }
+    }
+    &--xs > * {
+      padding-left: $icon-xs + 10px;
+      min-height: $icon-xs;
+      .icon {
+        @extend .icon--xs !optional;
+      }
+    }
+
+    > * > div.text {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-align: center;
+    }
+  }
+
+  &--inline {
+    display: inline-block;
+    li {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.desc-list {
+  dt {
+  }
+  dd {
+  }
+
+  &--horizontal {
+    dt {
+      float: left;
+      text-align: right;
+      overflow: hidden;
+      clear: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      @media (max-width: $screen-xs-max) {
+        float: none;
+        text-align: left;
+      }
+    }
+  }
+}
+
+//Order list
+ol.list {
+  counter-reset: section;
+
+  li {
+    list-style-type: none;
+    position: relative;
+  }
+
+  li::before {
+    content: counter(section);
+    counter-increment: section;
+    display: inline-block;
+    position: absolute;
+  }
+}

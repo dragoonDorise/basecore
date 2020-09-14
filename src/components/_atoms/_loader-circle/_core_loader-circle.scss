@@ -1,0 +1,33 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+//Loading circular
+.loader-circle {
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation: load8 1s infinite linear;
+}
+.loader-circle,
+.loader-circle:after {
+  border-radius: 50%;
+}
+@-webkit-keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

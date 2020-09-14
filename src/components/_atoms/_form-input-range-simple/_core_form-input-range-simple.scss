@@ -1,0 +1,24 @@
+@mixin generate-track() {
+  height: $form-slider-track-height;
+  cursor: pointer;
+  transition: $form-slider-track-transition;
+  background: $form-slider-track-bg;
+  border-radius: 0;
+}
+
+@mixin generate-thumb() {
+  border: 0;
+  height: $form-slider-thumb-size;
+  width: $form-slider-thumb-size;
+  box-sizing: border-box;
+  max-height: $form-slider-thumb-size;
+  max-width: $form-slider-thumb-size;
+  border-radius: 100%;
+  border: $form-slider-thumb-border-size $form-slider-thumb-border-color;
+  background: $form-slider-thumb-bg;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: ((-$form-slider-track-border * 2 + $form-slider-track-height) / 2) -
+    ($form-slider-thumb-size / 2);
+  box-shadow: $form-slider-thumb-shadow;
+}

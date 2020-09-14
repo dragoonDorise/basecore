@@ -1,0 +1,15 @@
+<div class="form__group">
+  <label class="form__label" for="">{{text}}</label>
+  <select
+    {{params}}
+    class="form__select"
+    role="listbox"
+    name="{{id}}"
+    id="{{id}}"
+    onclick="this.setAttribute('value', this.value);"
+    value="-1"
+  >
+    <option role="option" value="-1">Select</option>
+    <content></content>
+  </select>
+</div>

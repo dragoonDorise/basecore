@@ -1,0 +1,86 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+// --------------------------------------------------
+//  Radio
+// --------------------------------------------------
+
+.form__group > .radio-simple {
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+
+  input {
+    @include show-sr();
+  }
+
+  // Unchecked
+  label {
+    position: relative !important;
+    cursor: pointer;
+    pointer-events: all;
+    &:before {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      box-sizing: border-box;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      border-radius: 100%;
+      opacity: 0;
+      box-sizing: border-box;
+    }
+  }
+
+  //Checked
+  input:checked + label {
+    &:before {
+    }
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+// --------------------------------------------------
+//  Mixin tamaños de radios
+// --------------------------------------------------
+
+@mixin radio-simple-sizes($size, $radio-simple-size) {
+  .radio-simple--#{$size} {
+    // Unchecked
+    label {
+      padding-left: $radio-simple-size + $radio-simple-size/2;
+      line-height: $radio-simple-size;
+      //Borde exterior
+      &:before {
+        left: 0;
+        width: $radio-simple-size;
+        height: $radio-simple-size;
+      }
+      //Elemento interior
+      &:after {
+        left: $radio-simple-size/2;
+        top: $radio-simple-size/2;
+      }
+    }
+
+    //Checked
+    input:checked + label {
+      //Elemento interior
+      &:after {
+        left: $radio-simple-size/8;
+        top: $radio-simple-size/8;
+        width: $radio-simple-size - $radio-simple-size/4;
+        height: $radio-simple-size - $radio-simple-size/4;
+      }
+    }
+  }
+}
+

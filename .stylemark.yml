@@ -1,0 +1,35 @@
+name: Toolkit
+#assets: (optional) List of relative file/directory paths to copy and mirror in the generated style guide
+
+excludeDir: js
+#match: (optional) Regex pattern or list of files to process; by default, common source files are included
+
+
+theme:
+    logo:  toolkit/custom/logo.svg
+   
+    sidebar:
+        background: "#EE0256"
+        textColor: "#FFF"
+  
+#webpackAppPath: For React apps, this is the `output.library` value in your webpack config
+#emberAppName: For Ember apps, this is the name of the Ember app exported to the window object
+
+examples:
+
+    headHtml:
+    <link rel="stylesheet" href="../dist/css/styles.css">
+    <link rel="stylesheet" href="custom/styles.css"> 
+    <script src="../dist/js/async.js"></script>
+
+order:
+
+- Grid
+- Grid Layout
+- Atoms
+- Molecules
+- Organisms
+- Animations
+- Plugins
+- Utils CSS
+- Utils JS

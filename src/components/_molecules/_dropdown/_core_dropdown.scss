@@ -1,0 +1,47 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+.dropdown,
+.dropup {
+  position: relative;
+  &__menu {
+    width: auto;
+    //  display: none;
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+  }
+  &--open {
+    .dropdown__menu {
+      pointer-events: all;
+    }
+  }
+}
+
+.dropdown,
+.dropup {
+  &--open &__menu {
+    //  display: block;
+
+    z-index: $zindex1;
+  }
+}
+
+//  --------------------------------------------------
+//  Dropups
+//  --------------------------------------------------
+
+.dropup.open {
+  .dropdown__menu {
+    bottom: 100%;
+  }
+}
+
+.dropup {
+  .caret {
+    transform: rotate(180deg);
+  }
+}

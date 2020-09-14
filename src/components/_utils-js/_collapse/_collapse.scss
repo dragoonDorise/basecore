@@ -1,0 +1,12 @@
+@import "~basecore/src/components/_utils-js/_collapse/_core_collapse.scss";
+$collapse-transition-in: max-height 500ms ease-in;
+$collapse-transition-out: max-height 500ms ease-out;
+
+.collapse {
+  //Cierre
+  transition: $collapse-transition-out;
+  //Apertura
+  &.is-visible {
+    transition: $collapse-transition-in;
+  }
+}

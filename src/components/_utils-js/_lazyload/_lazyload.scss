@@ -1,0 +1,8 @@
+@import "~basecore/src/components/_utils-js/_lazyload/_core_lazyload.scss";
+[data-src] {
+  transition: 0.2s;
+}
+
+.is-lazyloaded {
+  transition: 0.2s;
+}

@@ -1,0 +1,33 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+.btn-switch {
+  position: relative;
+  user-select: none;
+  display: block;
+  &__checkbox {
+    display: none;
+  }
+  &__label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    padding: 0;
+    text-indent: -999em;
+  }
+  &__label:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: 0px;
+  }
+  &__checkbox:checked + &__label:before {
+    right: 0px;
+  }
+}
+

@@ -1,0 +1,30 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+.alert {
+  position: relative;
+  a {
+    font-weight: bold;
+  }
+
+  // Evitamos margens y padings que descuadren
+  *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  &__close {
+    position: relative;
+    float: right;
+    background: none;
+    border: 0px;
+    padding: 0;
+    margin: 0;
+    .icon {
+      vertical-align: baseline;
+    }
+  }
+}

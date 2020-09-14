@@ -1,0 +1,39 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+.accordion {
+  [data-toggle="collapse"] {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    font-size: inherit;
+
+    &:active {
+      color: inherit;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  [aria-expanded="true"] {
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__panel {
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@import "~basecore/src/components/_molecules/_dropdown/_core_dropdown.scss";
+$dropdown-icon-size: 20px;
+$dropdown-icon-color: var(--color-bg-1);
+$dropdown-menu-border: 1px solid var(--color-border-1);
+$dropdown-menu-bg: white;
+$dropdown-menu-padding: 10px;
+$dropdown-menu-transition-open: max-height 0.8s, opacity 0.5s;
+$dropdown-menu-transition-close: max-height 0.8s, opacity 0.5s;
+$dropdown-menu-item-mb: 10px;
+
+.dropdown,
+.dropup {
+  button > .icon {
+    width: $dropdown-icon-size;
+    height: $dropdown-icon-size;
+    fill: $dropdown-icon-color;
+    vertical-align: middle;
+  }
+
+  &__menu {
+    background: $dropdown-menu-bg;
+    border: $dropdown-menu-border;
+    padding: $dropdown-menu-padding;
+    opacity: 0;
+    max-height: 1px;
+    overflow: hidden;
+    transition: $dropdown-menu-transition-close;
+
+    > li {
+      margin-bottom: $dropdown-menu-item-mb;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &--open {
+    .dropdown__menu {
+      opacity: 1;
+      max-height: 400px;
+      transition: $dropdown-menu-transition-open;
+
+      //  transition: .5s;
+    }
+  }
+}

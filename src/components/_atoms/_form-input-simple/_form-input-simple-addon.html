@@ -1,0 +1,20 @@
+<div class="form__group form__group--addon--{{addon_position}}">
+  <label class="form__label" for="{{id}}">{{text}}</label>
+  <input
+    placeholder="{{placeholder}}"
+    id="{{id}}"
+    name="{{id}}"
+    class="form__control"
+    {{params}}
+    type="{{type}}"
+  />
+  <button type="button" class="form__addon {{addon_params}}">
+    <if condition="addon_text !== ''"> {{addon_text}} </if>
+
+    <else>
+      <svg class="icon {{icon_size}}" role="presentation">
+        <use xlink:href="../svg/sprite.svg#{{icon}}"></use>
+      </svg>
+    </else>
+  </button>
+</div>

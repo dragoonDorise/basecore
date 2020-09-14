@@ -1,0 +1,27 @@
+.anim-is-hiding {
+  height: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  transition: 0.5s;
+}
+
+.is-hidden,
+.anim-is-hidden {
+  display: none;
+  opacity: 0;
+}
+
+.anim-is-showing {
+  opacity: 0;
+  height: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  transition: 0.5s;
+}
+
+.anim-is-waiting {
+  opacity: 0;
+  transition: 0.5s;
+}

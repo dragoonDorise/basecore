@@ -1,0 +1,75 @@
+@import "~basecore/src/components/_molecules/_form/_core_form.scss";
+$form-fieldset-mb: $margin3;
+$form-group-mb: $margin3;
+$form-hr-mb: $margin3;
+
+.form {
+  fieldset {
+    margin-bottom: $form-fieldset-mb;
+  }
+
+  legend {
+    @extend .h3;
+  }
+
+  hr {
+    margin-top: 0;
+    margin-bottom: $form-hr-mb;
+  }
+
+  &__group {
+    margin-bottom: $form-group-mb;
+  }
+
+  //Formulario inline
+
+  &--inline {
+    label {
+      //display: inline-block;
+      margin-bottom: $margin1;
+    }
+
+    // .form__group{
+    //
+    //   //Les damos estilo en XS
+    //   @media (max-width: $screen-xs) {
+    //
+    //     //margen para separarlos en XS
+    //     .form__group{
+    //       margin-bottom: $margin2;
+    //     }
+    //   }
+    //
+    //   label{
+    //     @media (max-width: $screen-xs) {
+    //       margin-bottom: $margin1;
+    //     }
+    //   }
+    //
+    // }
+  }
+
+  // --------------------------------------------------
+  //  Tamaños
+  // --------------------------------------------------
+
+  &--xs {
+    input,
+    select {
+      font-size: 10px;
+    }
+  }
+
+  &--sm {
+    input,
+    select {
+    }
+  }
+
+  &--lg {
+    input,
+    select {
+      font-size: 24px;
+    }
+  }
+}

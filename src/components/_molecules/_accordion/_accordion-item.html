@@ -1,0 +1,20 @@
+<button
+  type="button"
+  data-toggle="collapse"
+  data-target="#{{id_slide}}"
+  data-parent="#{{id_accordion}}"
+  aria-expanded="false"
+  aria-controls="collapse"
+>
+  {{title}}
+
+  <svg class="icon" role="presentation">
+    <use xlink:href="../svg/sprite.svg#caret-arrow"></use>
+  </svg>
+</button>
+
+<div id="{{id_slide}}" class="accordion__collapse" aria-expanded="false">
+  <div class="accordion__panel">
+    <content></content>
+  </div>
+</div>

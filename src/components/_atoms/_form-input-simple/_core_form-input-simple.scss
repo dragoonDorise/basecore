@@ -1,0 +1,158 @@
+$form-control-border: 1px solid var(--color-border-1);
+$form-label-mb: $margin1;
+$form-control-border-radius: 0;
+$form-control-padding: 4px 10px;
+$form-control-box-shadow: none;
+$form-control-bg: white;
+$form-control-border-hover: 1px solid var(--color-border-1);
+$form-control-bg-hover: white;
+
+$form-help-padding: 12px 0;
+$form-help-text-size: 12px;
+
+$form-icon-size: 32px;
+$form-icon-right: 10px;
+$form-icon-top: 25px;
+
+$form-select-caret-size: 8px;
+$form-select-caret-position: right 12px center;
+
+.form--simple {
+  label {
+    margin-bottom: $form-label-mb;
+  }
+
+  .form__group {
+    position: relative;
+    // display: flex;
+    // align-items: center;
+
+    .form__help {
+      float: right;
+      font-size: $form-help-text-size;
+      padding: $form-help-padding;
+    }
+
+    > .form__addon {
+      @extend .btn-simple;
+      @extend .btn-simple--1;
+      border-radius: $form-control-border-radius;
+    }
+
+    .form__help {
+      float: right;
+      font-size: $form-help-text-size;
+      padding: $form-help-padding;
+    }
+
+    &--success,
+    &--info,
+    &--warning,
+    &--danger {
+    }
+
+    //Validaciones
+    &--success {
+      label,
+      input,
+      select,
+      textarea {
+        color: var(--color-success);
+        border-color: var(--color-success);
+      }
+      .form__group__help {
+        color: var(--color-success);
+      }
+      svg {
+        fill: var(--color-success);
+      }
+    }
+    &--info {
+      label,
+      input,
+      select,
+      textarea {
+        background: var(--color-info);
+        border-color: var(--color-info);
+      }
+      .form__group__help {
+        color: var(--color-info);
+      }
+      svg {
+        fill: var(--color-info);
+      }
+    }
+    &--warning {
+      label,
+      input,
+      select,
+      textarea {
+        color: var(--color-warning);
+        border-color: var(--color-warning);
+      }
+      .form__group__help {
+        color: var(--color-warning);
+      }
+      svg {
+        fill: var(--color-warning);
+      }
+    }
+    &--danger {
+      label,
+      input,
+      select,
+      textarea {
+        color: var(--color-danger);
+        border-color: var(--color-danger);
+      }
+      .form__group__help {
+        color: var(--color-danger);
+      }
+      svg {
+        fill: var(--color-danger);
+      }
+    }
+    //icono validación
+    .form__icon {
+      top: $form-icon-top;
+      svg {
+        width: $form-icon-size;
+        height: $form-icon-size;
+
+        right: $form-icon-right;
+      }
+    }
+  }
+
+  .form__control,
+  select,
+  textarea {
+    border: $form-control-border;
+    border-radius: $form-control-border-radius;
+    box-shadow: $form-control-box-shadow;
+    padding: $form-control-padding;
+    background: $form-control-bg;
+    &:focus {
+      background-color: $form-control-bg-hover;
+      border: $form-control-border-hover;
+    }
+  }
+
+  select {
+    padding-right: 20px;
+    background-color: $form-control-bg;
+    appearance: none;
+
+    &:focus {
+      background: $form-control-bg-hover;
+      border: $form-control-border-hover;
+    }
+  }
+
+  // svg {
+  //   position: absolute;
+  //   right: 12px;
+  //   width: 19px;
+  //   height: 19px;
+  // }
+}

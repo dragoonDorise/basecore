@@ -1,0 +1,81 @@
+@import "~basecore/src/components/_molecules/_alert/_core_alert.scss";
+$alert-padding: 20px;
+$alert-pr: 30px;
+$alert-border-radius: 0;
+$alert-mb: $margin1;
+$alert-border-size: 1px;
+$alert-icon-size: 20px;
+$alert-success-color-text: white;
+$alert-success-border-color: transparent;
+$alert-success-icon-color: white;
+$alert-info-color-text: white;
+$alert-info-border-color: transparent;
+$alert-info-icon-color: white;
+$alert-warning-color-text: white;
+$alert-warning-border-color: transparent;
+$alert-warning-icon-color: white;
+$alert-danger-color-text: white;
+$alert-danger-border-color: transparent;
+$alert-danger-icon-color: white;
+
+.alert {
+  padding: $alert-padding;
+  padding-right: $alert-pr;
+  margin-bottom: $alert-mb;
+  border-radius: $alert-border-radius;
+  border-width: $alert-border-size;
+  border-style: solid;
+
+  a {
+    font-weight: bold;
+  }
+
+  &__close {
+    right: -10px;
+    top: -2px;
+    font-size: 21px;
+    width: $alert-icon-size;
+    height: $alert-icon-size;
+    svg {
+      width: $alert-icon-size;
+      height: $alert-icon-size;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &--success {
+    background: var(--color-success);
+    color: $alert-success-color-text;
+    border-color: $alert-success-border-color;
+    .alert__close svg {
+      fill: $alert-success-icon-color;
+    }
+  }
+  &--info {
+    background: var(--color-info);
+    color: $alert-info-color-text;
+    border-color: $alert-info-border-color;
+    .alert__close svg {
+      fill: $alert-info-icon-color;
+    }
+  }
+  &--warning {
+    background: var(--color-warning);
+    color: $alert-warning-color-text;
+    border-color: $alert-warning-border-color;
+    .alert__close svg {
+      fill: $alert-warning-icon-color;
+    }
+  }
+  &--danger {
+    background: var(--color-danger);
+    color: $alert-danger-color-text;
+    border-color: $alert-danger-border-color;
+    .alert__close svg {
+      fill: $alert-danger-icon-color;
+    }
+  }
+}

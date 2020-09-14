@@ -1,0 +1,332 @@
+@import "~basecore/src/components/_atoms/_form-input-material/_core_form-input-material.scss";
+$form-control-border: 2px solid var(--color-border-1);
+$form-control-border-focus: 2px solid var(--color-bg-secondary);
+$form-mb: $margin3;
+$form-label-mb: $margin1;
+$form-control-border-radius: 0;
+$form-control-padding: 8px 10px 0px 10px;
+$form-control-box-shadow: none;
+$form-control-bg: white;
+$form-control-border-hover: 1px solid var(--color-border-1);
+$form-control-bg-hover: white;
+
+$form-help-padding: 12px 10px;
+$form-help-text-size: 12px;
+
+$form-icon-size: 32px;
+$form-icon-right: 10px;
+$form-icon-top: 0;
+
+$form-has-error-padding: 65px;
+
+$form-label-size: 1.2rem;
+$form-label-top: 0px;
+$form-label-color: var(--color-text-1);
+$form-select-caret-size: 8px;
+$form-select-caret-position: right 12px center;
+$form-label-size-xs: 1rem;
+$form-input-size-xs: 1.2rem;
+$form-label-size-sm: 1rem;
+$form-input-size-sm: 1.2rem;
+$form-label-size-lg: 1.6rem;
+$form-input-size-lg: 1.8rem;
+
+$form-control-border: 2px solid var(--color-border-1);
+$form-control-border-focus: 2px solid var(--color-bg-secondary);
+$form-label-mb: $margin1;
+$form-control-border-radius: 0;
+$form-control-padding: 8px 10px 0px 10px;
+$form-control-box-shadow: none;
+$form-control-bg: white;
+$form-control-border-hover: 1px solid var(--color-border-1);
+$form-control-bg-hover: white;
+
+$form-help-padding: 12px 10px;
+$form-help-text-size: 12px;
+
+$form-icon-size: 32px;
+$form-icon-right: 10px;
+$form-icon-top: 0;
+
+$form-label-size: 1.2rem;
+$form-select-caret-size: 24px;
+$form-select-caret-position: right 12px center;
+$form-label-size-xs: 1rem;
+$form-input-size-xs: 1.2rem;
+$form-label-size-sm: 1rem;
+$form-input-size-sm: 1.2rem;
+$form-label-size-lg: 1.6rem;
+$form-input-size-lg: 1.8rem;
+
+.form--material {
+  margin-bottom: $form-mb;
+  .form__group {
+    position: relative;
+
+    .form--material__label {
+      font-size: $form-label-size;
+      text-transform: uppercase;
+      margin-left: 10px;
+      transition: 0.2s ease all;
+      pointer-events: none;
+      color: $form-label-color;
+    }
+
+    &--addon--left .form--material__label {
+      left: $form-icon-size;
+    }
+
+    > .form__addon {
+      width: $form-icon-size;
+      padding: 0;
+      background: transparent;
+      color: inherit;
+      border-bottom: $form-control-border;
+      border-radius: $form-control-border-radius;
+    }
+
+    input ~ .form--material__label,
+    select ~ .form--material__label {
+      position: absolute;
+      top: $input-height/2;
+      left: 0;
+    }
+
+    input:focus ~ .form--material__label,
+    input:not(:placeholder-shown) ~ .form--material__label,
+    select:not([value="-1"]) ~ .form--material__label {
+      top: $form-label-top;
+      transition: 0.2s ease all;
+    }
+
+    .form__line {
+      border-bottom: $form-control-border-focus;
+      width: 1px;
+      opacity: 0;
+      margin: 0 auto;
+      transition: 0.3s ease all;
+      top: $input-height - 2px;
+      left: 0;
+      right: 0;
+      position: absolute;
+    }
+    input:focus ~ .form__line,
+    select:not([value="-1"]) ~ .form--material__label,
+    textarea:focus ~ .form__line {
+      opacity: 1;
+      width: 100%;
+      transition: 0.3s ease width;
+    }
+
+    textarea ~ .form__line {
+      top: auto;
+      bottom: 3px;
+    }
+
+    &__help {
+      font-size: $form-help-text-size;
+      padding: $form-help-padding;
+    }
+
+    &--success,
+    &--info,
+    &--warning,
+    &--danger {
+    }
+
+    //Validaciones
+    &--success {
+      .form--material__label,
+      input,
+      select,
+      textarea {
+        color: var(--color-success);
+        border-color: var(--color-success);
+      }
+      .form__group__help {
+        color: var(--color-success);
+      }
+      svg {
+        fill: var(--color-success);
+      }
+    }
+    &--info {
+      .form--material__label,
+      input,
+      select,
+      textarea {
+        background: var(--color-info);
+        border-color: var(--color-info);
+      }
+      .form__group__help {
+        color: var(--color-info);
+      }
+      svg {
+        fill: var(--color-info);
+      }
+    }
+    &--warning {
+      .form--material__label,
+      input,
+      select,
+      textarea {
+        color: var(--color-warning);
+        border-color: var(--color-warning);
+        padding-right: $form-has-error-padding;
+      }
+      .form__group__help {
+        color: var(--color-warning);
+      }
+      svg {
+        fill: var(--color-warning);
+      }
+    }
+    &--danger {
+      .form--material__label,
+      input,
+      select,
+      textarea {
+        color: var(--color-danger);
+        border-color: var(--color-danger);
+        padding-right: $form-has-error-padding;
+      }
+      .form__group__help {
+        color: var(--color-danger);
+      }
+      svg {
+        fill: var(--color-danger);
+      }
+    }
+    //icono validación
+    .form__icon {
+      top: $form-icon-top;
+      right: $form-icon-right;
+      svg {
+        width: $form-icon-size;
+        height: $form-icon-size;
+
+        right: $form-icon-right;
+      }
+    }
+  }
+
+  .form__control,
+  select,
+  textarea {
+    border: 0;
+    border-bottom: $form-control-border;
+    border-radius: $form-control-border-radius;
+    box-shadow: $form-control-box-shadow;
+    padding: $form-control-padding;
+    background: $form-control-bg;
+    &:focus {
+      background-color: $form-control-bg-hover;
+    }
+    &::placeholder {
+      color: transparent;
+      //opacity: 0;
+    }
+  }
+
+  select {
+    padding-right: 20px;
+    background: url($caret) no-repeat;
+    background-size: 100% 100%;
+    background-color: $form-control-bg;
+    background-size: $form-select-caret-size $form-select-caret-size;
+
+    background-position: $form-select-caret-position;
+    -moz-appearance: none;
+    + .form--material__label {
+    }
+    &:focus {
+      border: 0;
+      border-bottom: $form-control-border;
+    }
+  }
+
+  // --------------------------------------------------
+  //  Tamaños
+  // --------------------------------------------------
+
+  &.form--xs {
+    .form--material__label {
+      font-size: $form-label-size-xs;
+    }
+
+    .form__control,
+    select,
+    textarea {
+      font-size: $form-input-size-xs;
+    }
+
+    input ~ .form--material__label,
+    select ~ .form--material__label {
+      position: absolute;
+      top: $input-height-xs/2;
+    }
+
+    input:focus ~ .form--material__label,
+    input:not(:placeholder-shown) ~ .form--material__label,
+    select:not([value="-1"]) ~ .form--material__label {
+      top: 0;
+      transition: 0.2s ease all;
+    }
+  }
+
+  &.form--sm {
+    .form--material__label {
+      font-size: $form-label-size-sm;
+    }
+
+    .form__control,
+    select,
+    textarea {
+      font-size: $form-input-size-sm;
+    }
+
+    input ~ .form--material__label,
+    select ~ .form--material__label {
+      position: absolute;
+      top: $input-height-sm/2;
+    }
+
+    input:focus ~ .form--material__label,
+    input:not(:placeholder-shown) ~ .form--material__label,
+    select:not([value="-1"]) ~ .form--material__label {
+      top: 0;
+      transition: 0.2s ease all;
+    }
+  }
+
+  &.form--lg {
+    .form--material__label {
+      font-size: $form-label-size-lg;
+    }
+
+    .form__control,
+    select,
+    textarea {
+      font-size: $form-label-size-lg;
+    }
+
+    input ~ .form--material__label,
+    select ~ .form--material__label {
+      position: absolute;
+      top: $input-height-lg/2;
+    }
+
+    input:focus ~ .form--material__label,
+    input:not(:placeholder-shown) ~ .form--material__label,
+    select:not([value="-1"]) ~ .form--material__label {
+      top: 0;
+      transition: 0.2s ease all;
+    }
+  }
+}
+
+//IE11 Fix
+.form--material__label.ie-up {
+  top: 0 !important;
+  transition: 0.2s ease all;
+}
