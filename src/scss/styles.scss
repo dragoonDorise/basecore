@@ -4,11 +4,11 @@
 //
 // -----------------------------------------------------------------------------------------------------
 @import "../components/_utils-sass/_vars/_vars.scss";
-@import "~basecore/src/components/_utils-sass/_reset/_core_reset.scss";
-@import "~basecore/src/components/_utils-sass/_mixins/_core_mixins.scss";
-@import "~basecore/src/components/_atoms/_img/_core_img.scss";
+@import "~getbasecore/src/components/_utils-sass/_reset/_core_reset.scss";
+@import "~getbasecore/src/components/_utils-sass/_mixins/_core_mixins.scss";
+@import "~getbasecore/src/components/_atoms/_img/_core_img.scss";
 
-@import "~basecore/src/components/_utils-sass/_grid-layout/_core_grid-layout.scss";
+@import "~getbasecore/src/components/_utils-sass/_grid-layout/_core_grid-layout.scss";
 
 @import "../components/_utils-js/_collapse/collapse.scss";
 
