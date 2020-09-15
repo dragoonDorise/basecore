@@ -1,62 +1,256 @@
 # baseCore
-Modular, easy to upgrade and high performance HTML framework
 
-## Instalando baseCore por primera vez:
+Modular, easy to upgrade and high performance CSS framework
 
-Necesitamos instalar varios paquetes en el Mac:
+# Requirements
 
-### Node >12
-https://nodejs.org/es/download/
+- You need [Node > v12](https://nodejs.org/es/download/)
+- Our tool [basecore-cli](https://www.npmjs.com/package/basecore-cli)
+- A JS Framework of your choice ( right now we support Vanila JS with Parcel with React + Vue in the future )
 
-### Parcel
-Necesitamos instalar Parcel de manera global
-  npm install -g parcel-bundler
-De igual manera necesitamos instalar otro paquete para generar el sistema de iconos  
-  npm install -g svg-sprite-generator
+# Parcel Requirements
 
-### Primer setup
-Para poder usar basecore necesitamos
-  npm install
+We recommend this two plugins for parcel:
 
-## Creación de nuevos proyectos
+npm i --save posthtml-modules
+npm i --save posthtml-expressions
 
-Si queremos usar basecore para un único proyecto ya no es necesaria más configruación, pasa a leer al paso
+You'll need them to open the Kitchen Sink were you can preview all baseCore components, you can use them to build static html.
 
-Opcion A - Usar basecore como librería de componentes globales
+For Parcel to work nice with baseCore you need to create this two files in your project
 
-Desde la carpeta basecore ejecutamos sh create.sh
+.sassrc
 
-Este script creará una nueva carpeta con varios enlace simbólicos para que los archivos principales del proyecto siempre estén en la carpeta de basecore. De esta manera los proyectos siempre están al día con los bugfixes necesarios.
+    {
+        "includePaths": ["node_modules"]
+    }
 
-Se entiende que el repositorio local de basecore servirá de librería padre común para todos los proyectos hijos.
+.posthtmlrc
 
-Los enlaces simbólicos creados afectan a estos archivos:
+    {
+      "plugins": {
+        "posthtml-modules": {
+          "root": "./src"
+        }
+      }
+    }
 
-  node_modules
-  .browserslistrc
-  .editorconfig
-  .htaccess
-  .imageminrd
-  .postcssrc
-  .posthtmlrc
-  imagemin.config.js
-  package-lock.json
-  package.json
-  src/components/atoms/**/*.js
-  src/components/atoms/**/_core*.scss
+# Installing baseCore
 
-El usar enlaces simbólicos nos ayuda a montar proyectos más ligeros y más fáciles de actualizar pero supone tener especial cuidado, ya que cualquier cambio en alguno de los archivos de la lista anterior supondrá un cambio en el padre, que si se sube al repositorio supondrá un cambio en todo el resto de proyectos.
+Just follow [basecore-cli instructions](https://www.npmjs.com/package/basecore-cli)
 
+# Why another framework?
 
+basecore is a framework created with the efforts of both UI designers and Frontend Developers, keeping in mind reusability, accesibility and a low Kb weight size and extremely easy to customize components.
 
-## Actualizando proyectos hijos
-Para actualizar la versión de los proyectos, solo necesitamos hacer un git pull del repositorio de la base. Siempre usar la rama master.
+Our mission is to create an easy to use framework that allow everybody in the Team to create a project ASAP, for this we based our framework in the [Atomic Design](https://bradfrost.com/blog/post/atomic-web-design/) methodology
 
-## Ejecutando los proyectos hijos
+tldr; Atomic Design separates components in:
 
-  npm start
+| Type      | Description                                                                                    |
+| --------- | ---------------------------------------------------------------------------------------------- |
+| Atoms     | A simple element like a Button                                                                 |
+| Molecules | More than one Atom together                                                                    |
+| Cells     | This is not present in the classical Atomid Design. We use it to name the parents of Molecules |
+| Organisms | More than one Molecule / Cell together                                                         |
+| Templates | A whole page with Organisms, Molecuels, etc but with dummy content, like a prototype.          |
+| Pages     | A final Template but with final content                                                        |
 
-## Compilando proyectos hijos
+# Examples
 
-  npm run build
+## Atom
 
+<img src="docs/atom.png" width="122">
+
+## Molecules
+
+Two Atoms (buttons) together:
+
+<img src="docs/molecule.png" width="186">
+
+Another two Atoms: title and a paragraph tag:
+
+<img src="docs/molecule2.png" width="318">
+
+Three atoms Image + Title + Paragraph + List ( Molecule ) + button, all inside a Cell
+
+<img src="docs/molecule3.png" width="318">
+
+This previous case is special because Atomic Design dictates this should be an Organism, but we're calling it also a Molecule ( or a Mega Molecule for use of differente name ) because we only call something an Organism if that Component has JS logic. More on this later.
+
+## Cell
+
+A Cell is the container of others Atoms + Molecules, think of it as the typical card component, a Component container with CSS for only it's own padding, background color, margin, etc. But with no content inside, because the content doesn't inherit anything from the Cell as every Atom and Molecule has it's own CSS
+
+<img src="docs/cell.png" width="376">
+
+## Organism
+
+### A Cell + Image + Title + Paragraph + List + Button
+
+<img src="docs/organism.png" width="1024">
+
+### Same Cell + Title + Subtitle + Paragraph + Button
+
+<img src="docs/organism2.png" width="1024">
+
+### Separation of concerns
+
+Every component has its own SCSS, JS, MD and HTML files, starting with an underscore so we know it's a partial element of the component.
+
+| Name        | Description                         |
+| ----------- | ----------------------------------- |
+| \_name.scss | Component visuals                   |
+| \_name.js   | Component logic                     |
+| \_name.html | Component markup                    |
+| \_name.smd  | Markdown document for documentation |
+
+Every line of code should only affect the component itself, never its parents or his children, for example if a Molecule interacts with another Molecule then the two of them should be organized inside a Organism.
+
+In UI Design the complexity of the component defines if it's an Atom, a Molecule or an Organism, in code we have to twist that a litte, we use the scope of interaction to separate the components:
+
+| X possible values | Description                             |
+| ----------------- | --------------------------------------- |
+| Atom              | No JS or only to interact within itself |
+| Molecule          | No JS or only to interact within itself |
+| Organism          | JS that affects the items within        |
+| Cell              | No JS as it's only "a shell"            |
+
+#### Example:
+
+Imagine a search page, you have the Search Input, the Search Button and the Results, all in the same page.
+
+When you click on the Search Button, the Buttons changes and shows a loading animation, 1 second after, the Results starts to show your favourite products.
+
+Search Input => Atom 1
+
+Search Button => Atom 2
+
+Search Input + Search Button => Molecule 1
+
+Result Product => Molecule 2
+
+A grid of 9 Result Products => Mega Molecule 1
+
+Molecule 1 + Mega Molecule 1 => Organism 1
+
+Lets review the logic of every element:
+
+Atom 1: Has no JS Logic
+
+Atom 2: Has no JS Logic
+
+Molecule 1: Has JS logic so it can change the Search button
+
+Organism 1: Has JS Logic, when we press the Search Button we call a webservice that once we've parsed it we create the grid of 9 products
+
+By doing this, we can make multiple and different Result pages using the same Molecules in just _seconds_ because they have all we need except the webservice logic.
+
+So Atoms, Molecules and Cells are highly reusable, and since every one of them will just be imported / referenced in the whole project if we need to make a change, we only have to do it in one component and everything will propagate with no effort. As you can already see, Organisms aren't meant to be reused but you can, though, in the previous example you could integrate the Organism1 in any other page, as it already has everything needed in itself to just work.
+
+#Folder Structure
+
+    src/
+        app/
+        components/
+            _atoms/
+            _molecules/
+            _organisms/
+            _cell/
+            _layout/
+            _utils-js/
+            _utils-sass/
+            _vendor/
+        fonts/
+        img/
+        pages/
+        scss/
+        svg/
+
+| Name                       | Description                                            |
+| -------------------------- | ------------------------------------------------------ |
+| app/                       | Config your app here, imports, etc.                    |
+| components/\_atoms/        | Atoms, put yours here too                              |
+| components/\_molecules/    | Molecules, put yours here too                          |
+| components/\_organisms/    | Organisms, put yours here too                          |
+| components/\_cell/         | Cells, put yours here too                              |
+| components/\_layout/       | Define your layouts here                               |
+| components/\_utils-js\_/   | Some JS utilities, small plugins ready to go           |
+| components/\_utils-sass\_/ | Some Sass utilities like CSS Grid, Browser Fixes, etc. |
+| fonts/                     | Put all your custom Fonts here                         |
+| img/                       | Put all your images here                               |
+| pages/                     | Create differente .html files here for static projects |
+| scss/                      | You can import al the components SCSS in here          |
+| svg/                       | Store your svg and icons in here                       |
+
+## Importing SCSS and JS
+
+You can import your JS Modules in the /app/\_app.js file, and you can do the same with the SCSS in the scss/styles.scss if you want.
+
+## baseCore Core and Custom
+
+baseCore gets its name from this concept: Split the code in Core code and Custom Core.
+
+## Core Code
+
+This is the code you shouldn't have to touch ( we should maintain it for you ) because it contains logic that should change, for instance, a modal always has the same logic: You push a button and you get a modal window. This logic is within the node_modules and can't be extracted automaticaly, but nothing keeps you to just copy an paste the files in the project.
+
+Another example are buttons, how many times have you reset the buttons? Remove the borders, apply webkit fixes? All this code belongs to the Core portion of basecore so this annoyances are taken care for you even before starting the project.
+
+Here is some of the core code of the Modal Molecule Component:
+
+\_core_modal.scss
+
+```
+.modal {
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -1;
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0;
+}
+```
+
+This are things a modal is always going to have, and if for some reason it doesn't you can easily overwrite using the CSS cascade, but we've put a lot of work separating core and custom code so you don't have.
+
+All the JS Code that ships with baseCore is part of Core Code , so all imports targets are in the node_modules folder.
+
+## Custom Code
+
+This is the code you should and will touch, specially the SCSS so you can define new mixins or variables.
+
+Every component that comes with baseCore is defined almost in it's entirety with variables so you can change the component visual aspect really fast.
+
+Getting back to our modal, the scss in the project relates to the custom part of the code, in there you can see all the variables you can use to customize it
+
+```
+@import "~getbasecore/src/components/_molecules/_modal/_core_modal.scss";
+$modal-backdrop-bg: rgba(0, 0, 0, 0.5);
+$modal-dialog-bg: white;
+$modal-dialog-padding: 40px;
+$modal-close-size: 20px;
+$modal-close-color: var(--color-text-1);
+$modal-close-top: 10px;
+$modal-close-right: 10px;
+$modal-anim-top: 10%;
+```
+
+Notice that every Custom code needs to import the Core code first so it can work properly.
+
+In the complete baseCore Docs you can read about every single variable and what part of the component affects.
+
+| Name                   | Description                   |
+| ---------------------- | ----------------------------- |
+| \$modal-backdrop-bg    | Backdrop background color     |
+| \$modal-dialog-bg      | Modal dialog background color |
+| \$modal-dialog-padding | Modal dialog background color |
+| \$modal-close-size     | Close button size             |
+| \$modal-close-color    | Close button color            |
+| \$modal-close-top      | Close button top position     |
+| \$modal-close-right    | Close button right position   |
+| \$modal-anim-top       | Modal top position animation  |
+
+You could also say that Core Code contains Funcionality code, and Custom Code contains the Visual customizable code.
