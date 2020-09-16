@@ -10,10 +10,15 @@ Modular, easy to upgrade and high performance CSS framework
 
 # Parcel Requirements
 
-We recommend this two plugins for parcel:
+First, install [Parcel](https://parceljs.org):
 
-npm i --save posthtml-modules
-npm i --save posthtml-expressions
+    npm i -g parcel-bundler
+
+We recommend this two plugins for parcel [posthtml-modules](https://github.com/posthtml/posthtml-modules) and [posthtml-expressions](https://github.com/posthtml/posthtml-expressions)
+
+    npm i --save posthtml-modules
+
+    npm i --save posthtml-expressions
 
 You'll need them to open the Kitchen Sink were you can preview all baseCore components, you can use them to build static html.
 
@@ -34,6 +39,10 @@ For Parcel to work nice with baseCore you need to create this two files in your 
         }
       }
     }
+
+Start Parcel and have fun :)
+
+    parcel ./src/pages/index.html --open
 
 # Installing baseCore
 
@@ -60,21 +69,21 @@ tldr; Atomic Design separates components in:
 
 ## Atom
 
-<img src="docs/atom.png" width="122">
+<img src="https://raw.githubusercontent.com/dragoonDorise/basecore/master/docs/atom.png" width="122">
 
 ## Molecules
 
 Two Atoms (buttons) together:
 
-<img src="docs/molecule.png" width="186">
+<img src="https://raw.githubusercontent.com/dragoonDorise/basecore/master/docs/molecule.png" width="186">
 
 Another two Atoms: title and a paragraph tag:
 
-<img src="docs/molecule2.png" width="318">
+<img src="https://raw.githubusercontent.com/dragoonDorise/basecore/master/docs/molecule2.png" width="318">
 
 Three atoms Image + Title + Paragraph + List ( Molecule ) + button, all inside a Cell
 
-<img src="docs/molecule3.png" width="318">
+<img src="https://raw.githubusercontent.com/dragoonDorise/basecore/master/docs/molecule3.png" width="318">
 
 This previous case is special because Atomic Design dictates this should be an Organism, but we're calling it also a Molecule ( or a Mega Molecule for use of differente name ) because we only call something an Organism if that Component has JS logic. More on this later.
 
@@ -82,17 +91,17 @@ This previous case is special because Atomic Design dictates this should be an O
 
 A Cell is the container of others Atoms + Molecules, think of it as the typical card component, a Component container with CSS for only it's own padding, background color, margin, etc. But with no content inside, because the content doesn't inherit anything from the Cell as every Atom and Molecule has it's own CSS
 
-<img src="docs/cell.png" width="376">
+<img src="https://raw.githubusercontent.com/dragoonDorise/basecore/master/docs/cell.png" width="376">
 
 ## Organism
 
 ### A Cell + Image + Title + Paragraph + List + Button
 
-<img src="docs/organism.png" width="1024">
+<img src="https://raw.githubusercontent.com/dragoonDorise/basecore/master/docs/organism.png" width="1024">
 
 ### Same Cell + Title + Subtitle + Paragraph + Button
 
-<img src="docs/organism2.png" width="1024">
+<img src="https://raw.githubusercontent.com/dragoonDorise/basecore/master/docs/organism2.png" width="1024">
 
 ### Separation of concerns
 
