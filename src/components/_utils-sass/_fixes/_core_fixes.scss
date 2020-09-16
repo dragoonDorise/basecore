@@ -97,3 +97,11 @@ input[type="number"] {
     padding-right: env(safe-area-inset-right);
   }
 }
+
+//  --------------------------------------------------
+//  Content render improvement
+//  --------------------------------------------------
+section {
+  content-visibility: auto;
+  contain-intrinsic-size: 100vh;
+}
