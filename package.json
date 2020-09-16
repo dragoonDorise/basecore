@@ -1,6 +1,6 @@
 {
   "name": "getbasecore",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Modular, easy to upgrade and high performance HTML framework",
   "main": "index.js",
   "dependencies": {
