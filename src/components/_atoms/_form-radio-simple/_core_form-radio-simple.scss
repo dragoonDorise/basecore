@@ -22,6 +22,16 @@
     position: relative !important;
     cursor: pointer;
     pointer-events: all;
+    //Unset sr-only
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: auto;
+    margin: auto;
+    overflow: auto;
+    clip: rect(0, 0, 0, 0);
+    border: auto;
+
     &:before {
       position: absolute;
       content: "";
@@ -83,4 +93,3 @@
     }
   }
 }
-

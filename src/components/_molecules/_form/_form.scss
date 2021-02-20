@@ -21,6 +21,24 @@ $form-hr-mb: $margin3;
     margin-bottom: $form-group-mb;
   }
 
+  &__error {
+    opacity: 0;
+    max-height: 0;
+    flex-basis: 100%;
+  }
+
+  //Error messages
+  &__group--success,
+  &__group--info,
+  &__group--warning,
+  &__group--danger {
+    .form__error {
+      opacity: 1;
+      max-height: 100%;
+      transition: 0.5s;
+    }
+  }
+
   //Formulario inline
 
   &--inline {

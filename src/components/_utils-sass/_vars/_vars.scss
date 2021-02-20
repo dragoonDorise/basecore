@@ -41,6 +41,18 @@ $margin4: 3.2rem;
 $margin5: 4rem;
 $margin6: 4.8rem;
 
+:root {
+  --margin-elements: 2.4rem;
+  --margin-components: 18rem;
+}
+@media (max-width: $screen-xs-max) {
+  :root {
+    --margin-elements: 2.4rem;
+    --margin-components: 8rem;
+  }
+}
+$margin-elements: var(--margin-elements);
+$margin-components: var(--margin-components);
 // --------------------------------------------------
 //  Tamaños de iconos
 // --------------------------------------------------

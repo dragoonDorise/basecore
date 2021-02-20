@@ -5,15 +5,17 @@
 //
 //
 .nav--tabs {
-  @include clearfix;
-
-  > li {
+  overflow: auto;
+  scroll-behavior: smooth;
+  > ul {
+    display: flex;
+  }
+  > ul li {
     float: left;
     margin-bottom: -1px;
     margin-right: -1px;
 
     @media (max-width: $screen-xs-max) {
-      float: none;
       margin-right: 0px;
     }
 

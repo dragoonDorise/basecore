@@ -170,6 +170,7 @@ hr {
 p {
   margin-bottom: $p-mb;
   line-height: 140%;
+  color: $body-text-color;
   &.capitular {
     &::first-letter {
       float: left;
