@@ -1,0 +1,84 @@
+@import "~getbasecore/src/components/atoms/_form-radio-simple/_core_form-radio-simple.scss";
+// --------------------------------------------------
+//  Radio
+// --------------------------------------------------
+
+$radio-simple-size: 16px;
+$radio-simple-size-xs: 10px;
+$radio-simple-size-sm: 15px;
+$radio-simple-size-lg: 30px;
+$radio-simple-border: 1px solid var(--grey1);
+$radio-simple-fosus: 1px solid var(--grey1);
+$radio-simple-inner-width: 8px;
+$radio-simple-inner-left: 4px;
+$radio-simple-inner-top: 4px;
+$radio-simple-inner-bg: var(--blue1);
+$radio-simple-inner-transition-check: all 0.2s ease-in-out;
+$radio-simple-inner-transition-uncheck: all 0.2s ease-in-out;
+
+@include radio-simple-sizes(xs, $radio-simple-size-xs);
+@include radio-simple-sizes(sm, $radio-simple-size-sm);
+@include radio-simple-sizes(lg, $radio-simple-size-lg);
+
+.form__group > .radio-simple {
+  & + .radio-simple {
+    margin-top: var(--margin1);
+  }
+
+  input:focus + label:before {
+    border: $radio-simple-fosus;
+  }
+
+  // Unchecked
+  label {
+    padding-left: $radio-simple-size + $radio-simple-size/2;
+    line-height: $radio-simple-size;
+
+    //Unset sr-only
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: auto;
+    margin: auto;
+    overflow: auto;
+    clip: rect(0, 0, 0, 0);
+    border: auto;
+
+    //Borde exterior
+    &:before {
+      left: 0;
+      width: $radio-simple-size;
+      height: $radio-simple-size;
+      border: $radio-simple-border;
+      border-radius: 100%;
+    }
+    //Elemento interior
+    &:after {
+      left: $radio-simple-size/2;
+      top: $radio-simple-size/2;
+      width: 2px;
+      height: 2px;
+      background: $radio-simple-inner-bg;
+      border-radius: 100%;
+      transition: $radio-simple-inner-transition-uncheck;
+    }
+  }
+
+  //Checked
+  input:checked + label {
+    //Borde exterior
+    &:before {
+    }
+    //Elemento interior
+    &:after {
+      left: $radio-simple-inner-left;
+      top: $radio-simple-inner-left;
+      width: $radio-simple-inner-width;
+      height: $radio-simple-inner-width;
+      background: $radio-simple-inner-bg;
+      border-radius: 100%;
+      transform-origin: center;
+      transition: $radio-simple-inner-transition-check;
+    }
+  }
+}

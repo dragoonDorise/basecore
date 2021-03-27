@@ -1,0 +1,120 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+button {
+  border: 0;
+  background: none;
+  font-size: inherit;
+  color: inherit;
+  padding: 0;
+  line-height: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  margin: 0;
+}
+[class*="btn-"],
+.form .form__addon {
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  vertical-align: top;
+  &::hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn {
+  &--center {
+    &.btn--center {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+  }
+  &--block {
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    &--xs {
+      @media (min-width: var(--screen-xs)) and (max-width: var(--screen-xs-max)) {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    &--sm {
+      @media (min-width: var(--screen-sm)) and (max-width: var(--screen-sm-max)) {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    &--md {
+      @media (min-width: var(--screen-md)) and (max-width: var(--screen-md-max)) {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    &--lg {
+      @media (min-width: var(--screen-lg)) and (max-width: var(--screen-lg-max)) {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    &--xl {
+      @media (min-width: var(--screen-xl)) {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+// Reset para botones con aspecto de link
+button[class*="link--"] {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+//  --------------------------------------------------
+//  Button Groups
+//  --------------------------------------------------
+
+.btn-group {
+  display: inline-flex;
+  //Ocultamos input cuando son Toggles
+  input {
+    display: none;
+  }
+
+  [class*="btn-"] {
+    margin: 0;
+    border-radius: 0;
+  }
+}

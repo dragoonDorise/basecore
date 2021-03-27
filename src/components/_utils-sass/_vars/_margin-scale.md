@@ -7,11 +7,11 @@ To unify the space between elements, these global variables are used to give mar
 
 ```
 
-$margin1: 10px;
-$margin2: 20px;
-$margin3: 30px;
-$margin4: 40px;
-$margin5: 50px;
-$margin6: 60px;
+var(--margin1): 10px;
+var(--margin2): 20px;
+var(--margin3): 30px;
+var(--margin4): 40px;
+var(--margin5): 50px;
+var(--margin6): 60px;
 
 ```

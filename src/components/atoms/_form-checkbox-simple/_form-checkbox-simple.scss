@@ -1,0 +1,83 @@
+@import "~getbasecore/src/components/atoms/_form-checkbox-simple/_core_form-checkbox-simple.scss";
+// --------------------------------------------------
+//  Checkbox
+// --------------------------------------------------
+
+$checkbox-simple-size: 20px;
+$checkbox-simple-size-xs: 10px;
+$checkbox-simple-size-sm: 15px;
+$checkbox-simple-size-lg: 30px;
+$checkbox-simple-border: 1px solid var(--grey1);
+$checkbox-simple-border-check: $checkbox-simple-border;
+$checkbox-simple-focus: 1px solid var(--grey1);
+$checkbox-simple-inner-bg: #fff;
+$checkbox-simple-inner-bg-check: $checkbox-simple-inner-bg;
+$checkbox-simple-inner-transition-check: opacity 0.4s ease-in-out;
+$checkbox-simple-inner-transition-uncheck: opacity 0.4s ease-in-out;
+
+//The tick is stored as a base64 svg in _utils-sass/_base64
+
+.form__group > .checkbox-simple {
+  .form--inline & {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+  }
+
+  input:focus + label:before {
+    border: $checkbox-simple-focus;
+  }
+
+  // Unchecked
+  label {
+    padding-left: $checkbox-simple-size + $checkbox-simple-size/2;
+    line-height: $checkbox-simple-size;
+
+    //Borde exterior
+    &:before {
+      left: 0;
+      width: $checkbox-simple-size;
+      height: $checkbox-simple-size;
+      border: $checkbox-simple-border;
+
+      border-radius: 0px;
+    }
+    //Elemento interior
+    &:after {
+      top: 4px;
+      left: 4px;
+      width: 1px;
+      height: 1px;
+
+      transition: $checkbox-simple-inner-transition-uncheck;
+    }
+  }
+
+  //Checked
+
+  input:checked + label {
+    //Borde exterior
+    &:before {
+      border: $checkbox-simple-border-check;
+      background: $checkbox-simple-inner-bg-check;
+    }
+    //Elemento interior
+    &:after {
+      top: -2px;
+      left: 0px;
+      width: $checkbox-simple-size;
+      height: $checkbox-simple-size;
+      border-radius: 0;
+      background: url($checkbox-tick) no-repeat;
+      background-size: 100% 100%;
+
+      transition: $checkbox-simple-inner-transition-check;
+    }
+  }
+}
+
+//@mixin checkbox-simple-sizes($size,$checkbox-simple-size);
+
+@include checkbox-simple-sizes(xs, $checkbox-simple-size-xs);
+@include checkbox-simple-sizes(sm, $checkbox-simple-size-sm);
+@include checkbox-simple-sizes(lg, $checkbox-simple-size-lg);

@@ -5,7 +5,7 @@
 
   .main {
     flex: 1;
-    padding-bottom: $margin6;
+    padding-bottom: var(--margin6);
     > *:last-child {
       margin-bottom: 0;
     }

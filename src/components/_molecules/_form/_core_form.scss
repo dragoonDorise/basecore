@@ -14,7 +14,7 @@
   select,
   [class*="btn"],
   .form__addon {
-    height: $input-height;
+    height: var(--input-height);
     outline: none;
     -webkit-appearance: none;
   }
@@ -172,8 +172,8 @@
   .form__icon {
     position: absolute;
     right: 0;
-    width: $input-height;
-    height: $input-height;
+    width: var(--input-height);
+    height: var(--input-height);
 
     svg {
       position: absolute;
@@ -191,12 +191,12 @@
     [class*="form__c"],
     [class*="btn"],
     select {
-      height: $input-height-xs;
+      height: var(--input-height-xs);
     }
 
     .form__icon svg {
-      width: $input-height-xs;
-      height: $input-height-xs;
+      width: var(--input-height-xs);
+      height: var(--input-height-xs);
     }
   }
 
@@ -204,12 +204,12 @@
     [class*="form__c"],
     [class*="btn"],
     select {
-      height: $input-height-sm;
+      height: var(--input-height-sm);
     }
 
     .form__icon svg {
-      width: $input-height-sm;
-      height: $input-height-sm;
+      width: var(--input-height-sm);
+      height: var(--input-height-sm);
     }
   }
 
@@ -217,12 +217,12 @@
     [class*="form__c"],
     [class*="btn"],
     select {
-      height: $input-height-lg;
+      height: var(--input-height-lg);
     }
 
     .form__icon svg {
-      width: $input-height-lg;
-      height: $input-height-lg;
+      width: var(--input-height-lg);
+      height: var(--input-height-lg);
     }
   }
 }

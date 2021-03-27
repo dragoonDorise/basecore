@@ -14,7 +14,7 @@ category: Blocks
 footer {
   background: var(--color-bg-primary);
   padding: 20px;
-  margin-bottom: $margin2;
+  margin-bottom: var(--margin2);
   * {
     color: #fff !important;
   }

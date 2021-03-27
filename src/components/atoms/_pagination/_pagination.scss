@@ -1,0 +1,62 @@
+@import "~getbasecore/src/components/atoms/_pagination/_core_pagination.scss";
+$pagination-border: 1px solid var(--color-border-1);
+$pagination-mb: var(--margin3);
+$pagination-padding: 12px;
+$pagination-width: 46px;
+$pagination-height: 46px;
+$pagination-font-size: 12px;
+$pagination-line-height: 18px;
+$pagination-bg: white;
+$pagination-color: var(--color-text-1);
+$pagination-bg-hover: var(--color-bg-secondary);
+$pagination-color-hover: white;
+
+$pagination-bg-active: var(--color-bg-primary);
+$pagination-color-active: white;
+
+$pagination-icon-color: var(--color-text-2);
+$pagination-icon-size: 20px;
+
+.pagination {
+  margin-bottom: $pagination-mb;
+
+  .icon {
+    fill: $pagination-icon-color;
+
+    width: $pagination-icon-size;
+    height: $pagination-icon-size;
+    vertical-align: middle;
+  }
+
+  a {
+    padding: $pagination-padding;
+    width: $pagination-width;
+    height: $pagination-height;
+    border: $pagination-border;
+    border-right: 0;
+    color: inherit;
+    font-size: $pagination-font-size;
+    background: $pagination-bg;
+    line-height: $pagination-line-height;
+
+    &:hover {
+      background: $pagination-bg-hover;
+      color: $pagination-color-hover;
+      transition: 0.2s;
+      svg {
+        fill: $pagination-color-hover;
+      }
+    }
+  }
+
+  li:last-child {
+    a {
+      border-right: $pagination-border;
+    }
+  }
+
+  .is-active a {
+    background: $pagination-bg-active;
+    color: $pagination-color-active;
+  }
+}

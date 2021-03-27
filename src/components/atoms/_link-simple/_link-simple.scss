@@ -1,0 +1,36 @@
+@import "~getbasecore/src/components/atoms/_link/_core_link.scss";
+@import "~getbasecore/src/components/atoms/_link-simple/_core_link-simple.scss";
+$link-simple-transition: 0.5s;
+
+// @mixin generate-link-simple($name, $color, $color-hover, $color-disabled, $font-weight){
+
+@include generate-link-simple(
+  1,
+  var(--blue1),
+  var(--blue2),
+  var(--color-disabled),
+  700
+);
+
+.link-simple {
+  transition: $link-simple-transition;
+  text-decoration: none;
+  padding-bottom: 3px;
+
+  &:after {
+    transition: $link-simple-transition;
+    width: 1%;
+    height: 2px;
+    background: currentcolor;
+    display: none !important;
+  }
+
+  &:active,
+  &.active,
+  &:hover {
+    &:after {
+      width: 100%;
+      height: 2px;
+    }
+  }
+}

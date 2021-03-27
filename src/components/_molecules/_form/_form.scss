@@ -45,7 +45,7 @@ $form-hr-mb: $margin-elements;
   &--inline {
     label {
       //display: inline-block;
-      margin-bottom: $margin1;
+      margin-bottom: var(--margin1);
     }
 
     // .form__group{
@@ -55,13 +55,13 @@ $form-hr-mb: $margin-elements;
     //
     //     //margen para separarlos en XS
     //     .form__group{
-    //       margin-bottom: $margin2;
+    //       margin-bottom: var(--margin2);
     //     }
     //   }
     //
     //   label{
     //     @media (max-width: $screen-xs) {
-    //       margin-bottom: $margin1;
+    //       margin-bottom: var(--margin1);
     //     }
     //   }
     //

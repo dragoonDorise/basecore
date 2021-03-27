@@ -1,0 +1,190 @@
+@import "~getbasecore/src/components/atoms/_form-input-simple/_core_form-input-simple.scss";
+$form-control-border: 1px solid var(--brown-grey);
+$form-mb: var(--margin3);
+$form-label-mb: var(--margin1);
+$form-control-border-radius: 0;
+$form-control-padding: 4px 10px;
+$form-control-box-shadow: none;
+$form-control-bg: white;
+$form-control-border-hover: 1px solid var(--blue1);
+$form-control-bg-hover: white;
+
+$form-help-padding: 12px 0;
+$form-help-text-size: 12px;
+
+$form-icon-size: 32px;
+$form-icon-right: 10px;
+$form-icon-top: 25px;
+
+$form-select-caret-size: 16px;
+$form-select-caret-position: right 12px center;
+
+.form--simple {
+  margin-bottom: $form-mb;
+
+  label {
+    margin-bottom: $form-label-mb;
+    @include show-sr();
+  }
+
+  input + label {
+    margin-bottom: 0;
+  }
+
+  .form__group {
+    .form__help {
+      float: right;
+      font-size: $form-help-text-size;
+      padding: $form-help-padding;
+    }
+
+    > .form__addon {
+      @extend .btn-simple;
+      @extend .btn-simple--3;
+      padding: 0 20px;
+      border-radius: $form-control-border-radius;
+      margin-bottom: 0;
+    }
+
+    .form__help {
+      float: right;
+      font-size: $form-help-text-size;
+      padding: $form-help-padding;
+    }
+
+    &--success,
+    &--info,
+    &--warning,
+    &--danger {
+    }
+
+    //Validaciones
+    &--success {
+      label,
+      input,
+      select,
+      textarea {
+        color: var(--color-success);
+        border-color: var(--color-success);
+      }
+      .form__group__help,
+      .form__error {
+        color: var(--color-success);
+      }
+      svg {
+        fill: var(--color-success);
+      }
+    }
+    &--info {
+      label,
+      input,
+      select,
+      textarea {
+        background: var(--color-info);
+        border-color: var(--color-info);
+      }
+      .form__group__help,
+      .form__error {
+        color: var(--color-info);
+      }
+      svg {
+        fill: var(--color-info);
+      }
+    }
+    &--warning {
+      label,
+      input,
+      select,
+      textarea {
+        color: var(--color-warning);
+        border-color: var(--color-warning);
+      }
+      .form__group__help,
+      .form__error {
+        color: var(--color-warning);
+      }
+      svg {
+        fill: var(--color-warning);
+      }
+    }
+    &--danger {
+      label,
+      input,
+      select,
+      textarea {
+        color: var(--color-danger);
+        border-color: var(--color-danger);
+      }
+      .form__group__help,
+      .form__error {
+        color: var(--color-danger);
+      }
+      svg {
+        fill: var(--color-danger);
+      }
+    }
+    //icono validación
+    .form__icon {
+      top: $form-icon-top;
+      svg {
+        width: $form-icon-size;
+        height: $form-icon-size;
+
+        right: $form-icon-right;
+      }
+    }
+  }
+
+  .form__control,
+  select,
+  textarea {
+    border: $form-control-border;
+    border-radius: $form-control-border-radius;
+    box-shadow: $form-control-box-shadow;
+    padding: $form-control-padding;
+    background: $form-control-bg;
+    &:focus {
+      background-color: $form-control-bg-hover;
+      border: $form-control-border-hover;
+    }
+  }
+
+  select {
+    padding-right: 40px;
+    background: url($caret) no-repeat;
+    background-size: 100% 100%;
+    background-color: $form-control-bg;
+    background-size: $form-select-caret-size $form-select-caret-size;
+    background-position: $form-select-caret-position;
+    -moz-appearance: none;
+    &:focus {
+      background: url($caret) no-repeat;
+      background-size: 100% 100%;
+      background-size: $form-select-caret-size $form-select-caret-size;
+      background-position: $form-select-caret-position;
+
+      background-color: $form-control-bg-hover;
+      border: $form-control-border-hover;
+    }
+  }
+
+  &--dark {
+    .form__control,
+    select,
+    textarea {
+      --brown-grey: white !important;
+      $form-control-bg: #262626;
+      color: white;
+      border: $form-control-border;
+      border-radius: $form-control-border-radius;
+      box-shadow: $form-control-box-shadow;
+      padding: $form-control-padding;
+      background: $form-control-bg;
+      &:focus {
+        background-color: $form-control-bg-hover;
+        border: $form-control-border-hover;
+        color: #262626;
+      }
+    }
+  }
+}

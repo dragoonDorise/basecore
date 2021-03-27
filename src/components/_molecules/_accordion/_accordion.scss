@@ -96,7 +96,7 @@ $accordion-transition-out: 200ms;
       padding-left: 60px;
 
       li {
-        margin-bottom: $margin1;
+        margin-bottom: var(--margin1);
       }
     }
   }

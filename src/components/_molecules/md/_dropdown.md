@@ -35,7 +35,7 @@ category: Molecules
 >
   <li role="presentation">
     <module
-      href="/components/_atoms/_link-simple/_link-simple.html"
+      href="/components/atoms/_link-simple/_link-simple.html"
       locals='{
         "href":"button",
         "variant":"link-simple--1",
@@ -46,7 +46,7 @@ category: Molecules
 
   <li role="presentation">
     <module
-      href="/components/_atoms/_link-simple/_link-simple.html"
+      href="/components/atoms/_link-simple/_link-simple.html"
       locals='{
         "href":"button",
         "variant":"link-simple--1",

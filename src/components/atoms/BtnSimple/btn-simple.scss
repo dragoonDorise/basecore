@@ -1,0 +1,174 @@
+//@import "~getbasecore/src/components/_utils-sass/_vars/_vars.scss";
+@import "~getbasecore/src/components/_utils-sass/_mixins/_mixins.scss";
+@import "~getbasecore/src/components/atoms/Btn/core_btn.scss";
+@import "~getbasecore/src/components/atoms/BtnSimple/core_btn-simple.scss";
+.btn-simple {
+  --btn-simple-padding: 21px 48px;
+  --btn-simple-text-size: 14px;
+  --btn-simple-mt: 10px;
+  --btn-simple-border-radius: 0px;
+  --btn-simple-transition-in: 0.2s;
+  --btn-simple-transition-out: 0.2s;
+  --btn-simple-padding-xs: 4px 5px;
+  --btn-simple-text-size-xs: 10px;
+  --btn-simple-padding-sm: 6px 10px;
+  --btn-simple-text-size-sm: 12px;
+  --btn-simple-padding-lg: 10px 18px;
+  --btn-simple-text-size-lg: 18px;
+  --btn-group-separation: 18px;
+}
+//@include generate-btn-simple(var(--name, $color, $bg, $color-hover, $bg-hover, $bg-active, $color-disabled, $bg-disabled));
+
+@include generate-btn-simple(
+  1,
+  white,
+  var(--blue1),
+  white,
+  var(--blue2),
+  var(--blue2),
+  white,
+  var(--color-disabled)
+);
+@include generate-btn-simple(
+  2,
+  white,
+  var(--grey2),
+  white,
+  var(--blue2),
+  var(--blue2),
+  white,
+  var(--color-disabled)
+);
+
+@include generate-btn-simple(
+  3,
+  #262626,
+  white,
+  #262626,
+  white,
+  white,
+  white,
+  var(--color-disabled)
+);
+
+.btn-simple--3 {
+  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
+  padding: 25px 70px;
+  border-radius: 2px;
+  text-align: center;
+  p {
+    font-weight: normal;
+  }
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.btn-simple {
+  display: inline-block;
+  align-items: center;
+  font-size: var(--btn-simple-text-size);
+  padding: var(--btn-simple-padding);
+  border-radius: var(--btn-simple-border-radius);
+  transition: var(--btn-simple-transition-out);
+  line-height: var(--btn-simple-text-size);
+  font-weight: bold;
+  margin-bottom: var(--margin-elements);
+  //Remember, the button has the same height as the form input to be hable to use the button in horizontal forms. Adjust the height in _vars component
+  .form & {
+    height: var(--input-height);
+  }
+
+  // @media (max-width: $screen-xs-max) {
+  //   height: auto;
+  // }
+
+  &:hover {
+    transition: var(--btn-simple-transition-in);
+  }
+  &:focus {
+    transition: var(--btn-simple-transition-in);
+  }
+
+  //Separación entre botones juntos en XS
+  &--block + .btn--block {
+    @media (min-width: var(--screen-xs)) and (max-width: var(--screen-sm-max)) {
+      margin-top: var(--btn-simple-mt);
+    }
+  }
+
+  //Variantes de tamaños
+
+  &--xs {
+    font-size: var(--btn-simple-text-size-xs);
+    padding: var(--btn-simple-padding-xs);
+    height: var(--input-height-xs);
+  }
+
+  &--sm {
+    font-size: var(--btn-simple-text-size-sm);
+    padding: var(--btn-simple-padding-sm);
+    height: var(--input-height-sm);
+  }
+
+  &--lg {
+    font-size: var(--btn-simple-text-size-lg);
+    padding: var(--btn-simple-padding-lg);
+    height: var(--input-height-lg);
+  }
+}
+
+//Ajustes cuando el botón es un elemento diferente a button
+a.btn-simple,
+label.btn-simple {
+  line-height: 1;
+  &--xs {
+    line-height: 1;
+  }
+
+  &--sm {
+    line-height: 1;
+  }
+
+  &--lg {
+    line-height: 1;
+  }
+}
+
+.btn-group {
+  @include clearfix;
+  margin-bottom: var(--margin3);
+  justify-content: center;
+  @media (max-width: var(--screen-sm-max)) {
+    flex-wrap: wrap;
+  }
+
+  [class*="btn"] {
+    @media (max-width: var(--screen-sm-max)) {
+      width: 100%;
+      //display: block;
+      margin: 0;
+      margin-bottom: var(--margin-elements);
+    }
+    margin-right: var(--btn-group-separation);
+    &:first-of-type {
+      border-top-left-radius: var(--btn-simple-border-radius);
+      border-bottom-left-radius: var(--btn-simple-border-radius);
+    }
+    &:last-child {
+      border-top-right-radius: var(--btn-simple-border-radius);
+      border-bottom-right-radius: var(--btn-simple-border-radius);
+      margin-right: 0;
+    }
+  }
+}
+
+//Separación entre botones juntos
+.btn--block + .btn--block {
+  margin-top: var(--btn-simple-mt);
+}
+
+.btn--block {
+  padding-left: 0;
+  padding-right: 0;
+}

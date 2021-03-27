@@ -11,10 +11,10 @@ Se usa el sistema de cols para dar ancho a los input y el alto de input y botone
 
 | Name              | Description                    |
 | ----------------- | ------------------------------ |
-| \$input-height-xs | Input & buttons height size XS |
-| \$input-height-sm | Input & buttons height size SM |
-| \$input-height    | Input & buttons height size    |
-| \$input-height-lg | Input & buttons height size LG |
+| \var(--input-height-xs) | Input & buttons height size XS |
+| \var(--input-height-sm) | Input & buttons height size SM |
+| \var(--input-height)    | Input & buttons height size    |
+| \var(--input-height-lg) | Input & buttons height size LG |
 
 ## CSS Variables
 

@@ -164,7 +164,7 @@ So Atoms, Molecules and Cells are highly reusable, and since every one of them w
     src/
         app/
         components/
-            _atoms/
+            atoms/
             _molecules/
             _organisms/
             _cell/
@@ -181,7 +181,7 @@ So Atoms, Molecules and Cells are highly reusable, and since every one of them w
 | Name                       | Description                                            |
 | -------------------------- | ------------------------------------------------------ |
 | app/                       | Config your app here, imports, etc.                    |
-| components/\_atoms/        | Atoms, put yours here too                              |
+| components/\atoms/        | Atoms, put yours here too                              |
 | components/\_molecules/    | Molecules, put yours here too                          |
 | components/\_organisms/    | Organisms, put yours here too                          |
 | components/\_cell/         | Cells, put yours here too                              |

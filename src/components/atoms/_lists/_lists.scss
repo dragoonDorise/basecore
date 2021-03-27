@@ -1,0 +1,72 @@
+@import "~getbasecore/src/components/atoms/_lists/_core_lists.scss";
+$list-mb: var(--margin3);
+$list-li-mb: var(--margin2);
+$list-bullets-size: 6px;
+$list-bullets-top: 5px;
+$list-bullets-color: var(--color-bg-primary);
+
+$desc-list-mb: var(--margin1);
+$desc-list-dt-mb: 5px;
+$desc-list-dd-mb: var(--margin1);
+$desc-list-dt-width: 160px;
+
+$ol-padding: 30px;
+
+.list {
+  margin-bottom: $list-mb;
+
+  li {
+    margin-bottom: $list-li-mb;
+  }
+
+  //Con bullets
+  &--bullets {
+    li {
+      padding-left: $list-bullets-size * 2;
+    }
+    & li:before {
+      left: 0;
+      top: $list-bullets-top;
+      width: $list-bullets-size;
+      height: $list-bullets-size;
+      border-radius: 100%;
+      background: $list-bullets-color;
+    }
+  }
+}
+
+.desc-list {
+  margin-bottom: $desc-list-mb;
+  dt {
+    font-weight: bold;
+    margin-bottom: $desc-list-dt-mb;
+  }
+  dd {
+    margin-bottom: $desc-list-dd-mb;
+  }
+
+  &--horizontal {
+    dt {
+      width: $desc-list-dt-width;
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+      }
+    }
+
+    dd {
+      margin-left: $desc-list-dt-width + 20px;
+
+      @media (max-width: $screen-xs-max) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+//Order lists
+ol.list {
+  padding-left: $ol-padding;
+  li::before {
+    left: -$ol-padding;
+  }
+}
