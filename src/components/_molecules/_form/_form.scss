@@ -1,7 +1,7 @@
 @import "~getbasecore/src/components/_molecules/_form/_core_form.scss";
-$form-fieldset-mb: $margin3;
-$form-group-mb: $margin3;
-$form-hr-mb: $margin3;
+$form-fieldset-mb: $margin-elements;
+$form-group-mb: $margin-elements;
+$form-hr-mb: $margin-elements;
 
 .form {
   fieldset {
@@ -9,7 +9,7 @@ $form-hr-mb: $margin3;
   }
 
   legend {
-    @extend .h3;
+    // @extend .h3;
   }
 
   hr {
@@ -25,6 +25,7 @@ $form-hr-mb: $margin3;
     opacity: 0;
     max-height: 0;
     flex-basis: 100%;
+    transition: 0.5s;
   }
 
   //Error messages
@@ -36,11 +37,11 @@ $form-hr-mb: $margin3;
       opacity: 1;
       max-height: 100%;
       transition: 0.5s;
+      margin-top: 10px;
     }
   }
 
   //Formulario inline
-
   &--inline {
     label {
       //display: inline-block;

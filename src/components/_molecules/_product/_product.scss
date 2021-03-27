@@ -1,0 +1,29 @@
+@import "../../_utils-sass/_vars/_vars.scss";
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  transition: 1s;
+  &__item {
+    flex: 0;
+    margin-bottom: 32px;
+    margin-right: 20px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    //max-width: 50%;
+    flex-basis: calc(50% - 20px);
+    padding: 20px;
+    @media (max-width: $screen-sm-max) {
+      flex-basis: 100%;
+    }
+  }
+  &__name {
+    flex: 1;
+  }
+
+  &__img {
+    width: 75px;
+    margin-left: 15px;
+  }
+}

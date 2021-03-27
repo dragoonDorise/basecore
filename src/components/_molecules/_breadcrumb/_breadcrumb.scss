@@ -1,5 +1,6 @@
 @import "~getbasecore/src/components/_molecules/_breadcrumb/_core_breadcrumb.scss";
-$breadcrumb-mb: $margin3;
+@import "../../_utils-sass/_vars/_vars.scss";
+$breadcrumb-mb: $margin-elements;
 $breadcrumb-a-padding: 10px;
 $breadcrumb-a-bg-color: var(--color-bg-primary);
 $breadcrumb-a-color: white;

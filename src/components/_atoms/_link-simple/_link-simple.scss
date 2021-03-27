@@ -6,8 +6,8 @@ $link-simple-transition: 0.5s;
 
 @include generate-link-simple(
   1,
-  var(--color-text-1),
-  var(--color-bg-secondary),
+  var(--blue1),
+  var(--blue2),
   var(--color-disabled),
   700
 );
@@ -22,6 +22,7 @@ $link-simple-transition: 0.5s;
     width: 1%;
     height: 2px;
     background: currentcolor;
+    display: none !important;
   }
 
   &:active,

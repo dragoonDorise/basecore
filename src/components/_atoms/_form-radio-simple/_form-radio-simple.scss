@@ -7,12 +7,12 @@ $radio-simple-size: 16px;
 $radio-simple-size-xs: 10px;
 $radio-simple-size-sm: 15px;
 $radio-simple-size-lg: 30px;
-$radio-simple-border: 1px solid var(--color-border-1);
-$radio-simple-fosus: 1px solid var(--color-success);
+$radio-simple-border: 1px solid var(--grey1);
+$radio-simple-fosus: 1px solid var(--grey1);
 $radio-simple-inner-width: 8px;
 $radio-simple-inner-left: 4px;
 $radio-simple-inner-top: 4px;
-$radio-simple-inner-bg: var(--color-bg-secondary);
+$radio-simple-inner-bg: var(--blue1);
 $radio-simple-inner-transition-check: all 0.2s ease-in-out;
 $radio-simple-inner-transition-uncheck: all 0.2s ease-in-out;
 
@@ -33,6 +33,17 @@ $radio-simple-inner-transition-uncheck: all 0.2s ease-in-out;
   label {
     padding-left: $radio-simple-size + $radio-simple-size/2;
     line-height: $radio-simple-size;
+
+    //Unset sr-only
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: auto;
+    margin: auto;
+    overflow: auto;
+    clip: rect(0, 0, 0, 0);
+    border: auto;
+
     //Borde exterior
     &:before {
       left: 0;

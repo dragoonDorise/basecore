@@ -1,12 +1,12 @@
 @import "~getbasecore/src/components/_atoms/_form-input-simple/_core_form-input-simple.scss";
-$form-control-border: 1px solid var(--color-border-1);
+$form-control-border: 1px solid var(--brown-grey);
 $form-mb: $margin3;
 $form-label-mb: $margin1;
 $form-control-border-radius: 0;
 $form-control-padding: 4px 10px;
 $form-control-box-shadow: none;
 $form-control-bg: white;
-$form-control-border-hover: 1px solid var(--color-border-1);
+$form-control-border-hover: 1px solid var(--blue1);
 $form-control-bg-hover: white;
 
 $form-help-padding: 12px 0;
@@ -16,7 +16,7 @@ $form-icon-size: 32px;
 $form-icon-right: 10px;
 $form-icon-top: 25px;
 
-$form-select-caret-size: 8px;
+$form-select-caret-size: 16px;
 $form-select-caret-position: right 12px center;
 
 .form--simple {
@@ -24,6 +24,7 @@ $form-select-caret-position: right 12px center;
 
   label {
     margin-bottom: $form-label-mb;
+    @include show-sr();
   }
 
   input + label {
@@ -39,9 +40,10 @@ $form-select-caret-position: right 12px center;
 
     > .form__addon {
       @extend .btn-simple;
-      @extend .btn-simple--1;
-      padding: 10px;
+      @extend .btn-simple--3;
+      padding: 0 20px;
       border-radius: $form-control-border-radius;
+      margin-bottom: 0;
     }
 
     .form__help {
@@ -148,7 +150,7 @@ $form-select-caret-position: right 12px center;
   }
 
   select {
-    padding-right: 20px;
+    padding-right: 40px;
     background: url($caret) no-repeat;
     background-size: 100% 100%;
     background-color: $form-control-bg;
@@ -156,8 +158,33 @@ $form-select-caret-position: right 12px center;
     background-position: $form-select-caret-position;
     -moz-appearance: none;
     &:focus {
-      background: $form-control-bg-hover;
+      background: url($caret) no-repeat;
+      background-size: 100% 100%;
+      background-size: $form-select-caret-size $form-select-caret-size;
+      background-position: $form-select-caret-position;
+
+      background-color: $form-control-bg-hover;
       border: $form-control-border-hover;
+    }
+  }
+
+  &--dark {
+    .form__control,
+    select,
+    textarea {
+      --brown-grey: white !important;
+      $form-control-bg: #262626;
+      color: white;
+      border: $form-control-border;
+      border-radius: $form-control-border-radius;
+      box-shadow: $form-control-box-shadow;
+      padding: $form-control-padding;
+      background: $form-control-bg;
+      &:focus {
+        background-color: $form-control-bg-hover;
+        border: $form-control-border-hover;
+        color: #262626;
+      }
     }
   }
 }

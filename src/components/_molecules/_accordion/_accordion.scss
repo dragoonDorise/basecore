@@ -1,36 +1,39 @@
 @import "~getbasecore/src/components/_molecules/_accordion/_core_accordion.scss";
-$accordion-border-color: var(--color-border-1);
+$accordion-border-color: $color-border-1;
 $accordion-bg-color: white;
-$accordion-bg-color-hover: var(--color-bg-secondary);
+$accordion-bg-color-hover: $color-accordion--hover;
 $accordion-color-hover: white;
-$accordion-inner-border-color: var(--color-border-1);
+$accordion-inner-border-color: $color-border-1;
 $accordion-panel-bg-color: white;
-$accordion-icon-color: var(--color-text-2);
-$accordion-icon-size: 20px;
+$accordion-icon-color: $color-text-2;
+$accordion-icon-size: 32px;
 $accordion-icon-right: 20px;
-$accordion-button-padding: 20px;
+$accordion-button-padding: 20px 38px 32px;
 $accordion-button-padding-right: 40px; // Para el caret
 $accordion-panel-padding: 30px;
 $accordion-border-size: 1px;
-$accordion-mb: $margin3;
-$accordion-transition-in: max-height 500ms ease-in;
-$accordion-transition-out: max-height 500ms ease-out;
+$accordion-mb: $margin-elements;
+$accordion-transition-in: 1s;
+$accordion-transition-out: 200ms;
 
 .accordion {
   //exterior border
-  border: $accordion-border-size solid $accordion-border-color;
+  border-top: $accordion-border-size solid $accordion-border-color;
   border-bottom: 0;
   margin-bottom: $accordion-mb;
 
   &__collapse {
     //Cierre
-
     transition: $accordion-transition-out;
+    max-height: 0;
+    overflow: hidden;
 
     //Apertura
     &.is-visible {
       opacity: 1;
       transition: $accordion-transition-in;
+      max-height: 1000px;
+      overflow: initial;
     }
   }
 
@@ -39,23 +42,29 @@ $accordion-transition-out: max-height 500ms ease-out;
     padding-right: $accordion-button-padding-right;
     background: $accordion-bg-color;
     text-align: left;
+    //font-weight: bold;
     //border interior
     border-bottom: $accordion-border-size solid $accordion-inner-border-color;
 
     &:hover,
     &:focus {
+      outline: none;
       background: $accordion-bg-color-hover;
-      color: $accordion-color-hover;
       transition: 200ms;
-      .icon {
-        fill: $accordion-color-hover;
-      }
+    }
+
+    [data-brand="mini"] & {
+      text-transform: uppercase;
+      font-weight: normal;
+      padding-left: 60px;
     }
   }
 
   .icon {
+    position: absolute;
     transition: 200ms;
-    right: $accordion-icon-right;
+    top: -8px;
+    left: 0;
     width: $accordion-icon-size;
     height: $accordion-icon-size;
     fill: $accordion-icon-color;
@@ -72,5 +81,23 @@ $accordion-transition-out: max-height 500ms ease-out;
     background: $accordion-panel-bg-color;
     //border when open
     border-bottom: $accordion-border-size solid $accordion-inner-border-color;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+
+    > p {
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    [data-brand="mini"] & {
+      font-weight: normal;
+      font-family: "MINI Type Title";
+      font-size: 1.8rem;
+      padding-left: 60px;
+
+      li {
+        margin-bottom: $margin1;
+      }
+    }
   }
 }
