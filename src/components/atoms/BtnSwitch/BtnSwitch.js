@@ -10,7 +10,7 @@ export const BtnSwitch = ({ name }) => {
         className="btn-switch__checkbox"
         id={name}
       />
-      <label className="btn-switch__label" for={name}></label>
+      <label className="btn-switch__label" htmlFor={name}></label>
     </div>
   );
 };

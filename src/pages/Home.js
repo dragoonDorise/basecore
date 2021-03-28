@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 //Default BaseCore components
 import { BtnSimple } from "../components/atoms/BtnSimple/BtnSimple";
 import { BtnSwitch } from "../components/atoms/BtnSwitch/BtnSwitch";
+import { Icon } from "../components/atoms/Icon/Icon";
 
 //Import app strings
 const content = require("../data/lang.es.json");
@@ -21,6 +22,7 @@ export const Home = () => {
         Button #2
       </BtnSimple>
       <BtnSwitch name="switcharo" />
+      <Icon icon="close" size="icon--xs" />
     </main>
   );
 };

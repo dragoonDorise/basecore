@@ -20,27 +20,27 @@
 svg.icon.icon.icon {
   vertical-align: middle;
   &--xs {
-    width: $icon-xs;
-    height: $icon-xs;
+    width: var(--icon-xs);
+    height: var(--icon-xs);
   }
 
   &--sm {
-    width: $icon-sm;
-    height: $icon-sm;
+    width: var(--icon-sm);
+    height: var(--icon-sm);
   }
 
   &--md {
-    width: $icon-md;
-    height: $icon-md;
+    width: var(--icon-md);
+    height: var(--icon-md);
   }
 
   &--lg {
-    width: $icon-lg;
-    height: $icon-lg;
+    width: var(--icon-lg);
+    height: var(--icon-lg);
   }
 
   &--xl {
-    width: $icon-xl;
-    height: $icon-xl;
+    width: var(--icon-xl);
+    height: var(--icon-xl);
   }
 }

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { PropTypes } from "prop-types";
-export const Icon = ({ icon }) => {
+import "./icon.scss";
+export const Icon = ({ icon, size }) => {
   return (
-    <svg className="icon" role="presentation">
+    <svg className={`icon ${size}`} role="presentation">
       <use xlinkHref={`./svg/sprite.svg#${icon}`}></use>
     </svg>
   );
@@ -10,4 +11,5 @@ export const Icon = ({ icon }) => {
 
 Icon.propTypes = {
   icon: PropTypes.string.isRequired,
+  size: PropTypes.string.isRequired,
 };
