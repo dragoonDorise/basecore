@@ -95,33 +95,33 @@ Margin Scale
 
   --color-bg-primary: #1c69d4;
 }
+:root {
+  --color-text-1: #000;
+  --color-text-2: #404040;
+  --color-text-3: #bbbbbb;
+  --color-text-4: #666666;
 
-// $color-text-1: #000;
-// $color-text-2: #404040;
-// $color-text-3: #bbbbbb;
-// $color-text-4: #666666;
-//
-// // Colores BG
-// $color-bg-1: #fff;
-// $color-bg-2: #bfbfbf;
-// $color-bg-3: #7f7f7f;
-// $color-bg-4: #0076d9;
-// $color-bg-5: #1c69d4;
-// $color-bg-6: #0653b6;
-// $color-bg-7: #e6e6e6;
-// $color-border-1: #e3e3e3;
-//
-// $color-black: #262626;
-// $color-brown-grey: #8e8e8e;
-// $color-blue-blue: #1c69d4;
-// $color-greyish-brown: #4d4d4d;
-// $color-very-light-pink: #d8d8d8;
-//
-// $color-placeholder-1: #e3e3e3;
-//
-// $color-accordion--hover: #f5f5f5;
-// $color-brand: rgb(0, 118, 217);
+  // Colores BG
+  --color-bg-1: #fff;
+  --color-bg-2: #bfbfbf;
+  --color-bg-3: #7f7f7f;
+  --color-bg-4: #0076d9;
+  --color-bg-5: #1c69d4;
+  --color-bg-6: #0653b6;
+  --color-bg-7: #e6e6e6;
+  --color-border-1: #e3e3e3;
 
+  --color-black: #262626;
+  --color-brown-grey: #8e8e8e;
+  --color-blue-blue: #1c69d4;
+  --color-greyish-brown: #4d4d4d;
+  --color-very-light-pink: #d8d8d8;
+
+  -color-placeholder-1: #e3e3e3;
+
+  --color-accordion--hover: #f5f5f5;
+  --color-brand: rgb(0, 118, 217);
+}
 // --------------------------------------------------
 // Template variables para componentes
 // --------------------------------------------------
