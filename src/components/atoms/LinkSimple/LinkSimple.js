@@ -1,4 +1,5 @@
 //import { PropTypes } from "prop-types";
+import "./link-simple.scss";
 export const LinkSimple = ({ onClick, css, children, href, target }) => {
   return (
     <>

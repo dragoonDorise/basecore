@@ -1,6 +1,9 @@
-@import "~getbasecore/src/components/atoms/_link/_core_link.scss";
-@import "~getbasecore/src/components/atoms/_link-simple/_core_link-simple.scss";
-$link-simple-transition: 0.5s;
+@import "~getbasecore/src/components/atoms/Link/core_link.scss";
+@import "~getbasecore/src/components/atoms/LinkSimple/core_link-simple.scss";
+
+.link-simple {
+  --link-simple-transition: 0.5s;
+}
 
 // @mixin generate-link-simple($name, $color, $color-hover, $color-disabled, $font-weight){
 
@@ -13,12 +16,12 @@ $link-simple-transition: 0.5s;
 );
 
 .link-simple {
-  transition: $link-simple-transition;
+  transition: var(--link-simple-transition);
   text-decoration: none;
   padding-bottom: 3px;
 
   &:after {
-    transition: $link-simple-transition;
+    transition: var(--link-simple-transition);
     width: 1%;
     height: 2px;
     background: currentcolor;

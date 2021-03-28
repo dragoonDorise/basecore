@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import { BtnSimple } from "../components/atoms/BtnSimple/BtnSimple";
 import { BtnSwitch } from "../components/atoms/BtnSwitch/BtnSwitch";
 import { Icon } from "../components/atoms/Icon/Icon";
+import { LinkSimple } from "../components/atoms/LinkSimple/LinkSimple";
 
 //Import app strings
 const content = require("../data/lang.es.json");
@@ -23,6 +24,10 @@ export const Home = () => {
       </BtnSimple>
       <BtnSwitch name="switcharo" />
       <Icon icon="close" size="icon--xs" />
+      <br />
+      <LinkSimple css="link-simple--1" href="https://google.com">
+        Simple Link
+      </LinkSimple>
     </main>
   );
 };
