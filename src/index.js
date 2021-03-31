@@ -3,10 +3,13 @@ import ReactDOM from "react-dom";
 import { AppRouter } from "./routers/AppRouter.js";
 import reportWebVitals from "./reportWebVitals";
 import "./global.scss"; // Vars
+import { Typography } from "getbasecore/src/components/atoms/Typography/Typography";
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppRouter />
+    <Typography>
+      <AppRouter />
+    </Typography>
   </React.StrictMode>,
   document.getElementById("root")
 );

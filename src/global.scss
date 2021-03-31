@@ -1,2 +1,5 @@
 @import "~getbasecore/src/components/_utils-sass/_vars/_vars.scss";
 @import "~getbasecore/src/components/_utils-sass/_mixins/_mixins.scss";
+* {
+  box-sizing: border-box;
+}

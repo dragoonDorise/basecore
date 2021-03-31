@@ -9,7 +9,12 @@ import {
   Img,
   List,
   LoaderCircle,
+  ProgressBar,
 } from "getbasecore/Atoms";
+
+import { Pagination } from "getbasecore/Molecules";
+
+//import { ProgressBar } from "../components/atoms/ProgressBar/ProgressBar";
 
 //Import app strings
 const content = require("../data/lang.es.json");
@@ -54,6 +59,9 @@ export const Home = () => {
         ]}
       ></List>
       <LoaderCircle aria="loading" />
+      <ProgressBar value="800" max="900" css="progress--success" />
+
+      <Pagination name="pepe" />
     </main>
   );
 };

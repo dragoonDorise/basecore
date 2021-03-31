@@ -1,4 +1,4 @@
-@import "~getbasecore/src/components/atoms/_typography/_core_typography.scss";
+//@import "~getbasecore/src/components/atoms/Typography/core_typography.scss";
 $body-font-size: 1.5rem;
 $body-font-family: "bmwTypeWebLightAll";
 $body-text-color: var(--color-text-1);
@@ -136,10 +136,10 @@ $small-font-size: 1.2rem;
 //  Ajuste de fuentes en responsive
 //  --------------------------------------------------
 html {
-  @media (max-width: $screen-xs-max) {
+  @media (max-width: var(--screen-xs-max)) {
     font-size: $xs-adjustment;
   }
-  @media (max-width: $screen-sm-max) {
+  @media (max-width: var(--screen-sm-max)) {
     font-size: 52%;
   }
 }
@@ -156,7 +156,7 @@ body {
   color: $body-text-color;
   letter-spacing: -0.2px;
   line-height: 140%;
-  @media (max-width: $screen-sm-max) {
+  @media (max-width: var(--screen-sm-max)) {
     font-size: $body-font-size;
   }
 }

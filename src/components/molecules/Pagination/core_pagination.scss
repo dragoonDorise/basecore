@@ -1,0 +1,72 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+.pagination {
+  > ul {
+    display: flex;
+    list-style: none;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    color: inherit;
+
+    &:hover {
+    }
+  }
+
+  .is-active a {
+  }
+}
+
+.pagination {
+  margin-bottom: var(--pagination-mb);
+
+  .icon {
+    fill: var(--pagination-icon-color);
+
+    width: var(--pagination-icon-size);
+    height: var(--pagination-icon-size);
+    vertical-align: middle;
+  }
+
+  a {
+    padding: var(--pagination-padding);
+    width: var(--pagination-width);
+    height: var(--pagination-height);
+    border: var(--pagination-border);
+    border-right: 0;
+    color: inherit;
+    font-size: var(--pagination-font-size);
+    background: var(--pagination-bg);
+    line-height: var(--pagination-line-height);
+
+    &:hover {
+      background: var(--pagination-bg-hover);
+      color: var(--pagination-color-hover);
+      transition: 0.2s;
+      svg {
+        fill: var(--pagination-color-hover);
+      }
+    }
+  }
+
+  li:last-child {
+    a {
+      border-right: var(--pagination-border);
+    }
+  }
+
+  .is-active a {
+    background: var(--pagination-bg-active);
+    color: var(--pagination-color-active);
+  }
+}
+
+@import "/src/components/molecules/Pagination/pagination.scss";
