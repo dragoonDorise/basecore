@@ -1,0 +1,292 @@
+@import "~getbasecore/src/components/_utils-sass/_mixins/_mixins.scss";
+@import "/src/components/_utils-sass/_base64/_base64.scss";
+.form--simple {
+  label {
+    margin-bottom: var(--form-label-mb);
+  }
+
+  .form__group {
+    position: relative;
+    // display: flex;
+    // align-items: center;
+
+    .form__help {
+      float: right;
+      font-size: var(--form-help-text-size);
+      padding: var(--form-help-padding);
+    }
+
+    > .form__addon {
+      border-radius: var(--form-control-border-radius);
+    }
+
+    .form__help {
+      float: right;
+      font-size: var(--form-help-text-size);
+      padding: var(--form-help-padding);
+    }
+
+    &--success,
+    &--info,
+    &--warning,
+    &--danger {
+    }
+
+    //Validaciones
+    &--success {
+      label,
+      input,
+      select,
+      textarea {
+        color: var(--color-success);
+        border-color: var(--color-success);
+      }
+      .form__group__help {
+        color: var(--color-success);
+      }
+      svg {
+        fill: var(--color-success);
+      }
+    }
+    &--info {
+      label,
+      input,
+      select,
+      textarea {
+        background: var(--color-info);
+        border-color: var(--color-info);
+      }
+      .form__group__help {
+        color: var(--color-info);
+      }
+      svg {
+        fill: var(--color-info);
+      }
+    }
+    &--warning {
+      label,
+      input,
+      select,
+      textarea {
+        color: var(--color-warning);
+        border-color: var(--color-warning);
+      }
+      .form__group__help {
+        color: var(--color-warning);
+      }
+      svg {
+        fill: var(--color-warning);
+      }
+    }
+    &--danger {
+      label,
+      input,
+      select,
+      textarea {
+        color: var(--color-danger);
+        border-color: var(--color-danger);
+      }
+      .form__group__help {
+        color: var(--color-danger);
+      }
+      svg {
+        fill: var(--color-danger);
+      }
+    }
+    //icono validación
+    .form__icon {
+      top: var(--form-icon-top);
+      svg {
+        width: var(--form-icon-size);
+        height: var(--form-icon-size);
+
+        right: var(--form-icon-right);
+      }
+    }
+  }
+
+  .form__control,
+  select,
+  textarea {
+    border: var(--form-control-border);
+    border-radius: var(--form-control-border-radius);
+    box-shadow: var(--form-control-box-shadow);
+    padding: var(--form-control-padding);
+    background: var(--form-control-bg);
+    &:focus {
+      background-color: var(--form-control-bg-hover);
+      border: var(--form-control-border-hover);
+    }
+  }
+
+  select {
+    padding-right: 20px;
+    background-color: var(--form-control-bg);
+    appearance: none;
+
+    &:focus {
+      background: var(--form-control-bg-hover);
+      border: var(--form-control-border-hover);
+    }
+  }
+
+  // svg {
+  //   position: absolute;
+  //   right: 12px;
+  //   width: 19px;
+  //   height: 19px;
+  // }
+}
+
+
+
+.form--simple {
+  margin-bottom: var(--form-mb);
+
+  label {
+    margin-bottom: var(--form-label-mb);
+  }
+
+  input + label {
+    margin-bottom: 0;
+  }
+
+  .form__group {
+    .form__help {
+      float: right;
+      font-size: var(--form-help-text-size);
+      padding: var(--form-help-padding);
+    }
+
+    > .form__addon {
+      padding: 0 20px;
+      border-radius: var(--form-control-border-radius);
+      margin-bottom: 0;
+    }
+
+    .form__help {
+      float: right;
+      font-size: var(--form-help-text-size);
+      padding: var(--form-help-padding);
+    }
+
+    &--success,
+    &--info,
+    &--warning,
+    &--danger {
+    }
+
+    //Validaciones
+    &--success {
+      label,
+      input,
+      select,
+      textarea {
+        color: var(--color-success);
+        border-color: var(--color-success);
+      }
+      .form__group__help,
+      .form__error {
+        color: var(--color-success);
+      }
+      svg {
+        fill: var(--color-success);
+      }
+    }
+    &--info {
+      label,
+      input,
+      select,
+      textarea {
+        background: var(--color-info);
+        border-color: var(--color-info);
+      }
+      .form__group__help,
+      .form__error {
+        color: var(--color-info);
+      }
+      svg {
+        fill: var(--color-info);
+      }
+    }
+    &--warning {
+      label,
+      input,
+      select,
+      textarea {
+        color: var(--color-warning);
+        border-color: var(--color-warning);
+      }
+      .form__group__help,
+      .form__error {
+        color: var(--color-warning);
+      }
+      svg {
+        fill: var(--color-warning);
+      }
+    }
+    &--danger {
+      label,
+      input,
+      select,
+      textarea {
+        color: var(--color-danger);
+        border-color: var(--color-danger);
+      }
+      .form__group__help,
+      .form__error {
+        color: var(--color-danger);
+      }
+      svg {
+        fill: var(--color-danger);
+      }
+    }
+    //icono validación
+    .form__icon {
+      top: var(--form-icon-top);
+      svg {
+        width: var(--form-icon-size);
+        height: var(--form-icon-size);
+
+        right: var(--form-icon-right);
+      }
+    }
+  }
+
+  .form__control,
+  select,
+  textarea {
+    border: var(--form-control-border);
+    border-radius: var(--form-control-border-radius);
+    box-shadow: var(--form-control-box-shadow);
+    padding: var(--form-control-padding);
+    background: var(--form-control-bg);
+    &:focus {
+      background-color: var(--form-control-bg-hover);
+      border: var(--form-control-border-hover);
+    }
+  }
+
+  select {
+    padding-right: 40px;
+    background: url($caret no-repeat);
+    background-size: 100% 100%;
+    background-color: var(--form-control-bg);
+    background-size: var(--form-select-caret-size) var(--form-select-caret-size);
+    background-position: var(--form-select-caret-position);
+    -moz-appearance: none;
+    &:focus {
+      background: url($caret no-repeat);
+      background-size: 100% 100%;
+      background-size: var(--form-select-caret-size)
+        var(--form-select-caret-size);
+      background-position: var(--form-select-caret-position);
+
+      background-color: var(--form-control-bg-hover);
+      border: var(--form-control-border-hover);
+    }
+  }
+
+}
+
+@import "/src/components/atoms/FormInputSimple/form-input-simple.scss";

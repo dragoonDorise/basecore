@@ -1,16 +1,32 @@
-@import "~getbasecore/src/components/atoms/_form-input-range-simple/_core_form-input-range-simple.scss";
-$form-slider-track-height: 10px;
-$form-slider-track-bg: var(--grey3);
-$form-slider-track-bg-hover: var(--grey3);
-$form-slider-track-border: 0;
-$form-slider-track-border-radius: 0;
-$form-slider-track-transition: all 0.2s ease;
-$form-slider-thumb-size: 30px;
-$form-slider-thumb-border-size: 0;
-$form-slider-thumb-bg: var(--blue1);
-$form-slider-thumb-border-color: green;
-$form-slider-thumb-border-radius: 100%;
-$form-slider-thumb-shadow: black;
+@mixin generate-track() {
+  height: var(--form-slider-track-height);
+  cursor: pointer;
+  transition: var(--form-slider-track-transition);
+  background: var(--form-slider-track-bg);
+  border-radius: 0;
+}
+
+@mixin generate-thumb() {
+  border: 0;
+  height: var(--form-slider-thumb-size);
+  width: var(--form-slider-thumb-size);
+  box-sizing: border-box;
+  max-height: var(--form-slider-thumb-size);
+  max-width: var(--form-slider-thumb-size);
+  border-radius: 100%;
+  border: var(--form-slider-thumb-border-size) solid
+    var(--form-slider-thumb-border-color);
+  background: var(--form-slider-thumb-bg);
+  cursor: pointer;
+  -webkit-appearance: none;
+
+  margin-top: calc(
+    ((var(--form-slider-track-height)) / 2) -
+      (var(--form-slider-thumb-size) / 2)
+  );
+
+  box-shadow: var(--form-slider-thumb-shadow);
+}
 
 input[type="range"] {
   padding: 0 !important;
@@ -24,7 +40,7 @@ input[type="range"] {
   }
 
   &:focus::-webkit-slider-runnable-track {
-    background: $form-slider-track-bg-hover;
+    background: var(--form-slider-track-bg-hover);
   }
 
   &::-moz-range-track {
@@ -63,3 +79,5 @@ input[type="range"] {
   //   background: lighten($track-color, $contrast);
   // }
 }
+
+@import "/src/components/atoms/FormInputRangeSimple/form-input-range-simple.scss";

@@ -10,11 +10,14 @@ import {
   List,
   LoaderCircle,
   ProgressBar,
-} from "getbasecore/Atoms";
+  FormInputSimple,
+  FormSelectSimple,
+  FormRadioSimple,
+  FormCheckboxSimple,
+  FormInputRangeSimple,
+} from "getbasecore/Atoms?date=01";
 
-import { Pagination } from "getbasecore/Molecules";
-
-//import { ProgressBar } from "../components/atoms/ProgressBar/ProgressBar";
+import { Pagination, Form } from "getbasecore/Molecules";
 
 //Import app strings
 const content = require("../data/lang.es.json");
@@ -60,8 +63,32 @@ export const Home = () => {
       ></List>
       <LoaderCircle aria="loading" />
       <ProgressBar value="800" max="900" css="progress--success" />
-
       <Pagination name="pepe" />
+      <Form css="form--simple">
+        <FormInputSimple name="formu-input" type="text" />
+        <FormSelectSimple name="formu-inputa">
+          <option value="1">Option #1</option>
+          <option value="2">Option #2</option>
+        </FormSelectSimple>
+        <FormRadioSimple
+          name="formu-inputasa"
+          label="option radio"
+          checked={true}
+        />
+        <FormRadioSimple name="formu-inputasa" label="option radio 2" />
+        <FormCheckboxSimple name="formu-input-checbox" label="Checkbox" />
+        <FormCheckboxSimple
+          name="formu-input-checbox"
+          label="Checkbox checked"
+          checked={true}
+        />
+        <FormInputRangeSimple
+          name="formu-input-range"
+          min={0}
+          max={10}
+          type="text"
+        />
+      </Form>
     </main>
   );
 };

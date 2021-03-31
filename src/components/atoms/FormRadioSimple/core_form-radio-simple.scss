@@ -1,3 +1,4 @@
+@import "~getbasecore/src/components/_utils-sass/_mixins/_mixins.scss";
 //
 //
 // Hi there! Remember you are not suposed to be here.
@@ -93,3 +94,69 @@
     }
   }
 }
+
+.form__group > .radio-simple {
+  & + .radio-simple {
+    margin-top: var(--margin1);
+  }
+
+  input:focus + label:before {
+    border: var(--radio-simple-fosus);
+  }
+
+  // Unchecked
+  label {
+    padding-left: calc(var(--radio-simple-size) + var(--radio-simple-size) / 2);
+
+    line-height: var(--radio-simple-size);
+
+    //Unset sr-only
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: auto;
+    margin: auto;
+    overflow: auto;
+    clip: rect(0, 0, 0, 0);
+    border: auto;
+
+    //Borde exterior
+    &:before {
+      left: 0;
+      width: var(--radio-simple-size);
+      height: var(--radio-simple-size);
+      border: var(--radio-simple-border);
+      border-radius: 100%;
+    }
+    //Elemento interior
+    &:after {
+      left: var(--radio-simple-size/2);
+      top: var(--radio-simple-size/2);
+      width: 2px;
+      height: 2px;
+      background: var(--radio-simple-inner-bg);
+      border-radius: 100%;
+      transition: var(--radio-simple-inner-transition-uncheck);
+    }
+  }
+
+  //Checked
+  input:checked + label {
+    //Borde exterior
+    &:before {
+    }
+    //Elemento interior
+    &:after {
+      left: var(--radio-simple-inner-left);
+      top: var(--radio-simple-inner-left);
+      width: var(--radio-simple-inner-width);
+      height: var(--radio-simple-inner-width);
+      background: var(--radio-simple-inner-bg);
+      border-radius: 100%;
+      transform-origin: center;
+      transition: var(--radio-simple-inner-transition-check);
+    }
+  }
+}
+
+@import "/src/components/atoms/FormRadioSimple/form-radio-simple.scss";

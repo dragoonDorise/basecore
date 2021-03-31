@@ -1,0 +1,17 @@
+// --------------------------------------------------
+//  Checkbox
+// --------------------------------------------------
+.checkbox-simple {
+  --checkbox-simple-size: 20px;
+  --checkbox-simple-size-xs: 10px;
+  --checkbox-simple-size-sm: 15px;
+  --checkbox-simple-size-lg: 30px;
+  --checkbox-simple-border: 1px solid var(--grey1);
+  --checkbox-simple-border-check: var(--checkbox-simple-border);
+  --checkbox-simple-focus: 1px solid var(--grey1);
+  --checkbox-simple-inner-bg: #fff;
+  --checkbox-simple-inner-bg-check: var(--checkbox-simple-inner-bg);
+  --checkbox-simple-inner-transition-check: opacity 0.4s ease-in-out;
+  --checkbox-simple-inner-transition-uncheck: opacity 0.4s ease-in-out;
+}
+//The tick is stored as a base64 svg in _utils-sass/_base64

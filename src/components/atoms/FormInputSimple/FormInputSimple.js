@@ -1,5 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
+import "./core_form-input-simple.scss";
 export const FormInputSimple = ({
   label,
   placeholder,
