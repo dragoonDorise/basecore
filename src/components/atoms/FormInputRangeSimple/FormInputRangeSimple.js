@@ -36,6 +36,7 @@ export const FormInputRangeSimple = ({
           step="1"
           name={name}
           id={name}
+          onChange={onChange}
         />
       </div>
     </div>
@@ -44,4 +45,7 @@ export const FormInputRangeSimple = ({
 
 FormInputRangeSimple.propTypes = {
   label: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  min: PropTypes.number.isRequired,
+  max: PropTypes.number.isRequired,
 };
