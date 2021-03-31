@@ -1,11 +1,14 @@
 //import { useHistory } from "react-router-dom";
 
 //Default BaseCore components
-import { BtnSimple } from "../components/atoms/BtnSimple/BtnSimple";
-import { BtnSwitch } from "../components/atoms/BtnSwitch/BtnSwitch";
-import { Icon } from "../components/atoms/Icon/Icon";
-import { LinkSimple } from "../components/atoms/LinkSimple/LinkSimple";
-import { Img } from "../components/atoms/Img/Img";
+import {
+  BtnSimple,
+  BtnSwitch,
+  Icon,
+  LinkSimple,
+  Img,
+  List,
+} from "getbasecore/Atoms";
 
 //Import app strings
 const content = require("../data/lang.es.json");
@@ -24,12 +27,31 @@ export const Home = () => {
         Button #2
       </BtnSimple>
       <BtnSwitch name="switcharo" />
-      <Icon icon="close" size="icon--xs" />
+      <Icon icon="close" css="icon--xs" />
       <br />
       <LinkSimple css="link-simple--1" href="https://google.com">
         Simple Link
       </LinkSimple>
-      <Img src="logo192.png" src2x="logo512.png" css="img-no-responsive" />
+      <Img
+        src="logo192.png"
+        srcXS="xs.png"
+        srcSM="sm.png"
+        srcMD="md.png"
+        srcLG="lg.png"
+        srcXL="xl.png"
+        css="img-no-responsive"
+        alt="responsive Img"
+      />
+      <List css="list--bullets" children={[1, 2, 3, 4]}></List>
+      <List
+        css="list--icons list--icons--xs"
+        children={[
+          ["twitter", "Lorem ipsum a"],
+          ["close", "Lorem ipsum b"],
+          ["twitter", "Lorem ipsum cc"],
+          ["twitter", "Lorem ipsum d"],
+        ]}
+      ></List>
     </main>
   );
 };

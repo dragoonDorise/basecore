@@ -5,13 +5,15 @@
 //
 //
 
-img {
+img,
+picture {
   width: 100%;
   max-width: 100%;
 }
 
 .img-no-responsive {
   width: auto;
+  max-width: auto;
 }
 
 .img {

@@ -1,0 +1,72 @@
+@import "~getbasecore/src/components/atoms/List/core_list.scss";
+.list {
+  --list-mb: var(--margin3);
+  --list-li-mb: var(--margin2);
+  --list-bullets-size: 6px;
+  --list-bullets-top: 5px;
+  --list-bullets-color: var(--color-bg-primary);
+  --desc-list-mb: var(--margin1);
+  --desc-list-dt-mb: 5px;
+  --desc-list-dd-mb: var(--margin1);
+  --desc-list-dt-width: 160px;
+  --ol-padding: 30px;
+}
+
+.list {
+  margin-bottom: var(--list-mb);
+
+  li {
+    margin-bottom: var(--list-li-mb);
+  }
+
+  //Con bullets
+  &--bullets {
+    li {
+      padding-left: calc(var(--list-bullets-size) * 2);
+    }
+    & li:before {
+      left: 0;
+      top: var(--list-bullets-top);
+      width: var(--list-bullets-size);
+      height: var(--list-bullets-size);
+      border-radius: 100%;
+      background: var(--list-bullets-color);
+    }
+  }
+}
+
+.desc-list {
+  margin-bottom: var(--desc-list-mb);
+  dt {
+    font-weight: bold;
+    margin-bottom: var(--desc-list-dt-mb);
+  }
+  dd {
+    margin-bottom: var(--desc-list-dd-mb);
+  }
+
+  &--horizontal {
+    dt {
+      width: var(--desc-list-dt-width);
+      @media (max-width: var(--screen-xs-max)) {
+        width: 100%;
+      }
+    }
+
+    dd {
+      margin-left: calc(var(--desc-list-dt-width) + 20px);
+
+      @media (max-width: var(--screen-xs-max)) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+//Order lists
+ol.list {
+  padding-left: var(--ol-padding);
+  li::before {
+    left: -var(--ol-padding);
+  }
+}

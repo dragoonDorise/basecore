@@ -4,8 +4,10 @@
 // All customization must be done in _custom_ files!!
 //
 //
+@import "~getbasecore/src/components/atoms/Icon/core_icon.scss";
 .list {
   li {
+    list-style-type: none;
     &:last-child {
       margin-bottom: 0;
     }
@@ -31,37 +33,37 @@
     }
 
     &--xl > * {
-      padding-left: $icon-xl + 10px;
-      min-height: $icon-xl;
+      padding-left: calc(var(--icon-xl) + 10px);
+      min-height: var(--icon-xl);
       .icon {
         @extend .icon--xl !optional;
       }
     }
 
     &--lg > * {
-      padding-left: $icon-lg + 10px;
-      min-height: $icon-lg;
+      padding-left: calc(var(--icon-lg) + 10px);
+      min-height: var(--icon-lg);
       .icon {
         @extend .icon--lg !optional;
       }
     }
     &--md > * {
-      padding-left: $icon-md + 10px;
-      min-height: $icon-md;
+      padding-left: calc(var(--icon-md) + 10px);
+      min-height: var(--icon-md);
       .icon {
         @extend .icon--md !optional;
       }
     }
     &--sm > * {
-      padding-left: $icon-sm + 10px;
-      min-height: $icon-sm;
+      padding-left: calc(var(--icon-sm) + 10px);
+      min-height: var(--icon-sm);
       .icon {
         @extend .icon--sm !optional;
       }
     }
     &--xs > * {
-      padding-left: $icon-xs + 10px;
-      min-height: $icon-xs;
+      padding-left: calc(var(--icon-xs) + 10px);
+      min-height: var(--icon-xs);
       .icon {
         @extend .icon--xs !optional;
       }
@@ -102,7 +104,7 @@
       clear: left;
       text-overflow: ellipsis;
       white-space: nowrap;
-      @media (max-width: $screen-xs-max) {
+      @media (max-width: var(--screen-xs-max)) {
         float: none;
         text-align: left;
       }
