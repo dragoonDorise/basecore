@@ -11,5 +11,4 @@ export const Icon = ({ icon, css }) => {
 
 Icon.propTypes = {
   icon: PropTypes.string.isRequired,
-  css: PropTypes.string.isRequired,
 };
