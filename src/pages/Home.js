@@ -8,6 +8,7 @@ import {
   LinkSimple,
   Img,
   List,
+  LoaderCircle,
 } from "getbasecore/Atoms";
 
 //Import app strings
@@ -52,6 +53,7 @@ export const Home = () => {
           ["twitter", "Lorem ipsum d"],
         ]}
       ></List>
+      <LoaderCircle aria="loading" />
     </main>
   );
 };

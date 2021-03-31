@@ -1,5 +1,5 @@
 import { PropTypes } from "prop-types";
-import "./btn-simple.scss";
+import "./core_btn-simple.scss";
 export const BtnSimple = ({
   onClick,
   aria,

@@ -5,6 +5,7 @@
 //
 //
 @import "~getbasecore/src/components/atoms/Btn/core_btn.scss";
+@import "~getbasecore/src/components/_utils-sass/_mixins/_mixins.scss";
 @mixin generate-btn-simple(
   $name,
   $color,
@@ -153,3 +154,4 @@ label.btn-simple {
   padding-left: 0;
   padding-right: 0;
 }
+@import "/src/components/atoms/BtnSimple/btn-simple.scss";

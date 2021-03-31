@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import "./icon.scss";
+import "./core_icon.scss";
 export const Icon = ({ icon, css }) => {
   return (
     <svg className={`icon ${css}`} role="presentation">

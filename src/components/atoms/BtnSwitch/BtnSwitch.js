@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import "./btn-switch.scss";
+import "./core_btn-switch.scss";
 export const BtnSwitch = ({ name }) => {
   return (
     <div className="btn-switch">

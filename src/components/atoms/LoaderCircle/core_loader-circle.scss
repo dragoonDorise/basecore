@@ -1,0 +1,49 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+//Loading circular
+.loader-circle {
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation: load8 1s infinite linear;
+}
+.loader-circle,
+.loader-circle:after {
+  border-radius: 50%;
+}
+@-webkit-keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-circle {
+  margin-bottom: var(--loader-circle-mb);
+  font-size: 10px;
+  border-top: var(--loader-circle-border) solid rgba(255, 255, 255, 0.2);
+  border-right: var(--loader-circle-border) solid rgba(255, 255, 255, 0.2);
+  border-bottom: var(--loader-circle-border) solid rgba(255, 255, 255, 0.2);
+  border-left: var(--loader-circle-border) solid var(--loader-circle-color);
+}
+.loader-circle,
+.loader-circle:after {
+  width: var(--loader-circle-diameter);
+  height: var(--loader-circle-diameter);
+}
+
+@import "/src/components/atoms/LoaderCircle/loader-circle.scss";
