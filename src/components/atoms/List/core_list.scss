@@ -128,3 +128,62 @@ ol.list {
     position: absolute;
   }
 }
+
+.list {
+  margin-bottom: var(--list-mb);
+
+  li {
+    margin-bottom: var(--list-li-mb);
+  }
+
+  //Con bullets
+  &--bullets {
+    li {
+      padding-left: calc(var(--list-bullets-size) * 2);
+    }
+    & li:before {
+      left: 0;
+      top: var(--list-bullets-top);
+      width: var(--list-bullets-size);
+      height: var(--list-bullets-size);
+      border-radius: 100%;
+      background: var(--list-bullets-color);
+    }
+  }
+}
+
+.desc-list {
+  margin-bottom: var(--desc-list-mb);
+  dt {
+    font-weight: bold;
+    margin-bottom: var(--desc-list-dt-mb);
+  }
+  dd {
+    margin-bottom: var(--desc-list-dd-mb);
+  }
+
+  &--horizontal {
+    dt {
+      width: var(--desc-list-dt-width);
+      @media (max-width: var(--screen-xs-max)) {
+        width: 100%;
+      }
+    }
+
+    dd {
+      margin-left: calc(var(--desc-list-dt-width) + 20px);
+
+      @media (max-width: var(--screen-xs-max)) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+//Order lists
+ol.list {
+  padding-left: var(--ol-padding);
+  li::before {
+    left: -var(--ol-padding);
+  }
+}
