@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { AppRouter } from "./routers/AppRouter.js";
 import reportWebVitals from "./reportWebVitals";
 import "./global.scss"; // Vars
-import { Typography } from "getbasecore/src/components/atoms/Typography/Typography";
+import { Typography } from "getbasecore/Atoms";
 
 ReactDOM.render(
   <React.StrictMode>

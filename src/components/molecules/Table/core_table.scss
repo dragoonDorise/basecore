@@ -1,0 +1,105 @@
+@import "/src/global.scss";
+
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+
+// body {
+//   background: red;
+//   @media screen and (max-width: $screen-sm-max) {
+//     background: green;
+//   }
+// }
+
+.table {
+  width: 100%;
+  max-width: 100%;
+
+  caption {
+    @include show-sr();
+  }
+}
+
+.table-responsive {
+  overflow-x: auto;
+
+  @media screen and (max-width: $screen-xs-max) {
+    width: 100%;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
+}
+
+//Tablas con reflow
+.table-reflow {
+  table {
+    th {
+      display: none;
+    }
+
+    td {
+      display: block;
+
+      &:before {
+        content: attr(data-th) ": ";
+        display: inline-block;
+        @media (min-width: $screen-sm-max) {
+          display: none;
+        }
+      }
+    }
+
+    th,
+    td {
+      @media (min-width: $screen-sm-max) {
+        display: table-cell;
+      }
+    }
+  }
+}
+
+.table {
+  margin-bottom: var(--table-mb);
+  border: var(--table-border);
+
+  td,
+  th {
+    padding: var(--table-padding);
+  }
+
+  thead {
+    background: var(--table-thead-bg-color);
+    color: var(--table-thead-color);
+    text-align: left;
+  }
+
+  tbody {
+    background: var(--table-td-bg-color);
+    color: var(--table-td-color);
+    tr:nth-child(even) {
+      background: var(--table-td-color-even);
+    }
+  }
+}
+
+//Tablas con reflow
+.table-reflow {
+  table {
+    min-width: 280px;
+
+    td {
+      &:before {
+        font-weight: bold;
+        width: 6.5em; // magic number :( adjust according to your own content
+        @media (min-width: var(screen-sm-max)) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@import "/src/components/molecules/Table/table.scss";

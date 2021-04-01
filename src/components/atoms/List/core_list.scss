@@ -4,6 +4,7 @@
 // All customization must be done in _custom_ files!!
 //
 //
+@import "/src/global.scss";
 @import "~getbasecore/src/components/atoms/Icon/core_icon.scss";
 .list {
   li {
@@ -104,7 +105,7 @@
       clear: left;
       text-overflow: ellipsis;
       white-space: nowrap;
-      @media (max-width: var(--screen-xs-max)) {
+      @media (max-width: $screen-xs-max) {
         float: none;
         text-align: left;
       }

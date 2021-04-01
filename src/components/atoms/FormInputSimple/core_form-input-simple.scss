@@ -1,5 +1,4 @@
-@import "~getbasecore/src/components/_utils-sass/_mixins/_mixins.scss";
-@import "/src/components/_utils-sass/_base64/_base64.scss";
+@import "/src/global.scss";
 .form--simple {
   label {
     margin-bottom: var(--form-label-mb);
@@ -138,8 +137,6 @@
   // }
 }
 
-
-
 .form--simple {
   margin-bottom: var(--form-mb);
 
@@ -269,14 +266,14 @@
 
   select {
     padding-right: 40px;
-    background: url($caret no-repeat);
+    background: url($caret) no-repeat;
     background-size: 100% 100%;
     background-color: var(--form-control-bg);
     background-size: var(--form-select-caret-size) var(--form-select-caret-size);
     background-position: var(--form-select-caret-position);
     -moz-appearance: none;
     &:focus {
-      background: url($caret no-repeat);
+      background: url($caret) no-repeat;
       background-size: 100% 100%;
       background-size: var(--form-select-caret-size)
         var(--form-select-caret-size);
@@ -286,7 +283,6 @@
       border: var(--form-control-border-hover);
     }
   }
-
 }
 
 @import "/src/components/atoms/FormInputSimple/form-input-simple.scss";

@@ -1,0 +1,13 @@
+.breadcrumb {
+  --breadcrumb-mb: var(--margin-elements);
+  --breadcrumb-a-padding: 10px;
+  --breadcrumb-a-bg-color: var(--color-bg-primary);
+  --breadcrumb-a-color: white;
+  --breadcrumb-a-bg-color-hover: var(--color-bg-secondary);
+  --breadcrumb-a-color-hover: white;
+  --breadcrumb-a-active-bg-color: var(--color-bg-secondary);
+  --breadcrumb-a-active-color: white;
+  --breadcrumb-caret-border-color: white;
+  --breadcrumb-caret-height: 36px;
+  --breadcrumb-caret-width: 12px;
+}

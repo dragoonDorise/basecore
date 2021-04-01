@@ -17,7 +17,7 @@ import {
   FormInputRangeSimple,
 } from "getbasecore/Atoms?date=01";
 
-import { Pagination, Form } from "getbasecore/Molecules";
+import { Pagination, Form, Alert, Table } from "getbasecore/Molecules?id=12";
 
 //Import app strings
 const content = require("../data/lang.es.json");
@@ -28,6 +28,11 @@ export const Home = () => {
 
   return (
     <main>
+      <Table />
+      <Alert css="alert--success" close={true}>
+        Pepep
+      </Alert>
+
       <h1 className="h1">{homeContent.title}</h1>
       <BtnSimple type="button" css="btn-simple--1" aria="This is a button">
         Button #1
@@ -65,8 +70,13 @@ export const Home = () => {
       <ProgressBar value="800" max="900" css="progress--success" />
       <Pagination name="pepe" />
       <Form css="form--simple">
-        <FormInputSimple name="formu-input" type="text" />
-        <FormSelectSimple name="formu-inputa">
+        <FormInputSimple
+          name="formu-input"
+          type="text"
+          placeholder="Formulario"
+          label="formulario"
+        />
+        <FormSelectSimple name="formu-inputa" label="select">
           <option value="1">Option #1</option>
           <option value="2">Option #2</option>
         </FormSelectSimple>

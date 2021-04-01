@@ -5,7 +5,7 @@
 //
 //
 @import "~getbasecore/src/components/atoms/Btn/core_btn.scss";
-@import "~getbasecore/src/components/_utils-sass/_mixins/_mixins.scss";
+@import "/src/global.scss";
 @mixin generate-btn-simple(
   $name,
   $color,
@@ -118,7 +118,6 @@ label.btn-simple {
 }
 
 .btn-group {
-  @include clearfix;
   margin-bottom: var(--margin3);
   justify-content: center;
   @media (max-width: var(--screen-sm-max)) {

@@ -1,0 +1,110 @@
+@import "/src/global.scss";
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+.tooltip {
+  cursor: help;
+  position: relative;
+  transform: translateZ(0);
+}
+
+//tooltip
+.tooltip {
+  &__text {
+    display: block;
+    opacity: 0;
+    bottom: 150%;
+    pointer-events: none;
+    position: absolute;
+    width: auto;
+    min-width: 286px;
+    box-sizing: content-box;
+    z-index: 2;
+
+    @media (max-width: $screen-xs-max) {
+      min-width: 254px;
+    }
+
+    //Piquito
+    &:after {
+      bottom: -10px;
+      content: " ";
+      height: 0;
+      left: 50%;
+      margin-left: -13px;
+      position: absolute;
+      width: 0;
+    }
+  }
+
+  &:hover &__text {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &--bottom {
+    .tooltip__text {
+      bottom: auto;
+      top: 170%;
+
+      &:after {
+        bottom: auto;
+      }
+    }
+
+    &:hover .tooltip__text {
+      transform: translateY(0px);
+    }
+  }
+
+  &--right {
+    .tooltip__text {
+      bottom: auto;
+      left: 110%;
+      top: -200%;
+      top: auto;
+      margin: auto;
+      right: auto;
+
+      &:after {
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 0px;
+        width: 0px;
+        right: auto;
+        border-style: solid;
+      }
+    }
+
+    &:hover .tooltip__text {
+      transform: translateX(0px);
+    }
+  }
+
+  &--left {
+    .tooltip__text {
+      bottom: auto;
+      left: auto;
+      top: -150%;
+      right: 120%;
+
+      &:after {
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 0px;
+        width: 0px;
+        left: auto;
+        border-style: solid;
+      }
+    }
+
+    &:hover .tooltip__text {
+      transform: translateX(0px);
+    }
+  }
+}

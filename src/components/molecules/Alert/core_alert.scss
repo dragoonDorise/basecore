@@ -1,0 +1,106 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+.alert {
+  position: relative;
+  a {
+    font-weight: bold;
+  }
+
+  // Evitamos margens y padings que descuadren
+  *:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  &__close {
+    position: relative;
+    float: right;
+    background: none;
+    border: 0px;
+    padding: 0;
+    margin: 0;
+    .icon {
+      vertical-align: baseline;
+    }
+  }
+}
+
+.alert {
+  padding: var(--alert-padding);
+  padding-right: var(--alert-pr);
+  margin-bottom: var(--alert-mb);
+  border-radius: var(--alert-border-radius);
+  border-width: var(--alert-border-size);
+  border-style: solid;
+
+  a {
+    font-weight: bold;
+  }
+
+  &__close {
+    right: -10px;
+    top: -2px;
+    font-size: 21px;
+    width: var(--alert-icon-size);
+    height: var(--alert-icon-size);
+    svg {
+      width: var(--alert-icon-size);
+      height: var(--alert-icon-size);
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &--success {
+    background: var(--color-success);
+    color: var(--alert-success-color-text);
+    border-color: var(--alert-success-border-color);
+    svg {
+      fill: white;
+    }
+    .alert__close svg {
+      fill: var(--alert-success-icon-color);
+    }
+  }
+  &--info {
+    background: var(--color-info);
+    color: var(--alert-info-color-text);
+    border-color: var(--alert-info-border-color);
+    svg {
+      fill: white;
+    }
+    .alert__close svg {
+      fill: var(--alert-info-icon-color);
+    }
+  }
+  &--warning {
+    background: var(--color-warning);
+    color: var(--alert-warning-color-text);
+    border-color: var(--alert-warning-border-color);
+    svg {
+      fill: white;
+    }
+    .alert__close svg {
+      fill: var(--alert-warning-icon-color);
+    }
+  }
+  &--danger {
+    background: var(--color-danger);
+    color: var(--alert-danger-color-text);
+    border-color: var(--alert-danger-border-color);
+    svg {
+      fill: white;
+    }
+    .alert__close svg {
+      fill: var(--alert-danger-icon-color);
+    }
+  }
+}
+
+@import "/src/components/molecules/Alert/alert.scss";
