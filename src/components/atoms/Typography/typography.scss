@@ -137,10 +137,10 @@ $small-font-size: 1.2rem;
 //  --------------------------------------------------
 html {
   @media (max-width: var(--screen-xs-max)) {
-    font-size: $xs-adjustment;
+    font-size: $xs-adjustment !important;
   }
   @media (max-width: var(--screen-sm-max)) {
-    font-size: 52%;
+    font-size: 52% !important;
   }
 }
 
@@ -148,7 +148,7 @@ html {
 //  Global font attributes
 //  --------------------------------------------------
 
-body {
+html > body {
   margin: 0;
   font-size: $body-font-size;
   font-family: $body-font-family;

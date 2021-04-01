@@ -1,50 +1,50 @@
-@import "/src/global.scss";
 //
 //
 // Hi there! Remember you are not suposed to be here.
 // All customization must be done in _custom_ files!!
 //
 //
+@import "/src/global.scss";
 * {
   box-sizing: border-box;
 }
 
 .container-grid {
   display: grid;
-  grid-template-columns: repeat(var(--columns), minmax(0, 1fr));
-  grid-column-gap: var(--grid-gutter);
-  padding-right: var(--grid-gutter) / 2;
-  padding-left: var(--grid-gutter) / 2;
+  grid-template-columns: repeat($columns, minmax(0, 1fr));
+  grid-column-gap: $grid-gutter;
+  padding-right: $grid-gutter/2;
+  padding-left: $grid-gutter/2;
   margin-right: auto;
   margin-left: auto;
   min-width: 320px;
   transition: width 0.4s;
 
   @media (max-width: $screen-xs-max) {
-    grid-template-columns: repeat(var(--columns-xs), minmax(0, 1fr));
+    grid-template-columns: repeat($columns-xs, minmax(0, 1fr));
   }
 
   > * {
-    grid-column-end: span var(--columns);
+    grid-column-end: span $columns;
     @media (max-width: $screen-xs-max) {
-      grid-column-end: span var(--columns-xs);
+      grid-column-end: span $columns-xs;
     }
   }
 
   @media (min-width: $screen-sm) {
-    width: var(--container-sm);
+    width: $container-sm;
   }
 
   @media (min-width: $screen-md) {
-    width: var(--container-md);
+    width: $container-md;
   }
 
   @media (min-width: $screen-lg) {
-    width: var(--container-lg);
+    width: $container-lg;
   }
 
   @media (min-width: $screen-xl) {
-    width: var(--container-xl);
+    width: $container-xl;
   }
   &--no-padding {
     grid-column-gap: 0;
@@ -57,7 +57,7 @@
 
   &--mixed {
     width: 100%;
-    max-width: var(--container-grid-mixed-width);
+    max-width: $container-grid-mixed-width;
     padding: 0;
     display: block;
   }
@@ -82,11 +82,11 @@
 @mixin create-grid-layout($size) {
   $creen-size: 1px;
 
-  var(--columns): var(--columns);
+  $columns: $columns;
 
   @if $size == "xs" {
     $creen-size: 1px;
-    var(--columns): var(--columns-xs);
+    $columns: $columns-xs;
   }
   @if $size == "sm" {
     $creen-size: $screen-sm;
@@ -103,7 +103,7 @@
 
   // Columns
   @media (min-width: $creen-size) {
-    @for $i from 1 through var(--columns) {
+    @for $i from 1 through $columns {
       [data-col-#{$size}="#{$i}"] {
         grid-column-end: span $i;
       }
@@ -112,7 +112,7 @@
 
   // Column start
   @media (min-width: $creen-size) {
-    @for $i from 1 through var(--columns) {
+    @for $i from 1 through $columns {
       [data-col-start-#{$size}="#{$i}"] {
         grid-column-start: $i;
       }
