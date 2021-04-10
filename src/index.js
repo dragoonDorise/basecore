@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { AppRouter } from "./routers/AppRouter.js";
 import reportWebVitals from "./reportWebVitals";
-import "./utils/reset/core_reset.scss";
+import "getbasecore/src/utils/reset/core_reset.scss";
 import "./global.scss"; // Vars
-import "./utils/grid-layout/core_grid-layout.scss";
+import "getbasecore/src/utils/grid-layout/core_grid-layout.scss";
 import { Typography } from "getbasecore/Atoms";
 
 ReactDOM.render(

@@ -1,36 +1,4 @@
 @import "~getbasecore/src/utils/vars/core_vars.scss";
-
-// --------------------------------------------------
-//  Media Queries - SCSS vars, can not be CSS vars
-// --------------------------------------------------
-
-//Mobile First (min)
-$screen-xs: 320px;
-$screen-sm: 768px;
-$screen-md: 992px;
-$screen-lg: 1200px;
-$screen-xl: 1440px;
-
-//Desktop First (max)
-$screen-xs-max: 767px;
-$screen-sm-max: 991px;
-$screen-md-max: 1199px;
-$screen-lg-max: 1439px;
-
-// --------------------------------------------------
-//  Grid - SCSS vars, can not be CSS vars
-// --------------------------------------------------
-
-$grid-gutter: 32px;
-$grid-gutter-outside: 16px;
-$columns: 12;
-$columns-xs: 4;
-$container-sm: 720px;
-$container-md: 944px;
-$container-lg: 1136px;
-$container-xl: 1248px;
-$container-grid-mixed-width: 1600px;
-
 :root {
   /*
 Margin Scale
@@ -44,12 +12,6 @@ Margin Scale
 
   --margin-elements: 32px;
   --margin-components: 18rem;
-
-  @media (max-width: $screen-xs-max) {
-    :root {
-      --margin-components: 8rem;
-    }
-  }
 
   // --------------------------------------------------
   //  Tamaños de iconos

@@ -4,11 +4,10 @@
 // All customization must be done in _custom_ files!!
 //
 //
-@import "/src/global.scss";
 * {
   box-sizing: border-box;
 }
-
+@import "/src/utils/grid-layout/grid-layout.scss";
 .container-grid {
   display: grid;
   grid-template-columns: repeat($columns, minmax(0, 1fr));

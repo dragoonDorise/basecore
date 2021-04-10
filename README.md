@@ -181,7 +181,7 @@ So Atoms, Molecules and Cells are highly reusable, and since every one of them w
 | Name                       | Description                                            |
 | -------------------------- | ------------------------------------------------------ |
 | app/                       | Config your app here, imports, etc.                    |
-| components/\atoms/        | Atoms, put yours here too                              |
+| components/\atoms/         | Atoms, put yours here too                              |
 | components/\_molecules/    | Molecules, put yours here too                          |
 | components/\_organisms/    | Organisms, put yours here too                          |
 | components/\_cell/         | Cells, put yours here too                              |
@@ -265,3 +265,7 @@ In the complete baseCore Docs you can read about every single variable and what 
 | \$modal-anim-top       | Modal top position animation  |
 
 You could also say that Core Code contains Funcionality code, and Custom Code contains the Visual customizable code.
+
+## Scss imports
+
+You always import the scss in the component folder in node_modules, now this one then imports the custom scss and the global.scss in src

@@ -4,6 +4,7 @@
 // Not CSS Variables or regular CSS as this file is loaded in every component
 //
 //
+@import "./utils/grid-layout/grid-layout.scss";
 @import "./utils/mixins/mixins.scss";
 @import "./utils/vars/vars.scss";
 @import "./utils/base64/base64.scss";

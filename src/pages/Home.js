@@ -32,7 +32,10 @@ export const Home = () => {
       <Alert css="alert--success" close={true}>
         Pepep
       </Alert>
-
+      <div class="container-grid">
+        <div data-col-xs="6">pepee</div>
+        <div data-col-xs="2">apapap</div>
+      </div>
       <h1 className="h1">{homeContent.title}</h1>
       <BtnSimple type="button" css="btn-simple--1" aria="This is a button">
         Button #1
