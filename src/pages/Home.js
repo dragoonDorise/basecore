@@ -25,11 +25,9 @@ import {
   Accordion,
 } from "getbasecore/Molecules?id=12";
 
-// export { Accordion } from "./src/components/molecules/Accordion/Accordion";
 // export { Breadcrumb } from "./src/components/molecules/Breadcrumb/Breadcrumb";
 // export { Dropdown } from "./src/components/molecules/Dropdown/Dropdown";
 // export { Modal } from "./src/components/molecules/Modal/Modal";
-// export { Tabs } from "./src/components/molecules/Tabs/Tabs";
 // export { Tooltip } from "./src/components/molecules/Tooltip/Tooltip";
 
 //Import app strings
@@ -38,22 +36,6 @@ const homeContent = content.home;
 
 export const Home = () => {
   //let history = useHistory();
-
-  // const items = [
-  //   ["Movie Title", "Genre", "Year", "Gross"],
-  //   ["Star Wars1", "Adventure. Sci-fi", "1977", "$460935665"],
-  //   ["Star Wars2", "Adventure. Sci-fi", "1977", "$460935665"],
-  //   ["Star Wars3", "Adventure. Sci-fi", "1977", "$460935665"],
-  //   ["Star Wars4", "Adventure. Sci-fi", "1977", "$460935665"],
-  // ];
-
-  const itemsTable = {
-    0: ["Movie Title", "Genre", "Year", "Gross"],
-    1: ["Star Wars1", "Adventure. Sci-fi", "1977", "$460935665"],
-    2: ["Star Wars2", "Adventure. Sci-fi", "1977", "$460935665"],
-    3: ["Star Wars3", "Adventure. Sci-fi", "1977", "$460935665"],
-    4: ["Star Wars4", "Adventure. Sci-fi", "1977", "$460935665"],
-  };
 
   return (
     <main>
