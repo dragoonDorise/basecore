@@ -17,7 +17,13 @@ import {
   FormInputRangeSimple,
 } from "getbasecore/Atoms?sdf=01";
 
-import { Pagination, Form, Alert, Table } from "getbasecore/Molecules?id=12";
+import {
+  Pagination,
+  Form,
+  Alert,
+  Table,
+  Accordion,
+} from "getbasecore/Molecules?id=12";
 
 // export { Accordion } from "./src/components/molecules/Accordion/Accordion";
 // export { Breadcrumb } from "./src/components/molecules/Breadcrumb/Breadcrumb";
@@ -41,7 +47,7 @@ export const Home = () => {
   //   ["Star Wars4", "Adventure. Sci-fi", "1977", "$460935665"],
   // ];
 
-  const items = {
+  const itemsTable = {
     0: ["Movie Title", "Genre", "Year", "Gross"],
     1: ["Star Wars1", "Adventure. Sci-fi", "1977", "$460935665"],
     2: ["Star Wars2", "Adventure. Sci-fi", "1977", "$460935665"],
@@ -51,11 +57,33 @@ export const Home = () => {
 
   return (
     <main>
+      <Accordion
+        children={{
+          0: {
+            title: "Lorem ipsum dolor sit",
+            desc: "Sed est mi, pharetra quis tempor eu, tincidunt vel mi. Nam congue euismod neque ut ultricies. Fusce et ante eget massa vehicula auctor. Fusce aliquet, lorem sit amet varius lacinia, lectus tellus tempor orci, eget dignissim magna felis id ipsum.",
+          },
+          1: {
+            title: "Pellentesque accumsan",
+            desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor condimentum faucibus. Curabitur auctor, magna semper lobortis eleifend, turpis ante euismod orci, id sollicitudin ligula turpis nec turpis. ",
+          },
+        }}
+      />
+
       <p>
         Componente tabla, admite array/objeto de valores para montarla, la
         primera fila siempre será la cabecera
       </p>
-      <Table css="table-reflow" items={items} />
+      <Table
+        css="table-reflow"
+        items={{
+          0: ["Movie Title", "Genre", "Year", "Gross"],
+          1: ["Star Wars1", "Adventure. Sci-fi", "1977", "$460935665"],
+          2: ["Star Wars2", "Adventure. Sci-fi", "1977", "$460935665"],
+          3: ["Star Wars3", "Adventure. Sci-fi", "1977", "$460935665"],
+          4: ["Star Wars4", "Adventure. Sci-fi", "1977", "$460935665"],
+        }}
+      />
       <p>
         Componente tabla, tambien podemos añadir los valores como html
         manualmente
