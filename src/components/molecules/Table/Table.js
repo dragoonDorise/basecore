@@ -1,47 +1,58 @@
-import React, { useState } from "react";
-
+import { Td } from "./Td.js";
+import { Th } from "./Th.js";
 import "./core_table.scss";
-export const Table = ({ head, body, type }) => {
+export const Table = ({ items, css, children }) => {
+  let thead;
+  let tbody;
+  if (!!items) {
+    const itemsArray = Object.values(items);
+    thead = itemsArray.map((row, i) => {
+      let tr;
+      let td;
+      if (i === 0) {
+        td = row.map((item, j) => {
+          // console.log(firstRow);
+          return <Th key={j}>{item}</Th>;
+        });
+        return (
+          <thead>
+            <tr>{td}</tr>
+          </thead>
+        );
+      } else {
+        return;
+      }
+    });
+
+    tbody = itemsArray.map((row, i) => {
+      let tr;
+      let td;
+      if (i !== 0) {
+        td = row.map((item, j) => {
+          // console.log(firstRow);
+          return (
+            <Td dataTH={itemsArray[0][j]} key={j}>
+              {item}
+            </Td>
+          );
+        });
+        return <tr>{td}</tr>;
+      } else {
+        return;
+      }
+    });
+  }
+
   return (
-    <div className="table-reflow">
+    <div className={css}>
       <table className="table">
         <caption className="table__description">
           Descripción de la tabla
         </caption>
-        <thead>
-          <tr>
-            <th scope="col">Movie Title</th>
-            <th scope="col">Genre</th>
-            <th scope="col">Year</th>
-            <th scope="col">Gross</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td scope="row" data-th="Movie Title">
-              Star Wars
-            </td>
-            <td data-th="Genre">Adventure, Sci-fi</td>
-            <td data-th="Year">1977</td>
-            <td data-th="Gross">$460,935,665</td>
-          </tr>
-          <tr>
-            <td scope="row" data-th="Movie Title">
-              Howard The Duck
-            </td>
-            <td data-th="Genre">"Comedy"</td>
-            <td data-th="Year">1986</td>
-            <td data-th="Gross">$16,295,774</td>
-          </tr>
-          <tr>
-            <td scope="row" data-th="Movie Title">
-              American Graffiti
-            </td>
-            <td data-th="Genre">Comedy, Drama</td>
-            <td data-th="Year">1973</td>
-            <td data-th="Gross">$115,000,000</td>
-          </tr>
-        </tbody>
+        {thead && thead}
+        {tbody && <tbody>{tbody}</tbody>}
+
+        {children}
       </table>
     </div>
   );

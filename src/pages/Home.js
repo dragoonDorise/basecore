@@ -15,9 +15,16 @@ import {
   FormRadioSimple,
   FormCheckboxSimple,
   FormInputRangeSimple,
-} from "getbasecore/Atoms?date=01";
+} from "getbasecore/Atoms?sdf=01";
 
 import { Pagination, Form, Alert, Table } from "getbasecore/Molecules?id=12";
+
+// export { Accordion } from "./src/components/molecules/Accordion/Accordion";
+// export { Breadcrumb } from "./src/components/molecules/Breadcrumb/Breadcrumb";
+// export { Dropdown } from "./src/components/molecules/Dropdown/Dropdown";
+// export { Modal } from "./src/components/molecules/Modal/Modal";
+// export { Tabs } from "./src/components/molecules/Tabs/Tabs";
+// export { Tooltip } from "./src/components/molecules/Tooltip/Tooltip";
 
 //Import app strings
 const content = require("../data/lang.es.json");
@@ -26,9 +33,50 @@ const homeContent = content.home;
 export const Home = () => {
   //let history = useHistory();
 
+  // const items = [
+  //   ["Movie Title", "Genre", "Year", "Gross"],
+  //   ["Star Wars1", "Adventure. Sci-fi", "1977", "$460935665"],
+  //   ["Star Wars2", "Adventure. Sci-fi", "1977", "$460935665"],
+  //   ["Star Wars3", "Adventure. Sci-fi", "1977", "$460935665"],
+  //   ["Star Wars4", "Adventure. Sci-fi", "1977", "$460935665"],
+  // ];
+
+  const items = {
+    0: ["Movie Title", "Genre", "Year", "Gross"],
+    1: ["Star Wars1", "Adventure. Sci-fi", "1977", "$460935665"],
+    2: ["Star Wars2", "Adventure. Sci-fi", "1977", "$460935665"],
+    3: ["Star Wars3", "Adventure. Sci-fi", "1977", "$460935665"],
+    4: ["Star Wars4", "Adventure. Sci-fi", "1977", "$460935665"],
+  };
+
   return (
     <main>
-      <Table />
+      <p>
+        Componente tabla, admite array/objeto de valores para montarla, la
+        primera fila siempre será la cabecera
+      </p>
+      <Table css="table-reflow" items={items} />
+      <p>
+        Componente tabla, tambien podemos añadir los valores como html
+        manualmente
+      </p>
+
+      <Table css="table-reflow">
+        <thead>
+          <tr>
+            <th>Movie Title</th>
+            <th>Genre</th>
+            <th>Year</th>
+            <th>Gross</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td>Star Wars1</td>
+          <td>Adventure. Sci-fi</td>
+          <td>1977</td>
+          <td>$460935665</td>
+        </tbody>
+      </Table>
       <Alert css="alert--success" close={true}>
         Pepep
       </Alert>

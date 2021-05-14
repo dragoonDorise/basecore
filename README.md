@@ -8,6 +8,59 @@ Modular, easy to upgrade and high performance CSS framework
 - Our tool [basecore-cli](https://www.npmjs.com/package/basecore-cli)
 - A Javascript Framework of your choice ( right now we support Vanila Javascript with Parcel with React + Vue in the future )
 
+# React
+
+All the components live in node_modules/getbasecore/src/components/
+
+Every component follows this logic, lets use the Button Component as an example:
+
+### Core:
+
+JS is stored in node_modules/getbasecore/src/components/atoms/BtnSimple/BtnSimple.js
+SCSS is stored in node_modules/getbasecore/src/components/atoms/BtnSimple/core_btn-simple.scss
+
+The JS Component imports the SCSS core and the SCSS core imports the custom SCSS.
+
+BtnSimple.js
+import "./core_btn-simple.scss";
+
+core_btn-simple.scss
+
+@import "/src/global.scss";
+@import "/src/components/atoms/BtnSimple/btn-simple.scss";
+
+By doing this the components are easy to update using npm without breaking anything in your current project.
+
+### Custom
+
+SCSS is stored in /src/components/atoms/BtnSimple/btn-simple.scss
+
+## Customizing component
+Basecore works with the premise that you never need to change anything but CSS variables, this are located in your src/component/ folder.
+
+If you need to alter a component to change its behavior then it's best to just create a new component, every component has a onClick, onChange prop so you can pass any function to them and keep the component as just a shell that receives props.
+
+Some default components may have state but its only used to make it appear active / inactive and things like that.
+
+## Importing components
+
+You can import the built in components just by importing them like this:
+
+    import {
+      BtnSimple,
+      BtnSwitch,
+      Icon,
+      LinkSimple,
+      List,
+      FormInputRangeSimple,
+    } from "getbasecore/Atoms";
+
+
+    import {
+      Accordion,
+      Alert,
+    } from "getbasecore/Molecules";
+
 # Parcel Requirements
 
 First, install [Parcel](https://parceljs.org):
