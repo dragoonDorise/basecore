@@ -4,6 +4,7 @@
 // All customization must be done in _custom_ files!!
 //
 //
+@import "/src/utils/grid-layout/grid-layout.scss";
 button {
   border: 0;
   background: none;
@@ -46,7 +47,7 @@ button {
     text-align: center;
 
     &--xs {
-      @media (min-width: var(--screen-xs)) and (max-width: var(--screen-xs-max)) {
+      @media (min-width: $screen-xs) and (max-width: $screen-xs-max) {
         display: block;
         width: 100%;
         text-align: center;
@@ -55,7 +56,7 @@ button {
       }
     }
     &--sm {
-      @media (min-width: var(--screen-sm)) and (max-width: var(--screen-sm-max)) {
+      @media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
         display: block;
         width: 100%;
         text-align: center;

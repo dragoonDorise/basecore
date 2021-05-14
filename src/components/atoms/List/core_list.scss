@@ -166,7 +166,7 @@ ol.list {
   &--horizontal {
     dt {
       width: var(--desc-list-dt-width);
-      @media (max-width: var(--screen-xs-max)) {
+      @media (max-width: $screen-xs-max) {
         width: 100%;
       }
     }
@@ -174,7 +174,7 @@ ol.list {
     dd {
       margin-left: calc(var(--desc-list-dt-width) + 20px);
 
-      @media (max-width: var(--screen-xs-max)) {
+      @media (max-width: $screen-xs-max) {
         margin-left: 0;
       }
     }

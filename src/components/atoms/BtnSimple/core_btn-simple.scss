@@ -74,7 +74,7 @@
 
   //Separación entre botones juntos en XS
   &--block + .btn--block {
-    @media (min-width: var(--screen-xs)) and (max-width: var(--screen-sm-max)) {
+    @media (min-width: $screen-xs) and (max-width: $screen-sm-max) {
       margin-top: var(--btn-simple-mt);
     }
   }
@@ -120,12 +120,12 @@ label.btn-simple {
 .btn-group {
   margin-bottom: var(--margin3);
   justify-content: center;
-  @media (max-width: var(--screen-sm-max)) {
+  @media (max-width: $screen-sm-max) {
     flex-wrap: wrap;
   }
 
   [class*="btn"] {
-    @media (max-width: var(--screen-sm-max)) {
+    @media (max-width: $screen-sm-max) {
       width: 100%;
       //display: block;
       margin: 0;

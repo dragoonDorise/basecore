@@ -148,13 +148,13 @@
       vertical-align: top;
 
       //Les damos estilo en XS
-      @media (max-width: var(--screen-xs-max)) {
+      @media (max-width: $screen-xs-max) {
         width: 100%;
         display: block;
       }
 
       label {
-        @media (max-width: var(--screen-xs-max)) {
+        @media (max-width: $screen-xs-max) {
           display: block;
         }
       }
@@ -163,7 +163,7 @@
     [class*="form__c"] {
       width: auto;
       //Les damos estilo en XS
-      @media (max-width: var(--screen-xs-max)) {
+      @media (max-width: $screen-xs-max) {
         width: 100%;
       }
     }
