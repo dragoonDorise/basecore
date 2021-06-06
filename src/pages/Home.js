@@ -23,9 +23,9 @@ import {
   Alert,
   Table,
   Accordion,
+  Breadcrumb,
 } from "getbasecore/Molecules?id=12";
 
-// export { Breadcrumb } from "./src/components/molecules/Breadcrumb/Breadcrumb";
 // export { Dropdown } from "./src/components/molecules/Dropdown/Dropdown";
 // export { Modal } from "./src/components/molecules/Modal/Modal";
 // export { Tooltip } from "./src/components/molecules/Tooltip/Tooltip";
@@ -39,6 +39,28 @@ export const Home = () => {
 
   return (
     <main>
+      <p>Componente breadcrumb</p>
+
+      <Breadcrumb
+        children={{
+          0: {
+            active: false,
+            text: "Step 10",
+            link: "./a",
+          },
+          1: {
+            active: false,
+            text: "Step 20",
+            link: "./b",
+          },
+          2: {
+            active: true,
+            text: "Step 30",
+            link: "./c",
+          },
+        }}
+      ></Breadcrumb>
+
       <Accordion
         children={{
           0: {

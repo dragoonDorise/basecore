@@ -1,28 +1,12 @@
-//
-//
-// Hi there! Remember you are not suposed to be here.
-// All customization must be done in _custom_ files!!
-//
-//
-.breadcrumb {
-  ol {
-    display: flex;
-  }
-  li {
-    &:after {
-    }
-
-    a {
-    }
-  }
-  &__active {
-  }
-}
+@import "/src/components/molecules/Breadcrumb/breadcrumb.scss";
 
 .breadcrumb {
   margin-bottom: var(--breadcrumb-mb);
   display: inline-block;
   background: #bfbfbf;
+  ol {
+    display: flex;
+  }
   li {
     display: flex;
     position: relative;
@@ -38,14 +22,15 @@
     &:before {
       content: "";
       position: absolute;
-      right: -var(--breadcrumb-caret-width);
+      right: calc(var(--breadcrumb-caret-width) * -1);
       top: 0;
       width: 0;
       height: 0;
       z-index: 9;
       border-style: solid;
       border-width: calc(var(--breadcrumb-caret-height) / 2) 0
-        calc(var(--breadcrumb-caret-height) / 2) var(--breadcrumb-caret-width);
+        calc(var(--breadcrumb-caret-height) / 2)
+        calc(var(--breadcrumb-caret-width));
       border-color: transparent transparent transparent
         var(--breadcrumb-a-bg-color);
     }
@@ -96,5 +81,3 @@
     }
   }
 }
-
-@import "/src/components/molecules/Breadcrumb/breadcrumb.scss";
