@@ -24,7 +24,8 @@ import {
   Table,
   Accordion,
   Breadcrumb,
-} from "getbasecore/Molecules?id=12";
+  Dropdown,
+} from "getbasecore/Molecules?id=122";
 
 // export { Dropdown } from "./src/components/molecules/Dropdown/Dropdown";
 // export { Modal } from "./src/components/molecules/Modal/Modal";
@@ -39,8 +40,26 @@ export const Home = () => {
 
   return (
     <main>
-      <p>Componente breadcrumb</p>
-
+      <div>
+        <Dropdown
+          css="btn-simple btn-simple--1"
+          text="Dropdown Menu"
+          direction="up"
+        >
+          <ul>
+            <li role="menuitem">
+              <LinkSimple css="link-simple--1" href="https://google.com">
+                Simple Link
+              </LinkSimple>
+            </li>
+            <li role="menuitem">
+              <LinkSimple css="link-simple--1" href="https://google.com">
+                Simple Link
+              </LinkSimple>
+            </li>
+          </ul>
+        </Dropdown>
+      </div>
       <Breadcrumb
         children={{
           0: {

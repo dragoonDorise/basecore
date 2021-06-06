@@ -1,0 +1,99 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+.dropdown,
+.dropup {
+  --dropdown-icon-size: 20px;
+  --dropdown-icon-color: var(--color-bg-1);
+  --dropdown-menu-border: 1px solid var(--color-border-1);
+  --dropdown-menu-bg: white;
+  --dropdown-menu-padding: 10px;
+  --dropdown-menu-transition-open: max-height 0.8s, opacity 0.5s;
+  --dropdown-menu-transition-close: max-height 0.8s, opacity 0.5s;
+  --dropdown-menu-item-mb: 10px;
+}
+.dropdown,
+.dropup {
+  display: inline-block;
+  button {
+    margin-bottom: 0;
+  }
+  button > .icon {
+    width: var(--dropdown-icon-size);
+    height: var(--dropdown-icon-size);
+    fill: var(--dropdown-icon-color);
+    vertical-align: middle;
+  }
+
+  &__menu {
+    background: var(--dropdown-menu-bg);
+    border: var(--dropdown-menu-border);
+    padding: var(--dropdown-menu-padding);
+    opacity: 0;
+    max-height: 1px;
+    overflow: hidden;
+    transition: var(--dropdown-menu-transition-close);
+
+    ul > li {
+      margin-bottom: var(--dropdown-menu-item-mb);
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &--open {
+    .dropdown__menu {
+      opacity: 1;
+      max-height: 400px;
+      transition: var(--dropdown-menu-transition-open);
+
+      //  transition: .5s;
+    }
+  }
+}
+
+.dropdown,
+.dropup {
+  position: relative;
+  &__menu {
+    width: 100%;
+    //  display: none;
+    position: absolute;
+    left: 0;
+    pointer-events: none;
+  }
+  &--open {
+    .dropdown__menu {
+      pointer-events: all;
+    }
+  }
+}
+
+.dropdown,
+.dropup {
+  &--open &__menu {
+    //  display: block;
+
+    z-index: var(--zindex1);
+  }
+}
+
+//  --------------------------------------------------
+//  Dropups
+//  --------------------------------------------------
+
+.dropup.open {
+  .dropdown__menu {
+    bottom: 100%;
+  }
+}
+
+.dropup {
+  .caret {
+    transform: rotate(180deg);
+  }
+}
