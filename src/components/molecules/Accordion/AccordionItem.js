@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { PropTypes } from "prop-types";
+import { Icon } from "getbasecore/Atoms";
 export const AccordionItem = ({ title, desc, id }) => {
   //Estado para determinar si está plegado o no
   const [state, setState] = useState(false);
@@ -20,9 +21,7 @@ export const AccordionItem = ({ title, desc, id }) => {
         aria-expanded={state ? true : false}
         onClick={handleClick}
       >
-        <svg className="icon" role="presentation">
-          <use xlinkHref="./svg/sprite.svg#caret-arrow"></use>
-        </svg>
+        <Icon icon="caret-arrow" css="icon--xs" />
         {title}
       </button>
 

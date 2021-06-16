@@ -45,4 +45,10 @@ BtnSimple.propTypes = {
   css: PropTypes.string,
   href: PropTypes.string,
   disabled: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+    PropTypes.element,
+    PropTypes.string,
+  ]),
 };

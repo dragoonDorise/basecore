@@ -1,5 +1,5 @@
 import React from "react";
-//import {PropTypes} from "prop-types"
+import { PropTypes } from "prop-types";
 import "./core_breadcrumb.scss";
 import { BreadcrumbItem } from "./BreadcrumbItem";
 export const Breadcrumb = ({ children }) => {
@@ -21,4 +21,8 @@ export const Breadcrumb = ({ children }) => {
       </ol>
     </nav>
   );
+};
+
+Breadcrumb.propTypes = {
+  children: PropTypes.object,
 };

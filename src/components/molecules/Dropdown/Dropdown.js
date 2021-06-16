@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { PropTypes } from "prop-types";
+import { Icon } from "getbasecore/Atoms";
 import "./core_dropdown.scss";
 export const Dropdown = ({ css, text, children }) => {
   const [state, setState] = useState({ active: false });
@@ -22,9 +24,7 @@ export const Dropdown = ({ css, text, children }) => {
           onClick={toggleDropdown}
         >
           {text}
-          <svg className="icon" role="presentation">
-            <use xlinkHref="./svg/sprite.svg#caret-arrow"></use>
-          </svg>
+          <Icon icon="caret-arrow" css="icon" />
         </button>
         <div
           className="dropdown__menu"
@@ -35,4 +35,10 @@ export const Dropdown = ({ css, text, children }) => {
       </div>
     </>
   );
+};
+
+Dropdown.propTypes = {
+  css: PropTypes.string,
+  text: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
 };

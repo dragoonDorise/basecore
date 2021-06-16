@@ -25,9 +25,9 @@ import {
   Accordion,
   Breadcrumb,
   Dropdown,
+  Tabs,
 } from "getbasecore/Molecules?id=122";
 
-// export { Dropdown } from "./src/components/molecules/Dropdown/Dropdown";
 // export { Modal } from "./src/components/molecules/Modal/Modal";
 // export { Tooltip } from "./src/components/molecules/Tooltip/Tooltip";
 
@@ -45,6 +45,10 @@ export const Home = () => {
   return (
     <main>
       <div>
+        <Tabs
+          tabList={["Tab 1", "Tab 2"]}
+          tabContent={["Tab 1 content", "Tab 2 content"]}
+        />
         <Dropdown
           css="btn-simple btn-simple--1"
           text="Dropdown Menu"
@@ -85,7 +89,7 @@ export const Home = () => {
       ></Breadcrumb>
 
       <Accordion
-        children={{
+        items={{
           0: {
             title: "Lorem ipsum dolor sit",
             desc: "Sed est mi, pharetra quis tempor eu, tincidunt vel mi. Nam congue euismod neque ut ultricies. Fusce et ante eget massa vehicula auctor. Fusce aliquet, lorem sit amet varius lacinia, lectus tellus tempor orci, eget dignissim magna felis id ipsum.",

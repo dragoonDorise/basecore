@@ -10,5 +10,6 @@ export const Form = ({ children, css, onSubmit }) => {
 };
 
 Form.propTypes = {
-  css: PropTypes.string.isRequired,
+  css: PropTypes.string,
+  onSubmit: PropTypes.func,
 };

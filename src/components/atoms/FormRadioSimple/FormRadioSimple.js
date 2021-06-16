@@ -4,7 +4,6 @@ import "./core_form-radio-simple.scss";
 export const FormRadioSimple = ({
   name,
   id,
-  children,
   value,
   label,
   checked,

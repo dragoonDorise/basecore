@@ -19,4 +19,9 @@ export const List = ({ children, css }) => {
 
 List.propTypes = {
   css: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+    PropTypes.element,
+  ]),
 };

@@ -32,4 +32,10 @@ LinkSimple.propTypes = {
   css: PropTypes.string,
   href: PropTypes.string.isRequired,
   target: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+    PropTypes.element,
+    PropTypes.string,
+  ]),
 };

@@ -1,3 +1,4 @@
+import { PropTypes } from "prop-types";
 import { Td } from "./Td.js";
 import { Th } from "./Th.js";
 import "./core_table.scss";
@@ -53,4 +54,10 @@ export const Table = ({ items, css, children, description }) => {
       </table>
     </div>
   );
+};
+
+Table.propTypes = {
+  css: PropTypes.string,
+  items: PropTypes.object,
+  description: PropTypes.string,
 };

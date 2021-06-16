@@ -4,7 +4,6 @@ import "./core_form-checkbox-simple.scss";
 export const FormCheckboxSimple = ({
   name,
   id,
-  children,
   value,
   label,
   checked,

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import {PropTypes} from "prop-types"
+import { PropTypes } from "prop-types";
 import { TabList } from "./TabList";
 import { TabContent } from "./TabContent";
 import "./core_tabs.scss";
@@ -41,4 +41,9 @@ export const Tabs = ({ tabList, tabContent }) => {
       </div>
     </>
   );
+};
+
+Tabs.propTypes = {
+  tabList: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  tabContent: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };

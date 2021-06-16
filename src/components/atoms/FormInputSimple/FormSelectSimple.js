@@ -34,4 +34,9 @@ FormSelectSimple.propTypes = {
   onChange: PropTypes.func,
   hideDefault: PropTypes.bool,
   validation: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+    PropTypes.element,
+  ]),
 };

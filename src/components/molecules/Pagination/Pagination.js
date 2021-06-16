@@ -35,5 +35,8 @@ export const Pagination = ({ onClick, onClickNext, onClickPrev, pages }) => {
 };
 
 Pagination.propTypes = {
-  name: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  onClickNext: PropTypes.func,
+  onClickPrev: PropTypes.func,
+  pages: PropTypes.string,
 };
