@@ -46,6 +46,11 @@ export const Home = () => {
   return (
     <main>
       <div className="container">
+        Animations, in order to animate a componente, you just need to import
+        globals.scss in the scss file. And declare the animation duration using
+        mixins
+        <pre> @include animate("infinite");</pre>
+        <pre> @include bounce();</pre>
         <Tabs
           tabList={["Tab 1", "Tab 2"]}
           tabContent={["Tab 1 content", "Tab 2 content"]}
@@ -89,7 +94,6 @@ export const Home = () => {
             },
           }}
         ></Breadcrumb>
-
         <Accordion
           items={{
             0: {
@@ -102,7 +106,6 @@ export const Home = () => {
             },
           }}
         />
-
         <p>
           Componente tabla, admite array/objeto de valores para montarla, la
           primera fila siempre será la cabecera
@@ -122,7 +125,6 @@ export const Home = () => {
           Componente tabla, tambien podemos añadir los valores como html
           manualmente
         </p>
-
         <Table css="table-reflow" description="Table description">
           <thead>
             <tr>
