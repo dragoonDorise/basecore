@@ -59,7 +59,7 @@ h6 {
 }
 
 $body-font-size: 1.5rem;
-$body-font-family: "bmwTypeWebLightAll";
+$body-font-family: "OpenSans";
 $body-text-color: var(--color-text-1);
 $body-selection-bg-color: #0653b6;
 $body-selection-color: white;
@@ -77,128 +77,14 @@ $small-font-size: 1.2rem;
 //
 //  --------------------------------------------------
 
-@font-face {
-  font-family: bmwTypeWebLightAll;
-  src: url(/fonts/BMWTypeNextLatinTT-Regular.woff2);
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: bmwTypeWebLightAll;
-  src: url(/fonts/BMWTypeNextLatinTT-Light.woff2);
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: bmwTypeWebLightAll;
-  src: url(/fonts/BMWTypeNextLatinTT-Bold.woff2);
-  font-weight: 700;
-  font-style: normal;
-}
-
-//  --------------------------------------------------
-//  Titulares
-//  --------------------------------------------------
-
-// @mixin generate_titles($title-name, $font-size, $line-height, $letter-spacing, $font-family, $font-weight,  $color, $mb, $bg:none, $pb:0, $border:0)
-
-@include generate_titles(
-  "h1",
-  6rem,
-  6rem,
-  -0.05rem,
-  "bmwTypeWebLightAll",
-  300,
-  var(--color-text-1),
-  6rem
-);
-@include generate_titles(
-  "h2",
-  5rem,
-  5.7rem,
-  -0.05rem,
-  "bmwTypeWebLightAll",
-  300,
-  var(--color-text-1),
-  4.4rem
-);
-@include generate_titles(
-  "h3",
-  3.5rem,
-  4.2rem,
-  -0.05rem,
-  "bmwTypeWebLightAll",
-  300,
-  var(--color-text-1),
-  3.5rem
-);
-@include generate_titles(
-  "h4",
-  2.5rem,
-  3.2rem,
-  -0.05rem,
-  "bmwTypeWebLightAll",
-  300,
-  var(--color-text-1),
-  2.5rem
-);
-@include generate_titles(
-  "h5",
-  2rem,
-  2.7rem,
-  -0.05rem,
-  "bmwTypeWebLightAll",
-  300,
-  var(--color-text-1),
-  2rem
-);
-@include generate_titles(
-  "h6",
-  1.5rem,
-  1.5rem,
-  -0.05rem,
-  "bmwTypeWebLightAll",
-  300,
-  var(--color-text-1),
-  1.5rem
-);
-
-// * + {
-//   .h1,
-//   .h2,
-//   .h3,
-//   .h4,
-//   .h5,
-//   .h6 {
-//     margin-top: var(--margin2);
-//   }
-// }
-
-.h--border {
-  border-bottom: 1px solid currentcolor;
-}
-
-.h--highlight {
-  &:before {
-    content: "";
-    display: block;
-    height: 8px;
-    width: 40px;
-    background: #000;
-    margin-bottom: 20px;
-  }
-}
-
 //  --------------------------------------------------
 //  Ajuste de fuentes en responsive
 //  --------------------------------------------------
 html {
-  @media (max-width: var(--screen-xs-max)) {
+  @media (max-width: $screen-xs-max) {
     font-size: var(--xs-adjustment);
   }
-  @media (max-width: var(--screen-sm-max)) {
+  @media (max-width: $screen-sm-max) {
     font-size: 52%;
   }
 }
@@ -215,7 +101,7 @@ body {
   color: $body-text-color;
   letter-spacing: -0.2px;
   line-height: 140%;
-  @media (max-width: var(--screen-sm-max)) {
+  @media (max-width: $screen-sm-max) {
     font-size: $body-font-size;
   }
 }
