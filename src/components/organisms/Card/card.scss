@@ -1,0 +1,8 @@
+.card {
+  padding: 20px;
+  margin-bottom: var(--margin-elements);
+  border: 1px solid #efefef;
+  > :last-child {
+    margin-bottom: 0;
+  }
+}

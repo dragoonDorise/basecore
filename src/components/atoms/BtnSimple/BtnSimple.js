@@ -8,10 +8,12 @@ export const BtnSimple = ({
   children,
   href,
   disabled,
+  name,
+  id,
 }) => {
   return (
     <>
-      {type !== "link" && (
+      {type === "button" && (
         <button
           type={type}
           aria-label={aria}
@@ -34,6 +36,35 @@ export const BtnSimple = ({
           {children}
         </a>
       )}
+
+      {type === "toggle" && (
+        <>
+          <input
+            id={id}
+            name={name}
+            type="radio"
+            aria-label={aria}
+            autoComplete="off"
+          />
+          <label tabIndex="0" htmlFor={id} className={`btn-simple ${css}`}>
+            {children}
+          </label>
+        </>
+      )}
+      {type === "multiple" && (
+        <>
+          <input
+            id={id}
+            name={name}
+            type="checkbox"
+            aria-label={aria}
+            autoComplete="off"
+          />
+          <label tabIndex="0" htmlFor={id} className={`btn-simple ${css}`}>
+            {children}
+          </label>
+        </>
+      )}
     </>
   );
 };
@@ -45,6 +76,8 @@ BtnSimple.propTypes = {
   css: PropTypes.string,
   href: PropTypes.string,
   disabled: PropTypes.string,
+  name: PropTypes.string,
+  id: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.array,

@@ -4,7 +4,7 @@ import "./img.scss";
 export const Img = ({ src, srcXS, srcSM, srcMD, srcLG, srcXL, alt, css }) => {
   return (
     <picture className={css}>
-      <source media="(max-width: 380px)" srcSet={srcXS} />
+      <source media="(max-width: 460px)" srcSet={srcXS} />
 
       <source media="(max-width: 768px)" srcSet={srcSM} />
 

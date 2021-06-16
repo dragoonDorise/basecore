@@ -84,7 +84,7 @@
 
   &--inline {
     display: inline-block;
-    li {
+    > li {
       display: inline-block;
       margin-bottom: 0;
     }

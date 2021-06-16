@@ -20,6 +20,10 @@
     -webkit-appearance: none;
   }
 
+  > :last-child {
+    margin-bottom: 0;
+  }
+
   &__group {
     position: relative;
     //Cortamos el margen en el último elemento

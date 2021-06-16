@@ -1,11 +1,11 @@
-import React from "react";
-const content = require("../data/lang.es.json");
-const errorContent = content.error;
-
 export const Error = () => {
+  //let history = useHistory();
+
   return (
     <main>
-      <h1 className="h1">{errorContent.title}</h1>
+      <div className="container">
+        <span class="h1">Error!</span>
+      </div>
     </main>
   );
 };
