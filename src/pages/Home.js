@@ -46,7 +46,7 @@ export const Home = () => {
   return (
     <main>
       <div className="container">
-        Animations, in order to animate a componente, you just need to import
+        Animations, in order to animate a component, you just need to import
         globals.scss in the scss file. And declare the animation duration using
         mixins
         <pre> @include animate("infinite");</pre>
@@ -237,7 +237,7 @@ export const Home = () => {
 
       <div className="container container--grid">
         <div data-col-xs="4" data-col-sm="6">
-          <Iframe src="https://www.youtube.com/embed/KYniUCGPGLs?list=PLirAqAtl_h2r5g8xGajEwdXd3x1sZh8hC" />
+          <Iframe src="https://player.vimeo.com/video/12860646" />
         </div>
         <div data-col-xs="4" data-col-sm="6">
           50% width column, 100% in mobile

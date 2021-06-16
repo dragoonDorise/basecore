@@ -11,6 +11,7 @@ export const Iframe = ({ src, css }) => {
         src={src}
         frameBorder="0"
         allowFullScreen
+        allow="autoplay; fullscreen; picture-in-picture"
       ></iframe>
     </div>
   );
