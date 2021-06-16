@@ -49,14 +49,14 @@
 }
 
 .progress {
-  height: $progress-height;
-  margin-bottom: $progress-mb;
-  transition: $progress-transition;
+  height: var(--progress-height);
+  margin-bottom: var(--progress-mb);
+  transition: var(--progress-transition);
 
   //legacy progress value
   span {
-    font-size: $progress-font-size;
-    line-height: $progress-height;
+    font-size: var(--progress-font-size);
+    line-height: var(--progress-height);
   }
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import "./progress-bar.scss";
+import "./core_progress-bar.scss";
 export const ProgressBar = ({ css, value, max }) => {
   const percentage = (value * 100) / max;
   return (
