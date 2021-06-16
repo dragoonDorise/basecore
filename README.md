@@ -6,7 +6,7 @@ Modular, easy to upgrade and high performance CSS framework
 
 - You need [Node > v12](https://nodejs.org/es/download/)
 - Our tool [basecore-cli](https://www.npmjs.com/package/basecore-cli)
-- A Javascript Framework of your choice ( right now we support Vanila Javascript with Parcel with React + Vue in the future )
+- A proyect created using Create React App ( Vue support coming soon)
 
 # React
 
@@ -160,25 +160,25 @@ A Cell is the container of others Atoms + Molecules, think of it as the typical 
 
 ### Separation of concerns
 
-Every component has its own SCSS, Javascript, Markdown and HTML files, all of them starting with an underscore in its file name so we know it's a partial element of the component.
+Every component has its own SCSS and React Component files, all of them starting with an underscore in its file name so we know it's a partial element of the component.
 
-| Name        | Description                         |
-| ----------- | ----------------------------------- |
-| \_name.scss | Component visuals                   |
-| \_name.js   | Component logic                     |
-| \_name.html | Component markup                    |
-| \_name.md   | Markdown document for documentation |
+| Name       | Description       |
+| ---------- | ----------------- |
+| \name.scss | Component visuals |
+| \Name.js   | Component logic   |
 
 Every line of code should only affect the component itself, never its parents or his children, for example if a Molecule interacts with another Molecule then the two of them should be organized inside a Organism.
 
 In UI Design the complexity of the component defines if it's an Atom, a Molecule or an Organism, in code we have to twist that a litte, we use the scope of interaction to separate the components:
 
-| Component | Description                                                 |
-| --------- | ----------------------------------------------------------- |
-| Atom      | Has no Javascript or hast it only to interact within itself |
-| Molecule  | Has no Javascript or hast it only to interact within itself |
-| Organism  | Has Javascript that affects the children within             |
-| Cell      | Has no Javascript as it's only "a shell"                    |
+| Component | Description                                                                                  |
+| --------- | -------------------------------------------------------------------------------------------- |
+| Atom      | Only has State or logic its used to interact within itself. Functions are passed using props |
+| Molecule  | Only has State or logic its used to interact within itself. Functions are passed using props |
+| Organism  | Has Javascript Logic that affects the children within. Functions can be defined here         |
+| Cell      | Has no Javascript Logic as it's only "a shell"                                               |
+
+Components are designed as "empty shells", you pass them everything by using props. This way they are extremely reusable, you can have components that look the same but their functionality different whenever you need them to.
 
 #### Example:
 
@@ -204,7 +204,7 @@ Atom 1: Has no Javascript Logic
 
 Atom 2: Has no Javascript Logic
 
-Molecule 1: Has Javascript logic so it can change the Search button
+Molecule 1: Has Javascript logic so it can change the Search button, but only affects itself
 
 Organism 1: Has Javascript Logic, when we press the Search Button we call a web service that once we've parsed it we create the grid of 9 products
 
@@ -218,38 +218,117 @@ So Atoms, Molecules and Cells are highly reusable, and since every one of them w
         app/
         components/
             atoms/
-            _molecules/
-            _organisms/
-            _cell/
-            _layout/
-            _utils-js/
-            _utils-sass/
-            _vendor/
+            molecules/
+            organisms/
         fonts/
-        img/
+        hooks/
         pages/
-        scss/
-        svg/
+        routers/
+        utils/
+          animate/
+          grid-layout/
+          mixins/
+          reset/
+          vars/
+    public
+      svg/
+        icons/
+        sprite.svg
 
-| Name                       | Description                                            |
-| -------------------------- | ------------------------------------------------------ |
-| app/                       | Config your app here, imports, etc.                    |
-| components/\atoms/         | Atoms, put yours here too                              |
-| components/\_molecules/    | Molecules, put yours here too                          |
-| components/\_organisms/    | Organisms, put yours here too                          |
-| components/\_cell/         | Cells, put yours here too                              |
-| components/\_layout/       | Define your layouts here                               |
-| components/\_utils-js\_/   | Some Javascript utilities, small plugins ready to go   |
-| components/\_utils-sass\_/ | Some Sass utilities like CSS Grid, Browser Fixes, etc. |
-| fonts/                     | Put all your custom Fonts here                         |
-| img/                       | Put all your images here                               |
-| pages/                     | Create different .html files here for static projects  |
-| scss/                      | You can import al the components SCSS in here          |
-| svg/                       | Store your svg and icons in here                       |
+| Name                   | Description                                           |
+| ---------------------- | ----------------------------------------------------- |
+| components/\atoms/     | Atoms, put yours here too                             |
+| components/\molecules/ | Molecules, put yours here too                         |
+| components/\organisms/ | Organisms, put yours here too                         |
+| components/\cell/      | Cells, put yours here too                             |
+| fonts/                 | Put all your custom Fonts here                        |
+| hooks/                 | Create all your custom hooks here                     |
+| pages/                 | Create different .html files here for static projects |
+| routers/               | Create all your custom routers here                   |
+| utils/                 | Folder with various SCSS tools                        |
+| utils/animate/         | animate.css animations converted as mixins            |
+| utils/grid-layout/     | Grid custom SCSS properties                           |
+| utils/mixins/          | Mixins                                                |
+| utils/reset/           | Some SCSS Reset                                       |
+| utils/vars/            | SCSS Vars                                             |
+| public/svg/icons       | You can store your icons here for reference           |
+| public/svg/sprite.svg  | You need to store your SVG icons inside this file     |
 
-## Importing SCSS and Javascript
+## Importing components
 
-You can import your Javascript Modules in the /app/\_app.js file, and you can do the same with the SCSS in the scss/styles.scss if you want.
+You just need to import the desired component like this:
+
+```
+import {
+  ComponenteName,
+  AnotherComponentName
+} from "getbasecore/Atoms";
+```
+
+## Atoms
+
+This is the list of all the default Atoms available in baseCore:
+
+    Btn
+    BtnSimple
+    BtnSwitch
+    FormCheckboxSimple
+    FormInputRangeSimple
+    FormInputSimple
+    FormRadioSimple
+    Icon
+    Iframe
+    Img
+    Link
+    LinkSimple
+    List
+    LoaderCircle
+    ProgressBar
+    Typography
+
+## Molecules
+
+This is the list of all the default Atoms available in baseCore:
+
+    Accordion
+    Alert
+    Breadcrumb
+    Dropdown
+    Form
+    Modal
+    Pagination
+    Table
+    Tabs
+    Tooltip
+
+## Creating new icons
+
+Basecore uses SVG Sprites in order to have a powerfull icon system you can modify using only SCSS.
+
+To create a new icon you need to copy the svg source code in the public/svg/sprite.svg changing the svg tags with symbol tags and adding it an ID:
+
+Original SVG
+
+```
+<svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+</svg>
+```
+
+Modified inside sprite.svg
+
+```
+<symbol id="arrow-left" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+</symbol>
+```
+
+Now if you want to insert an icon just use the Icon component by just using the svg ID in the "icon" prop:
+
+```
+import { Icon } from "getbasecore/Atoms";
+export const Component = ({ props }) => {
+  return <Icon icon="arrow-left" />
+}
+```
 
 ## baseCore Core and Custom
 
@@ -263,7 +342,7 @@ Another example are buttons, how many times have you reset the buttons? Remove t
 
 Here is some of the core code of the Modal Molecule Component:
 
-\_core_modal.scss
+\core_modal.scss
 
 ```
 .modal {
@@ -284,41 +363,44 @@ All the Javascript Code that ships with baseCore is part of Core Code , so all i
 
 ## Custom Code
 
-This is the code you should and will touch, specially the SCSS so you can define new mixins or variables.
+This is the code you should and will touch.
 
-Every component that comes with baseCore is defined almost in it's entirety with variables so you can change the component visual aspect really fast.
+Every component that comes with baseCore is defined almost in it's entirety with CSS variables so you can change the component visual aspects really fast.
 
 Getting back to our modal, the scss in the project relates to the custom part of the code, in there you can see all the variables you can use to customize it
 
 ```
-@import "~getbasecore/src/components/_molecules/_modal/_core_modal.scss";
-$modal-backdrop-bg: rgba(0, 0, 0, 0.5);
-$modal-dialog-bg: white;
-$modal-dialog-padding: 40px;
-$modal-close-size: 20px;
-$modal-close-color: var(--color-text-1);
-$modal-close-top: 10px;
-$modal-close-right: 10px;
-$modal-anim-top: 10%;
+--modal-backdrop-bg: rgba(0, 0, 0, 0.5);
+--modal-dialog-bg: white;
+--modal-dialog-padding: 40px;
+--modal-close-size: 20px;
+--modal-close-color: var(--color-text-1);
+--modal-close-top: 10px;
+--modal-close-right: 10px;
+--modal-anim-top: 10%;
 ```
-
-Notice that every Custom code needs to import the Core code first so it can work properly.
 
 In the complete baseCore Docs you can read about every single variable and what part of the component affects.
 
-| Name                   | Description                   |
-| ---------------------- | ----------------------------- |
-| \$modal-backdrop-bg    | Backdrop background color     |
-| \$modal-dialog-bg      | Modal dialog background color |
-| \$modal-dialog-padding | Modal dialog background color |
-| \$modal-close-size     | Close button size             |
-| \$modal-close-color    | Close button color            |
-| \$modal-close-top      | Close button top position     |
-| \$modal-close-right    | Close button right position   |
-| \$modal-anim-top       | Modal top position animation  |
+| Name                    | Description                   |
+| ----------------------- | ----------------------------- |
+| \--modal-backdrop-bg    | Backdrop background color     |
+| \--modal-dialog-bg      | Modal dialog background color |
+| \--modal-dialog-padding | Modal dialog background color |
+| \--modal-close-size     | Close button size             |
+| \--modal-close-color    | Close button color            |
+| \--modal-close-top      | Close button top position     |
+| \--modal-close-right    | Close button right position   |
+| \--modal-anim-top       | Modal top position animation  |
 
 You could also say that Core Code contains Funcionality code, and Custom Code contains the Visual customizable code.
 
 ## Scss imports
 
-You always import the scss in the component folder in node_modules, now this one then imports the custom scss and the global.scss in src
+In order for baseCore to work you need to know that:
+
+- If you want to use SCSS vars you should import globals.scss
+- You need to import this SCSS files in your main index.js React file:
+  import "getbasecore/src/utils/reset/core_reset.scss";
+  import "getbasecore/src/utils/grid-layout/core_grid-layout.scss";
+  import "getbasecore/src/components/atoms/Typography/core_typography.scss";
