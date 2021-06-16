@@ -185,14 +185,14 @@ export const Home = () => {
         <FormRadioSimple
           name="formu-inputasa"
           label="option radio"
-          checked={true}
+          id="option1"
         />
-        <FormRadioSimple name="formu-inputasa" label="option radio 2" />
-        <FormCheckboxSimple name="formu-input-checbox" label="Checkbox" />
+        <FormRadioSimple name="formu-inputasa" label="option radio 2"  id="option2"/>
+        <FormCheckboxSimple name="formu-input-checbox" label="Checkbox" id="check1" />
         <FormCheckboxSimple
           name="formu-input-checbox"
+          id="check2"
           label="Checkbox checked"
-          checked={true}
         />
         <FormInputRangeSimple
           name="formu-input-range"
