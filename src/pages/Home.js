@@ -7,6 +7,7 @@ import {
   Icon,
   LinkSimple,
   Img,
+  Iframe,
   List,
   LoaderCircle,
   ProgressBar,
@@ -15,7 +16,7 @@ import {
   FormRadioSimple,
   FormCheckboxSimple,
   FormInputRangeSimple,
-} from "getbasecore/Atoms?sdf=01";
+} from "getbasecore/Atoms?sdf=011";
 
 import {
   Pagination,
@@ -30,7 +31,7 @@ import {
 
 // export { Modal } from "./src/components/molecules/Modal/Modal";
 // export { Tooltip } from "./src/components/molecules/Tooltip/Tooltip";
-
+//
 //Import app strings
 const content = require("../data/lang.es.json");
 const homeContent = content.home;
@@ -222,12 +223,22 @@ export const Home = () => {
           />
         </Form>
       </div>
+
       <div className="container container--grid">
         <div data-col-xs="2" data-col-sm="6">
           50% width column
         </div>
         <div data-col-xs="2" data-col-sm="6">
           50% width column
+        </div>
+      </div>
+
+      <div className="container container--grid">
+        <div data-col-xs="4" data-col-sm="6">
+          <Iframe src="https://www.youtube.com/embed/KYniUCGPGLs?list=PLirAqAtl_h2r5g8xGajEwdXd3x1sZh8hC" />
+        </div>
+        <div data-col-xs="4" data-col-sm="6">
+          50% width column, 100% in mobile
         </div>
       </div>
     </main>
