@@ -1,4 +1,4 @@
-//import { PropTypes } from "prop-types";
+import { PropTypes } from "prop-types";
 import "./link-simple.scss";
 export const LinkSimple = ({ onClick, css, children, href, target }) => {
   return (
@@ -27,6 +27,9 @@ export const LinkSimple = ({ onClick, css, children, href, target }) => {
   );
 };
 
-// LinkSimple.propTypes = {
-//   href: PropTypes.string.isRequired,
-// };
+LinkSimple.propTypes = {
+  onClick: PropTypes.func,
+  css: PropTypes.string,
+  href: PropTypes.string.isRequired,
+  target: PropTypes.string,
+};

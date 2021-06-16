@@ -39,7 +39,10 @@ export const BtnSimple = ({
 };
 
 BtnSimple.propTypes = {
+  onClick: PropTypes.func,
   aria: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
-  css: PropTypes.string.isRequired,
+  css: PropTypes.string,
+  href: PropTypes.string,
+  disabled: PropTypes.string,
 };

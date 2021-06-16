@@ -13,6 +13,7 @@ export const ProgressBar = ({ css, value, max }) => {
 };
 
 ProgressBar.propTypes = {
-  value: PropTypes.string.isRequired,
+  css: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   max: PropTypes.string.isRequired,
 };

@@ -8,9 +8,10 @@ export const FormCheckboxSimple = ({
   value,
   label,
   checked,
+  validation,
 }) => {
   return (
-    <div className="form__group">
+    <div className={`form__group ${validation}`}>
       <div className="checkbox-simple">
         <input
           id={id}
@@ -28,5 +29,8 @@ export const FormCheckboxSimple = ({
 FormCheckboxSimple.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   label: PropTypes.string.isRequired,
+  checked: PropTypes.string,
+  validation: PropTypes.string,
 };

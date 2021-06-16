@@ -11,6 +11,7 @@ export const Breadcrumb = ({ children }) => {
         {childrenArray.map((item, i) => {
           return (
             <BreadcrumbItem
+              key={i}
               text={item.text}
               link={item.link}
               active={item.active}

@@ -76,8 +76,22 @@ export const FormInputSimple = ({
 };
 
 FormInputSimple.propTypes = {
-  type: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  addon: PropTypes.string,
+  addonText: PropTypes.string,
+  disabled: PropTypes.string,
+  disabledAddon: PropTypes.string,
+  onClick: PropTypes.func,
+  onChange: PropTypes.func,
+  focus: PropTypes.bool,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  max: PropTypes.number,
+  min: PropTypes.number,
+  maxLength: PropTypes.number,
+  minLength: PropTypes.number,
+  validation: PropTypes.string,
+  error: PropTypes.string,
 };

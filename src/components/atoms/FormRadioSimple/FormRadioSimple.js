@@ -8,9 +8,10 @@ export const FormRadioSimple = ({
   value,
   label,
   checked,
+  validation,
 }) => {
   return (
-    <div className="form__group">
+    <div className={`form__group ${validation}`}>
       <div className="radio-simple">
         <input
           id={id}
@@ -28,5 +29,8 @@ export const FormRadioSimple = ({
 FormRadioSimple.propTypes = {
   name: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   label: PropTypes.string.isRequired,
+  checked: PropTypes.string,
+  validation: PropTypes.string,
 };

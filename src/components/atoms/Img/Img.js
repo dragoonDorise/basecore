@@ -21,5 +21,11 @@ export const Img = ({ src, srcXS, srcSM, srcMD, srcLG, srcXL, alt, css }) => {
 
 Img.propTypes = {
   src: PropTypes.string.isRequired,
+  srcXS: PropTypes.string,
+  srcSM: PropTypes.string,
+  srcMD: PropTypes.string,
+  srcLG: PropTypes.string,
+  srcXL: PropTypes.string,
   alt: PropTypes.string.isRequired,
+  css: PropTypes.string,
 };

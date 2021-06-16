@@ -1,8 +1,9 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 import { ListItem } from "./ListItem";
 import { ListItemIcon } from "./ListItemIcon";
 import "./core_list.scss";
-export const List = ({ children, css, icons }) => {
+export const List = ({ children, css }) => {
   return (
     <ul className={`list ${css}`}>
       {children.map((item, i) => {
@@ -16,6 +17,6 @@ export const List = ({ children, css, icons }) => {
   );
 };
 
-// List.propTypes = {
-//   : PropTypes.string.isRequired,
-// };
+List.propTypes = {
+  css: PropTypes.string,
+};

@@ -35,6 +35,10 @@ import {
 const content = require("../data/lang.es.json");
 const homeContent = content.home;
 
+const dummyFunct = () => {
+  console.log("called!");
+};
+
 export const Home = () => {
   //let history = useHistory();
 
@@ -99,6 +103,7 @@ export const Home = () => {
       </p>
       <Table
         css="table-reflow"
+        description="Table description"
         items={{
           0: ["Movie Title", "Genre", "Year", "Gross"],
           1: ["Star Wars1", "Adventure. Sci-fi", "1977", "$460935665"],
@@ -112,7 +117,7 @@ export const Home = () => {
         manualmente
       </p>
 
-      <Table css="table-reflow">
+      <Table css="table-reflow" description="Table description">
         <thead>
           <tr>
             <th>Movie Title</th>
@@ -127,13 +132,13 @@ export const Home = () => {
             <td data-th="Genre">Adventure. Sci-fi</td>
             <td data-th="Year">1977</td>
             <td data-th="Gross">$460935665</td>
-          </tr>{" "}
+          </tr>
         </tbody>
       </Table>
       <Alert css="alert--success" close={true}>
         Pepep
       </Alert>
-      <div class="container-grid">
+      <div className="container-grid">
         <div data-col-xs="6">pepee</div>
         <div data-col-xs="2">apapap</div>
       </div>
@@ -144,7 +149,7 @@ export const Home = () => {
       <BtnSimple type="button" css="btn-simple--2" aria="This is a button">
         Button #2
       </BtnSimple>
-      <BtnSwitch name="switcharo" />
+      <BtnSwitch name="switcharo" onChange={dummyFunct} />
       <Icon icon="close" css="icon--xs" />
       <br />
       <LinkSimple css="link-simple--1" href="https://google.com">
@@ -198,6 +203,7 @@ export const Home = () => {
           name="formu-input-checbox"
           label="Checkbox"
           id="check1"
+          value={1}
         />
         <FormCheckboxSimple
           name="formu-input-checbox"
@@ -208,7 +214,10 @@ export const Home = () => {
           name="formu-input-range"
           min={0}
           max={10}
+          step={1}
+          id="stepper"
           type="text"
+          label="Input Range"
         />
       </Form>
     </main>

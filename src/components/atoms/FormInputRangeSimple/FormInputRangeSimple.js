@@ -3,26 +3,18 @@ import { PropTypes } from "prop-types";
 import "./core_form-input-range-simple.scss";
 export const FormInputRangeSimple = ({
   label,
-  placeholder,
-  type,
+  id,
   name,
-  addon,
-  addonText,
   disabled,
-  disabledAddon,
-  onClick,
   onChange,
-  focus,
   value,
   max,
   min,
-  maxLength,
-  minLength,
+  step,
   validation,
-  error,
 }) => {
   return (
-    <div className="form__group">
+    <div className={`form__group ${validation}`}>
       <label htmlFor={name} className="label-range">
         {label}
       </label>
@@ -33,7 +25,7 @@ export const FormInputRangeSimple = ({
           min={min}
           max={max}
           value={value}
-          step="1"
+          step={value}
           name={name}
           id={name}
           onChange={onChange}
@@ -45,7 +37,13 @@ export const FormInputRangeSimple = ({
 
 FormInputRangeSimple.propTypes = {
   label: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  min: PropTypes.number.isRequired,
+  disabled: PropTypes.string,
+  onChange: PropTypes.func,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   max: PropTypes.number.isRequired,
+  min: PropTypes.number.isRequired,
+  step: PropTypes.number.isRequired,
+  validation: PropTypes.string,
 };

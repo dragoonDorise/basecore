@@ -1,6 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 export const Modal = ({ propa }) => {
-  const [state, setState] = useState("{active:false}");
-
   return <>Modal</>;
 };

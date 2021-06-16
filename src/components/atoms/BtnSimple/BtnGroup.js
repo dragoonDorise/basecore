@@ -1,4 +1,3 @@
-// import { PropTypes } from "prop-types";
 export const BtnGroup = ({ children }) => {
   return (
     <>
@@ -8,8 +7,3 @@ export const BtnGroup = ({ children }) => {
     </>
   );
 };
-
-// BtnSimple.propTypes = {
-//   aria: PropTypes.string.isRequired,
-//   type: PropTypes.string.isRequired,
-// };

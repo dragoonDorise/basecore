@@ -1,7 +1,7 @@
 import { Td } from "./Td.js";
 import { Th } from "./Th.js";
 import "./core_table.scss";
-export const Table = ({ items, css, children }) => {
+export const Table = ({ items, css, children, description }) => {
   let thead;
   let tbody;
   if (!!items) {
@@ -15,12 +15,12 @@ export const Table = ({ items, css, children }) => {
           return <Th key={j}>{item}</Th>;
         });
         return (
-          <thead>
-            <tr>{td}</tr>
+          <thead key={i}>
+            <tr key={i}>{td}</tr>
           </thead>
         );
       } else {
-        return;
+        return false;
       }
     });
 
@@ -36,9 +36,9 @@ export const Table = ({ items, css, children }) => {
             </Td>
           );
         });
-        return <tr>{td}</tr>;
+        return <tr key={i}>{td}</tr>;
       } else {
-        return;
+        return false;
       }
     });
   }
@@ -46,12 +46,9 @@ export const Table = ({ items, css, children }) => {
   return (
     <div className={css}>
       <table className="table">
-        <caption className="table__description">
-          Descripción de la tabla
-        </caption>
+        <caption className="table__description">{description}</caption>
         {thead && thead}
         {tbody && <tbody>{tbody}</tbody>}
-
         {children}
       </table>
     </div>

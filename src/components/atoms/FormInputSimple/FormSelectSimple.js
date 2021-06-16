@@ -6,10 +6,11 @@ export const FormSelectSimple = ({
   children,
   onChange,
   hideDefault,
+  validation,
 }) => {
   return (
     <>
-      <div className="form__group">
+      <div className={`form__group ${validation}`}>
         <label htmlFor={name} className="show-sr">
           {label}
         </label>
@@ -30,4 +31,7 @@ export const FormSelectSimple = ({
 FormSelectSimple.propTypes = {
   label: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  hideDefault: PropTypes.bool,
+  validation: PropTypes.string,
 };
