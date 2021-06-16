@@ -1,4 +1,0 @@
-- Limpieza utils js
-- Separar las vars dentro de cada componente
-- Limpieza de md
-- Separar utils en componentes donde tenga sentido.
