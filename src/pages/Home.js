@@ -122,10 +122,12 @@ export const Home = () => {
           </tr>
         </thead>
         <tbody>
-          <td>Star Wars1</td>
-          <td>Adventure. Sci-fi</td>
-          <td>1977</td>
-          <td>$460935665</td>
+          <tr>
+            <td data-th="Movie Title">Star Wars1</td>
+            <td data-th="Genre">Adventure. Sci-fi</td>
+            <td data-th="Year">1977</td>
+            <td data-th="Gross">$460935665</td>
+          </tr>{" "}
         </tbody>
       </Table>
       <Alert css="alert--success" close={true}>
@@ -187,8 +189,16 @@ export const Home = () => {
           label="option radio"
           id="option1"
         />
-        <FormRadioSimple name="formu-inputasa" label="option radio 2"  id="option2"/>
-        <FormCheckboxSimple name="formu-input-checbox" label="Checkbox" id="check1" />
+        <FormRadioSimple
+          name="formu-inputasa"
+          label="option radio 2"
+          id="option2"
+        />
+        <FormCheckboxSimple
+          name="formu-input-checbox"
+          label="Checkbox"
+          id="check1"
+        />
         <FormCheckboxSimple
           name="formu-input-checbox"
           id="check2"
