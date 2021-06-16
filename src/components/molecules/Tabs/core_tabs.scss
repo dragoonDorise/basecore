@@ -5,7 +5,7 @@
 // All customization must be done in _custom_ files!!
 //
 //
-.nav--tabs {
+.nav-tabs {
   overflow: auto;
   scroll-behavior: smooth;
   > ul {
@@ -51,7 +51,7 @@
   }
 }
 
-.nav--tabs {
+.nav-tabs {
   border-bottom: var(--nav-tabs-border);
   padding-bottom: 4px;
   > ul {

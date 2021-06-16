@@ -14,7 +14,7 @@ export const Tabs = ({ tabList, tabContent }) => {
 
   return (
     <>
-      <div className="nav nav--tabs">
+      <div className="nav-tabs">
         <ul role="tablist">
           {tabListArray.map((item, i) => {
             return (

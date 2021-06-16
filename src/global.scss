@@ -1,7 +1,7 @@
 //
 //
 // Important!!! Only scss vars & mixins are allowed to be imported here.
-// Not CSS Variables or regular CSS as this file is loaded in every component
+// Dont use CSS Variables or regular CSS as this file is loaded in every component
 //
 //
 @import "./utils/grid-layout/grid-layout.scss";

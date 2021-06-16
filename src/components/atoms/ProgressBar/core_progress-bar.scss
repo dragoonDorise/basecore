@@ -16,6 +16,7 @@
     }
 
     &::-webkit-progress-value {
+      transition: width 1s;
       background-color: $progress-value-bg;
     }
 
