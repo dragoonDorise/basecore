@@ -6,7 +6,6 @@ Modular, easy to upgrade and high performance CSS framework
 
 - You need [Node > v12](https://nodejs.org/es/download/)
 - Our tool [basecore-cli](https://www.npmjs.com/package/basecore-cli)
-- A proyect created using Create React App ( Vue support coming soon)
 
 # React
 
@@ -35,7 +34,8 @@ By doing this the components are easy to update using npm without breaking anyth
 
 SCSS is stored in /src/components/atoms/BtnSimple/btn-simple.scss
 
-## Customizing component
+## Customizing components
+
 Basecore works with the premise that you never need to change anything but CSS variables, this are located in your src/component/ folder.
 
 If you need to alter a component to change its behavior then it's best to just create a new component, every component has a onClick, onChange prop so you can pass any function to them and keep the component as just a shell that receives props.
@@ -61,7 +61,12 @@ You can import the built in components just by importing them like this:
       Alert,
     } from "getbasecore/Molecules";
 
-# Parcel Requirements
+# React Requirements (2.0 and up)
+
+- A project created using Create React App ( Vue support coming soon)
+- For React: React Router, node-sass ( Our CLI will install them for you )
+
+# Parcel Requirements (only 1.x)
 
 First, install [Parcel](https://parceljs.org):
 
