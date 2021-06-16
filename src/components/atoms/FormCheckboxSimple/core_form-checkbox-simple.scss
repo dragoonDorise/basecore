@@ -133,7 +133,7 @@
       width: var(--checkbox-simple-size);
       height: var(--checkbox-simple-size);
       border-radius: 0;
-      background: url($checkbox-tick) no-repeat;
+      background: var(--checkbox-simple-tick) no-repeat;
       background-size: 100% 100%;
 
       transition: var(--checkbox-simple-inner-transition-check);

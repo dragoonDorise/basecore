@@ -14,7 +14,7 @@ Margin Scale
   --margin-components: 18rem;
 
   // --------------------------------------------------
-  //  Tamaños de iconos
+  //  Icons sizes
   // --------------------------------------------------
   --icon-xl: 128px;
   --icon-lg: 56px;
@@ -33,8 +33,6 @@ Margin Scale
 // --------------------------------------------------
 // Colors - Global Palette
 // --------------------------------------------------
-
-//  Form validation
 
 :root {
   --color-success: #99cc33;
@@ -57,14 +55,13 @@ Margin Scale
   --brown-grey: #979797;
 
   --color-bg-primary: #1c69d4;
-}
-:root {
+
   --color-text-1: #000;
   --color-text-2: #404040;
   --color-text-3: #bbbbbb;
   --color-text-4: #666666;
 
-  // Colores BG
+  //  BG colors
   --color-bg-1: #fff;
   --color-bg-2: #bfbfbf;
   --color-bg-3: #7f7f7f;
@@ -80,29 +77,8 @@ Margin Scale
   --color-greyish-brown: #4d4d4d;
   --color-very-light-pink: #d8d8d8;
 
-  -color-placeholder-1: #e3e3e3;
+  --color-placeholder-1: #e3e3e3;
 
   --color-accordion--hover: #f5f5f5;
   --color-brand: rgb(0, 118, 217);
 }
-// --------------------------------------------------
-// Template variables para componentes
-// --------------------------------------------------
-
-//Variables para CSS habitual
-// $component-padding:
-// $component-mb:
-// $component-bg-color:
-// $component-color-text:
-// $component-border:
-// $component-border-radius:
-
-// $component-subcomponent-color:
-// $component-subcomponent-bg-color:
-// $component-subcomponent-padding:
-// $component-subcomponent-content:
-
-// $component-subcomponent-color-hover:
-// $component-subcomponent-bg-color-hover:
-
-// Variables opcionales como border, shadowbox han de tener un if porque no siempre se usará

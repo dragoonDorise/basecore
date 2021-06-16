@@ -266,14 +266,14 @@
 
   select {
     padding-right: 40px;
-    background: url($caret) no-repeat;
+    background: var(--form-select-caret) no-repeat;
     background-size: 100% 100%;
     background-color: var(--form-control-bg);
     background-size: var(--form-select-caret-size) var(--form-select-caret-size);
     background-position: var(--form-select-caret-position);
     -moz-appearance: none;
     &:focus {
-      background: url($caret) no-repeat;
+      background: var(--form-select-caret) no-repeat;
       background-size: 100% 100%;
       background-size: var(--form-select-caret-size)
         var(--form-select-caret-size);
