@@ -1,3 +1,4 @@
+import React from "react";
 export const TabContent = ({ children, active }) => {
   const css = active ? "is-active" : "";
 

@@ -1,3 +1,4 @@
+import React from "react";
 import { PropTypes } from "prop-types";
 import "./core_btn-simple.scss";
 export const BtnSimple = ({

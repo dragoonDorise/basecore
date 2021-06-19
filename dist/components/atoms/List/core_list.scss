@@ -1,0 +1,191 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+@import "/src/global.scss";
+@import "~getbasecore/src/components/atoms/Icon/core_icon.scss";
+.list {
+  li {
+    list-style-type: none;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  //Con bullets
+  &--bullets {
+    li {
+      position: relative;
+    }
+    & li:before {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  //Con iconos
+  &--icons {
+    > * {
+      display: table;
+      position: relative;
+    }
+
+    &--xl > * {
+      padding-left: calc(var(--icon-xl) + 10px);
+      min-height: var(--icon-xl);
+      .icon {
+        @extend .icon--xl !optional;
+      }
+    }
+
+    &--lg > * {
+      padding-left: calc(var(--icon-lg) + 10px);
+      min-height: var(--icon-lg);
+      .icon {
+        @extend .icon--lg !optional;
+      }
+    }
+    &--md > * {
+      padding-left: calc(var(--icon-md) + 10px);
+      min-height: var(--icon-md);
+      .icon {
+        @extend .icon--md !optional;
+      }
+    }
+    &--sm > * {
+      padding-left: calc(var(--icon-sm) + 10px);
+      min-height: var(--icon-sm);
+      .icon {
+        @extend .icon--sm !optional;
+      }
+    }
+    &--xs > * {
+      padding-left: calc(var(--icon-xs) + 10px);
+      min-height: var(--icon-xs);
+      .icon {
+        @extend .icon--xs !optional;
+      }
+    }
+
+    > * > div.text {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .icon {
+      position: absolute;
+      left: 0;
+      top: 0;
+      text-align: center;
+    }
+  }
+
+  &--inline {
+    display: inline-block;
+    > li {
+      display: inline-block;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.desc-list {
+  dt {
+  }
+  dd {
+  }
+
+  &--horizontal {
+    dt {
+      float: left;
+      text-align: right;
+      overflow: hidden;
+      clear: left;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      @media (max-width: $screen-xs-max) {
+        float: none;
+        text-align: left;
+      }
+    }
+  }
+}
+
+//Order list
+ol.list {
+  counter-reset: section;
+
+  li {
+    list-style-type: none;
+    position: relative;
+  }
+
+  li::before {
+    content: counter(section);
+    counter-increment: section;
+    display: inline-block;
+    position: absolute;
+  }
+}
+
+.list {
+  margin-bottom: var(--list-mb);
+
+  li {
+    margin-bottom: var(--list-li-mb);
+  }
+
+  //Con bullets
+  &--bullets {
+    li {
+      padding-left: calc(var(--list-bullets-size) * 2);
+    }
+    & li:before {
+      left: 0;
+      top: var(--list-bullets-top);
+      width: var(--list-bullets-size);
+      height: var(--list-bullets-size);
+      border-radius: 100%;
+      background: var(--list-bullets-color);
+    }
+  }
+}
+
+.desc-list {
+  margin-bottom: var(--desc-list-mb);
+  dt {
+    font-weight: bold;
+    margin-bottom: var(--desc-list-dt-mb);
+  }
+  dd {
+    margin-bottom: var(--desc-list-dd-mb);
+  }
+
+  &--horizontal {
+    dt {
+      width: var(--desc-list-dt-width);
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+      }
+    }
+
+    dd {
+      margin-left: calc(var(--desc-list-dt-width) + 20px);
+
+      @media (max-width: $screen-xs-max) {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+//Order lists
+ol.list {
+  padding-left: var(--ol-padding);
+  li::before {
+    left: -var(--ol-padding);
+  }
+}
+@import "/src/components/atoms/List/list.scss";

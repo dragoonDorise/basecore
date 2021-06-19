@@ -1,0 +1,129 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+.accordion {
+  [data-toggle="collapse"] {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0;
+    border: 0;
+    font-size: inherit;
+
+    &:active {
+      color: inherit;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
+  [aria-expanded="true"] {
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__panel {
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.accordion {
+  //exterior border
+  border-top: var(--accordion-border-size) solid var(--accordion-border-color);
+  border-bottom: 0;
+  margin-bottom: var(--accordion-mb);
+
+  &__collapse {
+    //Cierre
+    transition: var(--accordion-transition-out);
+    max-height: 0;
+    overflow: hidden;
+
+    //Apertura
+    &.is-visible {
+      opacity: 1;
+      transition: var(--accordion-transition-in);
+      max-height: 1000px;
+      overflow: initial;
+    }
+  }
+
+  [data-toggle="collapse"] {
+    padding: var(--accordion-button-padding);
+    padding-right: var(--accordion-button-padding-right);
+    background: var(--accordion-bg-color);
+    text-align: left;
+    //font-weight: bold;
+    //border interior
+    border-bottom: var(--accordion-border-size) solid
+      var(--accordion-inner-border-color);
+
+    &:hover,
+    &:focus {
+      outline: none;
+      background: var(--accordion-bg-color-hover);
+      transition: 200ms;
+    }
+
+    [data-brand="mini"] & {
+      text-transform: uppercase;
+      font-weight: normal;
+      padding-left: 60px;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    transition: 200ms;
+    top: -8px;
+    left: 0;
+    width: var(--accordion-icon-size);
+    height: var(--accordion-icon-size);
+    fill: var(--accordion-icon-color);
+  }
+
+  [aria-expanded="true"] {
+    .icon {
+      transition: 200ms;
+    }
+  }
+
+  &__panel {
+    padding: var(--accordion-panel-padding);
+    background: var(--accordion-panel-bg-color);
+    //border when open
+    border-bottom: var(--accordion-border-size) solid
+      var(--accordion-inner-border-color);
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+
+    > p {
+      font-size: inherit;
+      line-height: inherit;
+    }
+
+    [data-brand="mini"] & {
+      font-weight: normal;
+      font-family: "MINI Type Title";
+      font-size: 1.8rem;
+      padding-left: 60px;
+
+      li {
+        margin-bottom: var(--margin1);
+      }
+    }
+  }
+}
+
+@import "/src/components/molecules/Accordion/accordion.scss";

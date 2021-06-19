@@ -1,0 +1,325 @@
+@import "/src/global.scss";
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+
+// --------------------------------------------------
+//  Select
+// --------------------------------------------------
+
+.form {
+  input,
+  select,
+  [class*="btn"],
+  .form__addon {
+    height: var(--input-height);
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  &__group {
+    position: relative;
+    //Cortamos el margen en el último elemento
+    &:last-child:not(:only-child) {
+      margin-bottom: 0;
+    }
+    &__help {
+      flex-basis: 100%;
+    }
+  }
+
+  [class*="form__group--addon"] {
+    display: flex;
+    flex-wrap: wrap;
+
+    label {
+      flex: 1 1 100%;
+    }
+
+    input {
+      flex: 1 1 10%;
+    }
+    .form__addon {
+      align-self: flex-start;
+      flex: 0 1 auto;
+      position: relative;
+      .icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+  }
+
+  .form__group--addon--right {
+    .form__addon {
+      align-self: flex-end;
+    }
+  }
+
+  .form__group--addon--left {
+    input {
+      order: 2;
+    }
+    .form__addon {
+      order: 1;
+    }
+  }
+
+  .form__group--addon {
+    input[type="number"] {
+      padding-left: 50px;
+      padding-right: 50px;
+      text-align: center;
+    }
+
+    input {
+      order: 2;
+    }
+    .form__addon {
+      order: 1;
+      &:last-child {
+        order: 3;
+      }
+    }
+
+    .form__addon {
+      &:last-of-type {
+        align-self: flex-end;
+      }
+    }
+  }
+
+  [class*="form__c"],
+  select,
+  textarea {
+    width: 100%;
+    font-size: inherit;
+    margin: 0;
+  }
+
+  input,
+  textarea {
+    &:disabled,
+    &:read-only {
+      cursor: not-allowed;
+    }
+  }
+
+  button {
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  [type="range"] {
+    cursor: col-resize !important;
+    border: 0px;
+    -webkit-appearance: none;
+    appearance: none;
+    &:focus {
+      border: 0;
+    }
+  }
+
+  label {
+    display: block;
+  }
+
+  //Quitamos el margin si el label está dentro de columnas
+  //[class*="col-"] label{
+  //  margin-bottom: 0;
+  //}
+
+  // --------------------------------------------------
+  //  Formulario inline
+  // --------------------------------------------------
+
+  &--inline {
+    .form__group {
+      margin-top: 0;
+      display: inline-block;
+      vertical-align: top;
+
+      //Les damos estilo en XS
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+        display: block;
+      }
+
+      label {
+        @media (max-width: $screen-xs-max) {
+          display: block;
+        }
+      }
+    }
+
+    [class*="form__c"] {
+      width: auto;
+      //Les damos estilo en XS
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+      }
+    }
+  }
+
+  //icono validaciones
+  .form__icon {
+    position: absolute;
+    right: 0;
+    width: var(--input-height);
+    height: var(--input-height);
+
+    svg {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+
+  // --------------------------------------------------
+  //  Tamaños
+  // --------------------------------------------------
+
+  &--xs {
+    [class*="form__c"],
+    [class*="btn"],
+    select {
+      height: var(--input-height-xs);
+    }
+
+    .form__icon svg {
+      width: var(--input-height-xs);
+      height: var(--input-height-xs);
+    }
+  }
+
+  &--sm {
+    [class*="form__c"],
+    [class*="btn"],
+    select {
+      height: var(--input-height-sm);
+    }
+
+    .form__icon svg {
+      width: var(--input-height-sm);
+      height: var(--input-height-sm);
+    }
+  }
+
+  &--lg {
+    [class*="form__c"],
+    [class*="btn"],
+    select {
+      height: var(--input-height-lg);
+    }
+
+    .form__icon svg {
+      width: var(--input-height-lg);
+      height: var(--input-height-lg);
+    }
+  }
+}
+
+.form {
+  fieldset {
+    margin-bottom: var(--form-fieldset-mb);
+  }
+
+  legend {
+    // @extend .h3;
+  }
+
+  hr {
+    margin-top: 0;
+    margin-bottom: var(--form-hr-mb);
+  }
+
+  &__group {
+    margin-bottom: var(--form-group-mb);
+  }
+
+  &__error {
+    opacity: 0;
+    max-height: 0;
+    flex-basis: 100%;
+    transition: 0.5s;
+  }
+
+  //Error messages
+  &__group--success,
+  &__group--info,
+  &__group--warning,
+  &__group--danger {
+    .form__error {
+      opacity: 1;
+      max-height: 100%;
+      transition: 0.5s;
+      margin-top: 10px;
+    }
+  }
+
+  //Formulario inline
+  &--inline {
+    label {
+      //display: inline-block;
+      margin-bottom: var(--margin1);
+    }
+
+    // .form__group{
+    //
+    //   //Les damos estilo en XS
+    //   @media (max-width: $screen-xs) {
+    //
+    //     //margen para separarlos en XS
+    //     .form__group{
+    //       margin-bottom: var(--margin2);
+    //     }
+    //   }
+    //
+    //   label{
+    //     @media (max-width: $screen-xs) {
+    //       margin-bottom: var(--margin1);
+    //     }
+    //   }
+    //
+    // }
+  }
+
+  // --------------------------------------------------
+  //  Tamaños
+  // --------------------------------------------------
+
+  &--xs {
+    input,
+    select {
+      font-size: 10px;
+    }
+  }
+
+  &--sm {
+    input,
+    select {
+    }
+  }
+
+  &--lg {
+    input,
+    select {
+      font-size: 24px;
+    }
+  }
+}
+
+@import "/src/components/molecules/Form/form.scss";

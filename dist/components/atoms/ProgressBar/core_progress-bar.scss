@@ -1,0 +1,64 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+@mixin generate-progress(
+  $name,
+  $progress-color,
+  $progress-bg,
+  $progress-value-bg
+) {
+  .progress--#{$name} {
+    &::-webkit-progress-bar {
+      background-color: $progress-bg;
+    }
+
+    &::-webkit-progress-value {
+      transition: width 1s;
+      background-color: $progress-value-bg;
+    }
+
+    &::-moz-progress-bar {
+      background-color: $progress-value-bg;
+    }
+
+    //legacy
+    background-color: $progress-bg;
+
+    span {
+      background-color: $progress-value-bg;
+      color: $progress-color;
+    }
+  }
+}
+
+.progress {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+
+  //legacy progress value
+  span {
+    display: block;
+    height: 100%;
+    text-align: center;
+  }
+}
+
+.progress {
+  height: var(--progress-height);
+  margin-bottom: var(--progress-mb);
+  transition: var(--progress-transition);
+
+  //legacy progress value
+  span {
+    font-size: var(--progress-font-size);
+    line-height: var(--progress-height);
+  }
+}
+
+@import "/src/components/atoms/ProgressBar/progress-bar.scss";

@@ -1,3 +1,4 @@
+import React from "react";
 export const TabList = ({ children, active, onClick }) => {
   //const childrenArray = Object.values(children);
 

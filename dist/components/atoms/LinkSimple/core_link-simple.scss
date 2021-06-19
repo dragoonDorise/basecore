@@ -1,0 +1,66 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+
+@mixin generate-link-simple(
+  $name,
+  $color,
+  $color-hover,
+  $color-disabled,
+  $font-weight
+) {
+  .link-simple--#{$name} {
+    color: $color;
+    font-weight: $font-weight;
+    &:hover {
+      color: $color-hover;
+    }
+    &:disabled {
+      color: $color-disabled;
+    }
+  }
+}
+
+.link-simple {
+  &:after {
+    content: "";
+    display: block;
+    opacity: 0;
+  }
+
+  &:active,
+  &.active,
+  &:hover {
+    &:after {
+      content: "";
+      display: block;
+      opacity: 1;
+    }
+  }
+}
+
+.link-simple {
+  transition: var(--link-simple-transition);
+  text-decoration: none;
+  padding-bottom: 3px;
+
+  &:after {
+    transition: var(--link-simple-transition);
+    width: 1%;
+    height: 2px;
+    background: currentcolor;
+    display: none !important;
+  }
+
+  &:active,
+  &.active,
+  &:hover {
+    &:after {
+      width: 100%;
+      height: 2px;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+
+[class*="link-"] {
+  display: inline-table;
+}
+
+//Button reset to look like buttons
+button[class*="link-"] {
+  background: none;
+  border-left: none;
+  border-right: none;
+  font-size: inherit;
+  margin: 0;
+}
+
+//Reset links
+a {
+  text-decoration: none;
+  color: inherit;
+}

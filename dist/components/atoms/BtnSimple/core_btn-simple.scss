@@ -1,0 +1,156 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+@import "~getbasecore/src/components/atoms/Btn/core_btn.scss";
+@import "/src/global.scss";
+@mixin generate-btn-simple(
+  $name,
+  $color,
+  $bg,
+  $color-hover,
+  $bg-hover,
+  $bg-active,
+  $color-disabled,
+  $bg-disabled
+) {
+  .btn-simple--#{$name} {
+    fill: $color;
+    color: $color;
+    background: $bg;
+
+    &:hover,
+    &:focus {
+      fill: $color-hover;
+      color: $color-hover;
+      background: $bg-hover;
+    }
+
+    &[disabled],
+    &.is-disabled {
+      fill: $color-disabled;
+      color: $color-disabled;
+      background: $bg-disabled;
+    }
+    //When used as a fake radio / checkbox
+
+    @at-root .btn-group input + label#{&} {
+      background: $bg;
+    }
+
+    @at-root .btn-group input:checked + label#{&} {
+      background: $bg-active;
+    }
+  }
+}
+
+.btn-simple {
+  display: inline-block;
+  align-items: center;
+  font-size: var(--btn-simple-text-size);
+  padding: var(--btn-simple-padding);
+  border-radius: var(--btn-simple-border-radius);
+  transition: var(--btn-simple-transition-out);
+  line-height: var(--btn-simple-text-size);
+  font-weight: bold;
+  margin-bottom: var(--margin-elements);
+  //Remember, the button has the same height as the form input to be hable to use the button in horizontal forms. Adjust the height in _vars component
+  .form & {
+    height: var(--input-height);
+  }
+
+  // @media (max-width: $screen-xs-max) {
+  //   height: auto;
+  // }
+
+  &:hover {
+    transition: var(--btn-simple-transition-in);
+  }
+  &:focus {
+    transition: var(--btn-simple-transition-in);
+  }
+
+  //Separación entre botones juntos en XS
+  &--block + .btn--block {
+    @media (min-width: $screen-xs) and (max-width: $screen-sm-max) {
+      margin-top: var(--btn-simple-mt);
+    }
+  }
+
+  //Variantes de tamaños
+
+  &--xs {
+    font-size: var(--btn-simple-text-size-xs);
+    padding: var(--btn-simple-padding-xs);
+    height: var(--input-height-xs);
+  }
+
+  &--sm {
+    font-size: var(--btn-simple-text-size-sm);
+    padding: var(--btn-simple-padding-sm);
+    height: var(--input-height-sm);
+  }
+
+  &--lg {
+    font-size: var(--btn-simple-text-size-lg);
+    padding: var(--btn-simple-padding-lg);
+    height: var(--input-height-lg);
+  }
+}
+
+//Ajustes cuando el botón es un elemento diferente a button
+a.btn-simple,
+label.btn-simple {
+  line-height: 1;
+  &--xs {
+    line-height: 1;
+  }
+
+  &--sm {
+    line-height: 1;
+  }
+
+  &--lg {
+    line-height: 1;
+  }
+}
+
+.btn-group {
+  margin-bottom: var(--margin3);
+  justify-content: center;
+  @media (max-width: $screen-sm-max) {
+    flex-wrap: wrap;
+  }
+
+  [class*="btn"] {
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+      //display: block;
+      margin: 0;
+      margin-bottom: var(--margin-elements);
+    }
+    margin-right: var(--btn-group-separation);
+    &:first-of-type {
+      border-top-left-radius: var(--btn-simple-border-radius);
+      border-bottom-left-radius: var(--btn-simple-border-radius);
+    }
+    &:last-child {
+      border-top-right-radius: var(--btn-simple-border-radius);
+      border-bottom-right-radius: var(--btn-simple-border-radius);
+      margin-right: 0;
+    }
+  }
+}
+
+//Separación entre botones juntos
+.btn--block + .btn--block {
+  margin-top: var(--btn-simple-mt);
+}
+
+.btn--block {
+  padding-left: 0;
+  padding-right: 0;
+}
+@import "/src/components/atoms/BtnSimple/btn-simple.scss";

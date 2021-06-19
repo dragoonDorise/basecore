@@ -1,0 +1,52 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+
+//  --------------------------------------------------
+//  Tamaños
+// --------------------------------------------------
+
+// Comentado por incompatibilidad con IE11 y ya no ser necesario
+// Permitimos colorear los iconos
+// .icon use>svg path para solventar Firefox BUG
+//svg path,
+//.icon use>svg path  {
+//  fill: currentColor;
+//}
+
+svg.icon.icon.icon {
+  vertical-align: middle;
+  &--xs {
+    width: var(--icon-xs);
+    height: var(--icon-xs);
+  }
+
+  &--sm {
+    width: var(--icon-sm);
+    height: var(--icon-sm);
+  }
+
+  &--md {
+    width: var(--icon-md);
+    height: var(--icon-md);
+  }
+
+  &--lg {
+    width: var(--icon-lg);
+    height: var(--icon-lg);
+  }
+
+  &--xl {
+    width: var(--icon-xl);
+    height: var(--icon-xl);
+  }
+}
+
+svg.icon {
+  vertical-align: middle;
+}
+
+@import "/src/components/atoms/Icon/icon.scss";

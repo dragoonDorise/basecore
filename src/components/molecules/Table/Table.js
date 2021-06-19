@@ -1,3 +1,4 @@
+import React from "react";
 import { PropTypes } from "prop-types";
 import { Td } from "./Td.js";
 import { Th } from "./Th.js";

@@ -1,0 +1,162 @@
+@import "/src/global.scss";
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+// --------------------------------------------------
+//  Radio
+// --------------------------------------------------
+
+.form__group > .radio-simple {
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+
+  input {
+    @include show-sr();
+  }
+
+  // Unchecked
+  label {
+    position: relative !important;
+    cursor: pointer;
+    pointer-events: all;
+    //Unset sr-only
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: auto;
+    margin: auto;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: auto;
+
+    &:before {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      box-sizing: border-box;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      border-radius: 100%;
+      opacity: 0;
+      box-sizing: border-box;
+    }
+  }
+
+  //Checked
+  input:checked + label {
+    &:before {
+    }
+    &:after {
+      opacity: 1;
+    }
+  }
+}
+
+// --------------------------------------------------
+//  Mixin tamaños de radios
+// --------------------------------------------------
+
+@mixin radio-simple-sizes($size, $radio-simple-size) {
+  .radio-simple--#{$size} {
+    // Unchecked
+    label {
+      padding-left: $radio-simple-size + $radio-simple-size/2;
+      line-height: $radio-simple-size;
+      //Borde exterior
+      &:before {
+        left: 0;
+        width: $radio-simple-size;
+        height: $radio-simple-size;
+      }
+      //Elemento interior
+      &:after {
+        left: $radio-simple-size/2;
+        top: $radio-simple-size/2;
+      }
+    }
+
+    //Checked
+    input:checked + label {
+      //Elemento interior
+      &:after {
+        left: $radio-simple-size/8;
+        top: $radio-simple-size/8;
+        width: $radio-simple-size - $radio-simple-size/4;
+        height: $radio-simple-size - $radio-simple-size/4;
+      }
+    }
+  }
+}
+
+.form__group > .radio-simple {
+  & + .radio-simple {
+    margin-top: var(--margin1);
+  }
+
+  input:focus + label:before {
+    border: var(--radio-simple-fosus);
+  }
+
+  // Unchecked
+  label {
+    padding-left: calc(var(--radio-simple-size) + var(--radio-simple-size) / 2);
+
+    line-height: var(--radio-simple-size);
+
+    //Unset sr-only
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: auto;
+    margin: auto;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: auto;
+
+    //Borde exterior
+    &:before {
+      left: 0;
+      width: var(--radio-simple-size);
+      height: var(--radio-simple-size);
+      border: var(--radio-simple-border);
+      border-radius: 100%;
+    }
+    //Elemento interior
+    &:after {
+      left: var(--radio-simple-size/2);
+      top: var(--radio-simple-size/2);
+      width: 2px;
+      height: 2px;
+      background: var(--radio-simple-inner-bg);
+      border-radius: 100%;
+      transition: var(--radio-simple-inner-transition-uncheck);
+    }
+  }
+
+  //Checked
+  input:checked + label {
+    //Borde exterior
+    &:before {
+    }
+    //Elemento interior
+    &:after {
+      left: var(--radio-simple-inner-left);
+      top: var(--radio-simple-inner-left);
+      width: var(--radio-simple-inner-width);
+      height: var(--radio-simple-inner-width);
+      background: var(--radio-simple-inner-bg);
+      border-radius: 100%;
+      transform-origin: center;
+      transition: var(--radio-simple-inner-transition-check);
+    }
+  }
+}
+
+@import "/src/components/atoms/FormRadioSimple/form-radio-simple.scss";
