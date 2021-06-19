@@ -17,7 +17,7 @@ import {
   FormRadioSimple,
   FormCheckboxSimple,
   FormInputRangeSimple,
-} from "getbasecore/Atoms?sdf=011";
+} from "getbasecore/Atoms";
 
 import {
   Pagination,
@@ -28,9 +28,9 @@ import {
   Breadcrumb,
   Dropdown,
   Tabs,
-} from "getbasecore/Molecules?id=122";
+} from "getbasecore/Molecules";
 
-import { Card } from "../components/organisms/Card/Card";
+import { Card } from "getbasecore/Organisms";
 
 // export { Modal } from "./src/components/molecules/Modal/Modal";
 // export { Tooltip } from "./src/components/molecules/Tooltip/Tooltip";
