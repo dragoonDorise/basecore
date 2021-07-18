@@ -3,6 +3,7 @@ import { PropTypes } from "prop-types";
 import "./core_form-input-simple.scss";
 export const FormInputSimple = ({
   label,
+  labelButton,
   placeholder,
   type,
   name,
@@ -53,6 +54,7 @@ export const FormInputSimple = ({
           <button
             className="form__addon btn-simple--1"
             type="submit"
+            aria-label={labelButton}
             disabled={disabledAddon ? "disabled" : ""}
             onClick={onClick}
           >

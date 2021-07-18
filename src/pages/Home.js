@@ -92,6 +92,7 @@ export const Home = () => {
           ></Breadcrumb>
 
           <Tabs
+            ariaLabel="Demo Tabs"
             tabList={["Tab 1", "Tab 2", "Tab 3"]}
             tabContent={[
               <>
@@ -265,6 +266,7 @@ export const Home = () => {
 
               <FormInputSimple
                 label="Input with add-on button"
+                labelButton="Show password"
                 name="password"
                 type="password"
                 addon="right"
@@ -409,25 +411,27 @@ export const Home = () => {
                       css="btn-simple btn-simple--1"
                       text="Dropdown Menu"
                       direction="up"
+                      ariaControls="dropdown-menu"
+                      ariaLabelled="dropdown"
                     >
-                      <ul>
-                        <li role="menuitem">
-                          <LinkSimple
-                            css="link-simple--1"
-                            href="https://google.com"
-                          >
-                            Simple Link
-                          </LinkSimple>
-                        </li>
-                        <li role="menuitem">
-                          <LinkSimple
-                            css="link-simple--1"
-                            href="https://google.com"
-                          >
-                            Simple Link
-                          </LinkSimple>
-                        </li>
-                      </ul>
+                      <li role="none">
+                        <LinkSimple
+                          css="link-simple--1"
+                          href="https://google.com"
+                          role="menuitem"
+                        >
+                          Simple Link
+                        </LinkSimple>
+                      </li>
+                      <li role="none">
+                        <LinkSimple
+                          css="link-simple--1"
+                          href="https://google.com"
+                          role="menuitem"
+                        >
+                          Simple Link
+                        </LinkSimple>
+                      </li>
                     </Dropdown>
                   </li>
                 </ul>

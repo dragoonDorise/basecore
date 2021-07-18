@@ -3,7 +3,7 @@ import { PropTypes } from "prop-types";
 import { TabList } from "./TabList";
 import { TabContent } from "./TabContent";
 import "./core_tabs.scss";
-export const Tabs = ({ tabList, tabContent }) => {
+export const Tabs = ({ tabList, tabContent, ariaLabel }) => {
   const tabListArray = Object.values(tabList);
   const tabContentArray = Object.values(tabContent);
   const [tabState, setTabState] = useState(0);
@@ -15,7 +15,7 @@ export const Tabs = ({ tabList, tabContent }) => {
   return (
     <>
       <div className="nav-tabs">
-        <ul role="tablist">
+        <ul role="tablist" aria-label={ariaLabel}>
           {tabListArray.map((item, i) => {
             return (
               <TabList

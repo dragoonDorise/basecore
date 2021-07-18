@@ -1,9 +1,15 @@
 import React from "react";
-export const TabContent = ({ children, active }) => {
+export const TabContent = ({ children, active, id }) => {
   const css = active ? "is-active" : "";
 
   return (
-    <div role="tabpanel" className={`tab-content__panel ${css}`}>
+    <div
+      tabindex="0"
+      role="tabpanel"
+      id={`tab${id}-content`}
+      aria-labelledby={`tab${id}`}
+      className={`tab-content__panel ${css}`}
+    >
       {children}
     </div>
   );

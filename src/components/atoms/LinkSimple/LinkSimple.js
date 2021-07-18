@@ -1,7 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import "./link-simple.scss";
-export const LinkSimple = ({ onClick, css, children, href, target }) => {
+export const LinkSimple = ({ onClick, css, children, href, target, role }) => {
   return (
     <>
       {href && (
@@ -10,6 +10,7 @@ export const LinkSimple = ({ onClick, css, children, href, target }) => {
           onClick={onClick}
           className={`link-simple ${css}`}
           target={target}
+          role={role}
         >
           {children}
         </a>

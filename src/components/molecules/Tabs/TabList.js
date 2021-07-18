@@ -1,5 +1,5 @@
 import React from "react";
-export const TabList = ({ children, active, onClick }) => {
+export const TabList = ({ children, active, onClick, id }) => {
   //const childrenArray = Object.values(children);
 
   return (
@@ -7,10 +7,10 @@ export const TabList = ({ children, active, onClick }) => {
       <li role="presentation" className={active ? "is-active" : ""}>
         <button
           type="button"
-          aria-selected="true"
-          aria-controls="home"
+          aria-selected={active ? "true" : "false"}
+          aria-controls={`tab${id}-content`}
+          id={`tab${id}`}
           role="tab"
-          data-toggle="tab"
           onClick={onClick}
         >
           {children}
