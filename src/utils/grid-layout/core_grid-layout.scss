@@ -10,26 +10,26 @@
 @import "/src/utils/grid-layout/grid-layout.scss";
 
 .container {
-  padding-right: $grid-gutter/2;
-  padding-left: $grid-gutter/2;
+  padding-right: calc(var(--grid-gutter) / 2);
+  padding-left: calc(var(--grid-gutter) / 2);
   margin-right: auto;
   margin-left: auto;
   min-width: 320px;
   transition: width 0.4s;
   @media (min-width: $screen-sm) {
-    width: $container-sm;
+    width: var(--container-sm);
   }
 
   @media (min-width: $screen-md) {
-    width: $container-md;
+    width: var(--container-md);
   }
 
   @media (min-width: $screen-lg) {
-    width: $container-lg;
+    width: var(--container-lg);
   }
 
   @media (min-width: $screen-xl) {
-    width: $container-xl;
+    width: var(--container-xl);
   }
 
   &--fluid {
@@ -39,7 +39,7 @@
 
   &--mixed {
     width: 100%;
-    max-width: $container-grid-mixed-width;
+    max-width: var(--container-grid-mixed-width);
     padding: 0;
     display: block;
   }
@@ -48,7 +48,7 @@
 .container--grid {
   display: grid;
   grid-template-columns: repeat($columns, minmax(0, 1fr));
-  grid-column-gap: $grid-gutter;
+  grid-column-gap: var(--grid-gutter);
 
   @media (max-width: $screen-xs-max) {
     grid-template-columns: repeat($columns-xs, minmax(0, 1fr));

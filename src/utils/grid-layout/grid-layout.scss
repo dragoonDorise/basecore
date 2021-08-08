@@ -1,16 +1,21 @@
 // --------------------------------------------------
-//  Grid - SCSS vars, can not be CSS vars
+//  Grid - CSS vars
 // --------------------------------------------------
 
-$grid-gutter: 32px;
-$grid-gutter-outside: 16px;
+:root {
+  --grid-gutter: 32px;
+  --container-sm: 720px;
+  --container-md: 944px;
+  --container-lg: 1136px;
+  --container-xl: 1248px;
+  --container-grid-mixed-width: 1600px;
+}
+
+// --------------------------------------------------
+//  Grid - SCSS vars, can not be CSS vars
+// --------------------------------------------------
 $columns: 12;
 $columns-xs: 4;
-$container-sm: 720px;
-$container-md: 944px;
-$container-lg: 1136px;
-$container-xl: 1248px;
-$container-grid-mixed-width: 1600px;
 
 // --------------------------------------------------
 //  Media Queries - SCSS vars, can not be CSS vars
