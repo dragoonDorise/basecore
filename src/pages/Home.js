@@ -10,7 +10,6 @@ import {
   Img,
   Iframe,
   List,
-  LoaderCircle,
   ProgressBar,
   FormInputSimple,
   FormSelectSimple,
@@ -43,7 +42,8 @@ export const Home = () => {
       <main className="main">
         <section className="container">
           <Alert css="alert--info" close={false}>
-            Congratulations, you are our number one customer!
+            <Icon icon="form-success" css="icon--xs" /> Congratulations, you are
+            our number one customer!
           </Alert>
 
           <Card>
