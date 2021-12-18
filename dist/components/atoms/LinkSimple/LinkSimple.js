@@ -19,13 +19,15 @@ const LinkSimple = _ref => {
     css,
     children,
     href,
-    target
+    target,
+    role
   } = _ref;
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, href && /*#__PURE__*/_react.default.createElement("a", {
     href: href,
     onClick: onClick,
     className: "link-simple ".concat(css),
-    target: target
+    target: target,
+    role: role
   }, children), !href && /*#__PURE__*/_react.default.createElement("button", {
     type: "button",
     onClick: onClick,

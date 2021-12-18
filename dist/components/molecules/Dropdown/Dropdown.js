@@ -23,7 +23,9 @@ const Dropdown = _ref => {
   let {
     css,
     text,
-    children
+    children,
+    ariaControls,
+    ariaLabelled
   } = _ref;
   const [state, setState] = (0, _react.useState)({
     active: false
@@ -49,15 +51,21 @@ const Dropdown = _ref => {
   }, /*#__PURE__*/_react.default.createElement("button", {
     className: css,
     type: "button",
+    id: ariaLabelled,
     "aria-expanded": active ? "true" : "false",
     "aria-haspopup": "true",
+    "aria-controls": ariaControls,
     onClick: toggleDropdown
   }, text, /*#__PURE__*/_react.default.createElement(_Atoms.Icon, {
     icon: "caret-arrow",
     css: "icon"
-  })), /*#__PURE__*/_react.default.createElement("div", {
+  })), /*#__PURE__*/_react.default.createElement("ul", {
     className: "dropdown__menu",
-    "aria-expanded": active ? "true" : "false"
+    "aria-expanded": active ? "true" : "false",
+    "aria-labelledby": ariaLabelled,
+    tabindex: "-1",
+    id: ariaControls,
+    role: "menu"
   }, children)));
 };
 
@@ -65,5 +73,7 @@ exports.Dropdown = Dropdown;
 Dropdown.propTypes = {
   css: _propTypes.PropTypes.string,
   text: _propTypes.PropTypes.string.isRequired,
-  children: _propTypes.PropTypes.element.isRequired
+  children: _propTypes.PropTypes.element.isRequired,
+  ariaControls: _propTypes.PropTypes.string.isRequired,
+  ariaLabelled: _propTypes.PropTypes.string.isRequired
 };

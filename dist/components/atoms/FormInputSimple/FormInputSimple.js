@@ -18,6 +18,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const FormInputSimple = _ref => {
   let {
     label,
+    labelButton,
     placeholder,
     type,
     name,
@@ -67,6 +68,7 @@ const FormInputSimple = _ref => {
   }), addon && /*#__PURE__*/_react.default.createElement("button", {
     className: "form__addon btn-simple--1",
     type: "submit",
+    "aria-label": labelButton,
     disabled: disabledAddon ? "disabled" : "",
     onClick: onClick
   }, addonText.includes("#") ? /*#__PURE__*/_react.default.createElement("svg", {

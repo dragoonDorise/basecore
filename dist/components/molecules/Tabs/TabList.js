@@ -13,7 +13,8 @@ const TabList = _ref => {
   let {
     children,
     active,
-    onClick
+    onClick,
+    id
   } = _ref;
   //const childrenArray = Object.values(children);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("li", {
@@ -21,10 +22,10 @@ const TabList = _ref => {
     className: active ? "is-active" : ""
   }, /*#__PURE__*/_react.default.createElement("button", {
     type: "button",
-    "aria-selected": "true",
-    "aria-controls": "home",
+    "aria-selected": active ? "true" : "false",
+    "aria-controls": "tab".concat(id, "-content"),
+    id: "tab".concat(id),
     role: "tab",
-    "data-toggle": "tab",
     onClick: onClick
   }, children)));
 };

@@ -24,7 +24,8 @@ function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && 
 const Tabs = _ref => {
   let {
     tabList,
-    tabContent
+    tabContent,
+    ariaLabel
   } = _ref;
   const tabListArray = Object.values(tabList);
   const tabContentArray = Object.values(tabContent);
@@ -37,7 +38,8 @@ const Tabs = _ref => {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "nav-tabs"
   }, /*#__PURE__*/_react.default.createElement("ul", {
-    role: "tablist"
+    role: "tablist",
+    "aria-label": ariaLabel
   }, tabListArray.map((item, i) => {
     return /*#__PURE__*/_react.default.createElement(_TabList.TabList, {
       key: i,

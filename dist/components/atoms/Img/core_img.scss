@@ -32,28 +32,28 @@ picture {
 
   //Landscape
   &--4-3 {
-    padding-bottom: (3 / 4) * 100%;
+    padding-bottom: calc(3 / 4 * 100%);
   }
 
   &--3-2 {
-    padding-bottom: (2 / 3) * 100%;
+    padding-bottom: calc(2 / 3 * 100%);
   }
 
   &--16-9 {
-    padding-bottom: (9 / 16) * 100%;
+    padding-bottom: calc(9 / 16 * 100%);
   }
 
   &--21-9 {
-    padding-bottom: (9 / 21) * 100%;
+    padding-bottom: calc(9 / 21 * 100%);
   }
 
   //Portrait
 
   &--3-4 {
-    padding-bottom: (4 / 3) * 100%;
+    padding-bottom: calc(4 / 3 * 100%);
   }
 
   &--2-3 {
-    padding-bottom: (3 / 2) * 100%;
+    padding-bottom: calc(3 / 2 * 100%);
   }
 }
