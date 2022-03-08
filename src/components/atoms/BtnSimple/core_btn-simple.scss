@@ -59,6 +59,17 @@
   //Remember, the button has the same height as the form input to be hable to use the button in horizontal forms. Adjust the height in _vars component
   .form & {
     height: var(--input-height);
+    &--xs {
+      height: var(--input-height-xs);
+    }
+
+    &--sm {
+      height: var(--input-height-sm);
+    }
+
+    &--lg {
+      height: var(--input-height-lg);
+    }
   }
 
   // @media (max-width: $screen-xs-max) {
@@ -84,19 +95,16 @@
   &--xs {
     font-size: var(--btn-simple-text-size-xs);
     padding: var(--btn-simple-padding-xs);
-    height: var(--input-height-xs);
   }
 
   &--sm {
     font-size: var(--btn-simple-text-size-sm);
     padding: var(--btn-simple-padding-sm);
-    height: var(--input-height-sm);
   }
 
   &--lg {
     font-size: var(--btn-simple-text-size-lg);
     padding: var(--btn-simple-padding-lg);
-    height: var(--input-height-lg);
   }
 }
 
