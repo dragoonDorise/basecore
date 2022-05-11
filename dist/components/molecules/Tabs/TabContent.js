@@ -17,7 +17,7 @@ const TabContent = _ref => {
   } = _ref;
   const css = active ? "is-active" : "";
   return /*#__PURE__*/_react.default.createElement("div", {
-    tabindex: "0",
+    tabIndex: "0",
     role: "tabpanel",
     id: "tab".concat(id, "-content"),
     "aria-labelledby": "tab".concat(id),

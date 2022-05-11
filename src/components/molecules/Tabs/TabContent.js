@@ -4,7 +4,7 @@ export const TabContent = ({ children, active, id }) => {
 
   return (
     <div
-      tabindex="0"
+      tabIndex="0"
       role="tabpanel"
       id={`tab${id}-content`}
       aria-labelledby={`tab${id}`}

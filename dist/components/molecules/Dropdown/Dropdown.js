@@ -63,7 +63,7 @@ const Dropdown = _ref => {
     className: "dropdown__menu",
     "aria-expanded": active ? "true" : "false",
     "aria-labelledby": ariaLabelled,
-    tabindex: "-1",
+    tabIndex: "-1",
     id: ariaControls,
     role: "menu"
   }, children)));
