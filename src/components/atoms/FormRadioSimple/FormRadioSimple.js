@@ -17,7 +17,7 @@ export const FormRadioSimple = ({
           name={name}
           type="radio"
           value={value}
-          checked={checked}
+          defaultChecked={checked}
         />
         <label htmlFor={id}>{label}</label>
       </div>

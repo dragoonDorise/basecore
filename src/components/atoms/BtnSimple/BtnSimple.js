@@ -20,8 +20,7 @@ export const BtnSimple = ({
           aria-label={aria}
           onClick={onClick}
           className={`btn-simple ${css}`}
-          disabled={disabled ? "disabled" : ""}
-        >
+          disabled={disabled ? "disabled" : ""}>
           {children}
         </button>
       )}
@@ -32,8 +31,7 @@ export const BtnSimple = ({
           aria-label={aria}
           onClick={onClick}
           className={`btn-simple ${css}`}
-          target="_parent"
-        >
+          target="_parent">
           {children}
         </a>
       )}
@@ -76,7 +74,7 @@ BtnSimple.propTypes = {
   type: PropTypes.string.isRequired,
   css: PropTypes.string,
   href: PropTypes.string,
-  disabled: PropTypes.string,
+  disabled: PropTypes.bool,
   name: PropTypes.string,
   id: PropTypes.string,
   children: PropTypes.oneOfType([

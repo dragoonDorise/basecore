@@ -17,7 +17,7 @@ export const FormCheckboxSimple = ({
           name={name}
           type="checkbox"
           value={value}
-          checked={checked}
+          defaultChecked={checked}
         />
         <label htmlFor={id}>{label}</label>
       </div>

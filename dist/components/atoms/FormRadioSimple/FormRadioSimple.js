@@ -31,7 +31,7 @@ const FormRadioSimple = _ref => {
     name: name,
     type: "radio",
     value: value,
-    checked: checked
+    defaultChecked: checked
   }), /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: id
   }, label)));

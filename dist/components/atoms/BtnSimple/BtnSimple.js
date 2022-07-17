@@ -67,7 +67,7 @@ BtnSimple.propTypes = {
   type: _propTypes.PropTypes.string.isRequired,
   css: _propTypes.PropTypes.string,
   href: _propTypes.PropTypes.string,
-  disabled: _propTypes.PropTypes.string,
+  disabled: _propTypes.PropTypes.bool,
   name: _propTypes.PropTypes.string,
   id: _propTypes.PropTypes.string,
   children: _propTypes.PropTypes.oneOfType([_propTypes.PropTypes.object, _propTypes.PropTypes.array, _propTypes.PropTypes.element, _propTypes.PropTypes.string])

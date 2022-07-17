@@ -31,7 +31,7 @@ const FormCheckboxSimple = _ref => {
     name: name,
     type: "checkbox",
     value: value,
-    checked: checked
+    defaultChecked: checked
   }), /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: id
   }, label)));

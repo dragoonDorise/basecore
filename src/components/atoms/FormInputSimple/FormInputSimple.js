@@ -44,7 +44,7 @@ export const FormInputSimple = ({
           disabled={disabled ? "disabled" : ""}
           autoFocus={focus ? "autofocus" : ""}
           onChange={onChange}
-          value={value}
+          defaultValue={value}
           maxLength={maxLength}
           minLength={minLength}
           max={max}
@@ -56,8 +56,7 @@ export const FormInputSimple = ({
             type="submit"
             aria-label={labelButton}
             disabled={disabledAddon ? "disabled" : ""}
-            onClick={onClick}
-          >
+            onClick={onClick}>
             {addonText.includes("#") ? (
               <svg className="icon icon--xs">
                 <use xlinkHref={`./svg/sprite.svg${addonText}`}></use>

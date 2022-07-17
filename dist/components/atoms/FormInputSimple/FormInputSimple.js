@@ -60,7 +60,7 @@ const FormInputSimple = _ref => {
     disabled: disabled ? "disabled" : "",
     autoFocus: focus ? "autofocus" : "",
     onChange: onChange,
-    value: value,
+    defaultValue: value,
     maxLength: maxLength,
     minLength: minLength,
     max: max,
