@@ -16,6 +16,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const BtnSimple = _ref => {
   let {
     onClick,
+    onChange,
     aria,
     type,
     css,
@@ -23,7 +24,8 @@ const BtnSimple = _ref => {
     href,
     disabled,
     name,
-    id
+    id,
+    target
   } = _ref;
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, type === "button" && /*#__PURE__*/_react.default.createElement("button", {
     type: type,
@@ -36,13 +38,14 @@ const BtnSimple = _ref => {
     "aria-label": aria,
     onClick: onClick,
     className: "btn-simple ".concat(css),
-    target: "_parent"
+    target: target ? target : "_parent"
   }, children), type === "toggle" && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("input", {
     id: id,
     name: name,
     type: "radio",
     "aria-label": aria,
-    autoComplete: "off"
+    autoComplete: "off",
+    onChange: onChange
   }), /*#__PURE__*/_react.default.createElement("label", {
     tabIndex: "0",
     htmlFor: id,

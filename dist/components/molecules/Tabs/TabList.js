@@ -13,8 +13,9 @@ const TabList = _ref => {
   let {
     children,
     active,
-    onClick,
-    id
+    onClick: _onClick,
+    id,
+    onClickAlt
   } = _ref;
   //const childrenArray = Object.values(children);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("li", {
@@ -26,7 +27,10 @@ const TabList = _ref => {
     "aria-controls": "tab".concat(id, "-content"),
     id: "tab".concat(id),
     role: "tab",
-    onClick: onClick
+    onClick: () => {
+      _onClick;
+      onClickAlt;
+    }
   }, children)));
 };
 

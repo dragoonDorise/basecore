@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { PropTypes } from "prop-types";
 import { TabList } from "./TabList";
 import { TabContent } from "./TabContent";
 import "./core_tabs.scss";
-export const Tabs = ({ tabList, tabContent, ariaLabel }) => {
+export const Tabs = ({ tabList, tabContent, ariaLabel, active, onClick }) => {
   const tabListArray = Object.values(tabList);
   const tabContentArray = Object.values(tabContent);
   const [tabState, setTabState] = useState(0);
@@ -12,18 +12,18 @@ export const Tabs = ({ tabList, tabContent, ariaLabel }) => {
     setTabState(i);
   };
 
+  useEffect(() => {
+    console.log(active);
+    updateTab(active);
+  }, [active]);
+
   return (
     <>
       <div className="nav-tabs">
         <ul role="tablist" aria-label={ariaLabel}>
           {tabListArray.map((item, i) => {
             return (
-              <TabList
-                key={i}
-                id={i}
-                active={tabState === i ? true : false}
-                onClick={() => updateTab(i)}
-              >
+              <TabList key={i} id={i} active={tabState === i ? true : false} onClick={onClick ? (onClick = { onClick }) : null} onClick={() => updateTab(i)}>
                 {item}
               </TabList>
             );

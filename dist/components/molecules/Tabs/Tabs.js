@@ -25,7 +25,9 @@ const Tabs = _ref => {
   let {
     tabList,
     tabContent,
-    ariaLabel
+    ariaLabel,
+    active,
+    onClick
   } = _ref;
   const tabListArray = Object.values(tabList);
   const tabContentArray = Object.values(tabContent);
@@ -35,6 +37,10 @@ const Tabs = _ref => {
     setTabState(i);
   };
 
+  (0, _react.useEffect)(() => {
+    console.log(active);
+    updateTab(active);
+  }, [active]);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "nav-tabs"
   }, /*#__PURE__*/_react.default.createElement("ul", {
@@ -45,6 +51,9 @@ const Tabs = _ref => {
       key: i,
       id: i,
       active: tabState === i ? true : false,
+      onClick: onClick ? onClick = {
+        onClick
+      } : null,
       onClick: () => updateTab(i)
     }, item);
   }))), /*#__PURE__*/_react.default.createElement("div", {

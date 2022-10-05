@@ -18,8 +18,7 @@ export const FormSelectSimple = ({
           className="form__select"
           name={name}
           id={name}
-          onChange={onChange}
-        >
+          onChange={onChange}>
           {!hideDefault && <option value="-1">{label}</option>}
           {children}
         </select>

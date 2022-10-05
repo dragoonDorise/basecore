@@ -1,5 +1,5 @@
 import React from "react";
-export const TabList = ({ children, active, onClick, id }) => {
+export const TabList = ({ children, active, onClick, id, onClickAlt }) => {
   //const childrenArray = Object.values(children);
 
   return (
@@ -11,8 +11,10 @@ export const TabList = ({ children, active, onClick, id }) => {
           aria-controls={`tab${id}-content`}
           id={`tab${id}`}
           role="tab"
-          onClick={onClick}
-        >
+          onClick={() => {
+            onClick;
+            onClickAlt;
+          }}>
           {children}
         </button>
       </li>
