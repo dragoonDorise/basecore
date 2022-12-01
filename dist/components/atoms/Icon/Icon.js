@@ -22,7 +22,7 @@ const Icon = _ref => {
     className: "icon ".concat(css),
     role: "presentation"
   }, /*#__PURE__*/_react.default.createElement("use", {
-    xlinkHref: "./svg/sprite.svg#".concat(icon)
+    xlinkHref: "".concat(process.env.PUBLIC_URL, "/svg/sprite.svg#").concat(icon)
   }));
 };
 
