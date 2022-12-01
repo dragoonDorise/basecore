@@ -4,7 +4,7 @@ import "./core_icon.scss";
 export const Icon = ({ icon, css }) => {
   return (
     <svg className={`icon ${css}`} role="presentation">
-      <use xlinkHref={`./svg/sprite.svg#${icon}`}></use>
+      <use xlinkHref={`${process.env.PUBLIC_URL}/svg/sprite.svg#${icon}`}></use>
     </svg>
   );
 };
