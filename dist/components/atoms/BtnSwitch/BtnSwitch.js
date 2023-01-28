@@ -17,13 +17,15 @@ const BtnSwitch = _ref => {
   let {
     name,
     onChange,
-    value
+    value,
+    checked
   } = _ref;
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "btn-switch"
   }, /*#__PURE__*/_react.default.createElement("input", {
     type: "checkbox",
     name: name,
+    defaultChecked: checked,
     className: "btn-switch__checkbox",
     id: name,
     onChange: onChange,

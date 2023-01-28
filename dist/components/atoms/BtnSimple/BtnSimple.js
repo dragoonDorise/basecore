@@ -38,7 +38,7 @@ const BtnSimple = _ref => {
     "aria-label": aria,
     onClick: onClick,
     className: "btn-simple ".concat(css),
-    target: target ? target : "_parent"
+    target: !!target ? target : "_parent"
   }, children), type === "toggle" && /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("input", {
     id: id,
     name: name,

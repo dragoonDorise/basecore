@@ -11,7 +11,7 @@ export const BtnSimple = ({ onClick, onChange, aria, type, css, children, href, 
       )}
 
       {type === "link" && (
-        <a href={href} aria-label={aria} onClick={onClick} className={`btn-simple ${css}`} target={target ? target : "_parent"}>
+        <a href={href} aria-label={aria} onClick={onClick} className={`btn-simple ${css}`} target={!!target ? target : "_parent"}>
           {children}
         </a>
       )}

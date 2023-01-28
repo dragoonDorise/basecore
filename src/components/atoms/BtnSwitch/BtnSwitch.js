@@ -1,17 +1,10 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import "./core_btn-switch.scss";
-export const BtnSwitch = ({ name, onChange, value }) => {
+export const BtnSwitch = ({ name, onChange, value, checked }) => {
   return (
     <div className="btn-switch">
-      <input
-        type="checkbox"
-        name={name}
-        className="btn-switch__checkbox"
-        id={name}
-        onChange={onChange}
-        value={value}
-      />
+      <input type="checkbox" name={name} defaultChecked={checked} className="btn-switch__checkbox" id={name} onChange={onChange} value={value} />
       <label className="btn-switch__label" htmlFor={name}></label>
     </div>
   );
