@@ -4,15 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.BtnSimple = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _propTypes = require("prop-types");
-
 require("./core_btn-simple.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 const BtnSimple = _ref => {
   let {
     onClick,
@@ -62,7 +57,6 @@ const BtnSimple = _ref => {
     className: "btn-simple ".concat(css)
   }, children)));
 };
-
 exports.BtnSimple = BtnSimple;
 BtnSimple.propTypes = {
   onClick: _propTypes.PropTypes.func,

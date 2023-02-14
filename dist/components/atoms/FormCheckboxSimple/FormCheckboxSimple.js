@@ -4,15 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.FormCheckboxSimple = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _propTypes = require("prop-types");
-
 require("./core_form-checkbox-simple.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 const FormCheckboxSimple = _ref => {
   let {
     name,
@@ -36,7 +31,6 @@ const FormCheckboxSimple = _ref => {
     htmlFor: id
   }, label)));
 };
-
 exports.FormCheckboxSimple = FormCheckboxSimple;
 FormCheckboxSimple.propTypes = {
   name: _propTypes.PropTypes.string.isRequired,

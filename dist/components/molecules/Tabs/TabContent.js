@@ -4,11 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.TabContent = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 const TabContent = _ref => {
   let {
     children,
@@ -24,5 +21,4 @@ const TabContent = _ref => {
     className: "tab-content__panel ".concat(css)
   }, children);
 };
-
 exports.TabContent = TabContent;

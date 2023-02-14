@@ -4,11 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.BtnGroup = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 const BtnGroup = _ref => {
   let {
     children
@@ -18,5 +15,4 @@ const BtnGroup = _ref => {
     role: "group"
   }, children));
 };
-
 exports.BtnGroup = BtnGroup;

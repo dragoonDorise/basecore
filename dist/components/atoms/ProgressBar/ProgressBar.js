@@ -4,15 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.ProgressBar = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _propTypes = require("prop-types");
-
 require("./core_progress-bar.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 const ProgressBar = _ref => {
   let {
     css,
@@ -32,7 +27,6 @@ const ProgressBar = _ref => {
     }
   }, value, "%")));
 };
-
 exports.ProgressBar = ProgressBar;
 ProgressBar.propTypes = {
   css: _propTypes.PropTypes.string,

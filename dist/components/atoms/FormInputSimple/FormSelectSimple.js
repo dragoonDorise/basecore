@@ -4,13 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.FormSelectSimple = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _propTypes = require("prop-types");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 const FormSelectSimple = _ref => {
   let {
     label,
@@ -34,7 +30,6 @@ const FormSelectSimple = _ref => {
     value: "-1"
   }, label), children)));
 };
-
 exports.FormSelectSimple = FormSelectSimple;
 FormSelectSimple.propTypes = {
   label: _propTypes.PropTypes.string.isRequired,

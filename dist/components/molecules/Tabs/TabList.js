@@ -4,11 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.TabList = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 const TabList = _ref => {
   let {
     children,
@@ -18,6 +15,7 @@ const TabList = _ref => {
     onClickAlt
   } = _ref;
   //const childrenArray = Object.values(children);
+
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("li", {
     role: "presentation",
     className: active ? "is-active" : ""
@@ -33,5 +31,4 @@ const TabList = _ref => {
     }
   }, children)));
 };
-
 exports.TabList = TabList;

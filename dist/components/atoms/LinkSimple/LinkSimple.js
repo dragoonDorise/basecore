@@ -4,15 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.LinkSimple = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _propTypes = require("prop-types");
-
 require("./link-simple.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 const LinkSimple = _ref => {
   let {
     onClick,
@@ -34,7 +29,6 @@ const LinkSimple = _ref => {
     className: "link-simple ".concat(css)
   }, children));
 };
-
 exports.LinkSimple = LinkSimple;
 LinkSimple.propTypes = {
   onClick: _propTypes.PropTypes.func,

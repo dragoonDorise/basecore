@@ -4,15 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Img = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _propTypes = require("prop-types");
-
 require("./img.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 const Img = _ref => {
   let {
     src,
@@ -47,7 +42,6 @@ const Img = _ref => {
     alt: alt
   }));
 };
-
 exports.Img = Img;
 Img.propTypes = {
   src: _propTypes.PropTypes.string.isRequired,

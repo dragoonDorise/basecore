@@ -4,15 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.FormInputRangeSimple = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _propTypes = require("prop-types");
-
 require("./core_form-input-range-simple.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 const FormInputRangeSimple = _ref => {
   let {
     label,
@@ -45,7 +40,6 @@ const FormInputRangeSimple = _ref => {
     onChange: onChange
   })));
 };
-
 exports.FormInputRangeSimple = FormInputRangeSimple;
 FormInputRangeSimple.propTypes = {
   label: _propTypes.PropTypes.string.isRequired,

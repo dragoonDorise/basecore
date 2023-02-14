@@ -4,17 +4,11 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Pagination = void 0;
-
 var _react = _interopRequireDefault(require("react"));
-
 var _propTypes = require("prop-types");
-
 var _Atoms = require("getbasecore/Atoms");
-
 require("./core_pagination.scss");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 const Pagination = _ref => {
   let {
     onClick: _onClick,
@@ -49,7 +43,6 @@ const Pagination = _ref => {
     icon: "arrow-right"
   })))));
 };
-
 exports.Pagination = Pagination;
 Pagination.propTypes = {
   onClick: _propTypes.PropTypes.func,
