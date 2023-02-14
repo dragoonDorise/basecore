@@ -4,7 +4,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Table = void 0;
-require("core-js/modules/es.symbol.description.js");
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = require("prop-types");
 var _Td = require("./Td.js");
