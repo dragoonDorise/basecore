@@ -8,3 +8,27 @@
 @import "./utils/mixins/mixins.scss";
 @import "./utils/vars/vars.scss";
 @import "./utils/animate/animate.scss";
+
+//  --------------------------------------------------
+//  Custom Fonts here ! Store them in src/assets/fonts
+//
+// Some examples here
+//  https://github.com/matthewgonzalez/fontplop/releases
+// https://google-webfonts-helper.herokuapp.com/fonts/
+//
+//  --------------------------------------------------
+@font-face {
+  font-family: "OpenSans";
+  src: url("fonts/open-sans-v17-latin-regular.woff2");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("fonts/open-sans-v17-latin-300.woff2");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "OpenSans";
+  src: url("fonts/open-sans-v17-latin-700.woff2");
+  font-weight: 700;
+}

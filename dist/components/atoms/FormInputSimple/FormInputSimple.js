@@ -4,7 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.FormInputSimple = void 0;
-require("core-js/modules/es7.array.includes.js");
+require("core-js/modules/es.array.includes.js");
+require("core-js/modules/es.string.includes.js");
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = require("prop-types");
 require("./core_form-input-simple.scss");
