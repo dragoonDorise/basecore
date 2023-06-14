@@ -3,18 +3,6 @@
     "EditorConfig.EditorConfig",
     "dbaeumer.vscode-eslint",
     "eamodio.gitlens",
-    "esbenp.prettier-vscode",
-    "L13RARY.l13-projects",
-    "lukasz-wronski.ftp-sync",
-    "amazonwebservices.aws-toolkit-vscode",
-    "donjayamanne.githistory",
-    "kamikillerto.vscode-colorize",
-    "streetsidesoftware.code-spell-checker",
-    "wayou.vscode-todo-highlight",
-    "vscode-icons-team.vscode-icons",
-    "formulahendry.auto-rename-tag",
-    "johnpapa.vscode-peacock",
-    "SonarSource.sonarlint-vscode",
-    "MS-vsliveshare.vsliveshare"
+    "esbenp.prettier-vscode"
   ]
 }
