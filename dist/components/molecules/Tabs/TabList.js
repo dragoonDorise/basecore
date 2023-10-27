@@ -10,9 +10,8 @@ const TabList = _ref => {
   let {
     children,
     active,
-    onClick: _onClick,
-    id,
-    onClickAlt
+    onClick,
+    id
   } = _ref;
   //const childrenArray = Object.values(children);
 
@@ -25,10 +24,7 @@ const TabList = _ref => {
     "aria-controls": "tab".concat(id, "-content"),
     id: "tab".concat(id),
     role: "tab",
-    onClick: () => {
-      _onClick;
-      onClickAlt;
-    }
+    onClick: onClick
   }, children)));
 };
 exports.TabList = TabList;

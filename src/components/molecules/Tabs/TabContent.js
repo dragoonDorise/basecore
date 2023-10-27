@@ -8,8 +8,7 @@ export const TabContent = ({ children, active, id }) => {
       role="tabpanel"
       id={`tab${id}-content`}
       aria-labelledby={`tab${id}`}
-      className={`tab-content__panel ${css}`}
-    >
+      className={`tab-content__panel ${css}`}>
       {children}
     </div>
   );

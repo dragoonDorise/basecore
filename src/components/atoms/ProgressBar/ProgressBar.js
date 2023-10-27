@@ -1,10 +1,30 @@
 import React from "react";
 import { PropTypes } from "prop-types";
 import "./core_progress-bar.scss";
-export const ProgressBar = ({ css, value, max }) => {
+export const ProgressBar = ({ css, value, max, infinite }) => {
+  let valueFinal;
+  if (infinite) {
+    const [counter, setCounter] = useState(0);
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCounter((prevCounter) => {
+          if (prevCounter === 110) {
+            prevCounter = -10;
+          }
+          return prevCounter + 1;
+        });
+      }, 100);
+
+      return () => clearInterval(interval);
+    }, []);
+    valueFinal = counter;
+  } else {
+    valueFinal = value;
+  }
+
   const percentage = (value * 100) / max;
   return (
-    <progress className={`progress ${css}`} value={value} max={max}>
+    <progress className={`progress ${css}`} value={valueFinal} max={max}>
       <div className="progress">
         <span style={{ width: percentage + "%" }}>{value}%</span>
       </div>
