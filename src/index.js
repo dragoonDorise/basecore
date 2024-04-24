@@ -1,16 +1,18 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { AppRouter } from "./routers/AppRouter.js";
 import reportWebVitals from "./reportWebVitals";
 import "getbasecore/src/utils/reset/core_reset.scss";
 import "getbasecore/src/utils/grid-layout/core_grid-layout.scss";
 import "getbasecore/src/components/atoms/Typography/core_typography.scss";
 
-ReactDOM.render(
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
   <React.StrictMode>
     <AppRouter />
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
