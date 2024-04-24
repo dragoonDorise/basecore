@@ -1,5 +1,5 @@
 //import { useHistory } from "react-router-dom";
-
+import React, { useState } from "react";
 //Default BaseCore components
 import {
   BtnSimple,
@@ -18,16 +18,7 @@ import {
   FormInputRangeSimple,
 } from "getbasecore/Atoms";
 
-import {
-  Pagination,
-  Form,
-  Alert,
-  Table,
-  Accordion,
-  Breadcrumb,
-  Dropdown,
-  Tabs,
-} from "getbasecore/Molecules";
+import { Pagination, Form, Alert, Table, Accordion, Breadcrumb, Dropdown, Tabs, Modal } from "getbasecore/Molecules";
 
 import { Card } from "getbasecore/Organisms";
 
@@ -37,30 +28,45 @@ import { Card } from "getbasecore/Organisms";
 export const Home = () => {
   //let history = useHistory();
 
+  const [statePage, setStatePage] = useState({
+    modal: false,
+  });
+
+  const handleModal = () => {
+    setStatePage({
+      ...statePage,
+      modal: {
+        active: true,
+        header: <span className="h4">Settings saved!</span>,
+        css: "modal--sm",
+        body: <p>Now go do something else :)</p>,
+      },
+    });
+  };
+
   return (
     <div className="wrapper">
+      <Modal modal={modal} />
       <main className="main">
         <section className="container">
           <Alert css="alert--info" close={false}>
-            <Icon icon="form-success" css="icon--xs" /> Congratulations, you are
-            our number one customer!
+            <Icon icon="form-success" css="icon--xs" /> Congratulations, you are our number one customer!
           </Alert>
 
           <Card>
             <span className="h1">Welcome!</span>
             <span className="h5">This is BaseCore Kitchen Sink</span>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi
-              dolorum ea iusto possimus dolores tenetur? Vitae odit, modi nemo
-              nobis, voluptatibus molestiae fugiat est quisquam pariatur
-              molestias, commodi totam tempora!
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi dolorum ea iusto possimus dolores
+              tenetur? Vitae odit, modi nemo nobis, voluptatibus molestiae fugiat est quisquam pariatur molestias,
+              commodi totam tempora!
               <strong>Vitae odit</strong>
             </p>
 
             <div>
               <BtnGroup>
-                <BtnSimple type="button" css="btn-simple--1" aria="Read">
-                  Button #1
+                <BtnSimple type="button" css="btn-simple--1" aria="Read" onClick={() => handleModal()}>
+                  Button #1 Modal
                 </BtnSimple>
                 <BtnSimple type="button" css="btn-simple--2" aria="Download">
                   Button #2
@@ -88,8 +94,7 @@ export const Home = () => {
                 text: "Data",
                 link: "./",
               },
-            }}
-          ></Breadcrumb>
+            }}></Breadcrumb>
 
           <Tabs
             ariaLabel="Demo Tabs"
@@ -102,38 +107,15 @@ export const Home = () => {
                   description="Table description"
                   items={{
                     0: ["Movie Title", "Genre", "Year", "Gross"],
-                    1: [
-                      "Star Wars1",
-                      "Adventure. Sci-fi",
-                      "1977",
-                      "$460935665",
-                    ],
-                    2: [
-                      "Star Wars2",
-                      "Adventure. Sci-fi",
-                      "1977",
-                      "$460935665",
-                    ],
-                    3: [
-                      "Star Wars3",
-                      "Adventure. Sci-fi",
-                      "1977",
-                      "$460935665",
-                    ],
-                    4: [
-                      "Star Wars4",
-                      "Adventure. Sci-fi",
-                      "1977",
-                      "$460935665",
-                    ],
+                    1: ["Star Wars1", "Adventure. Sci-fi", "1977", "$460935665"],
+                    2: ["Star Wars2", "Adventure. Sci-fi", "1977", "$460935665"],
+                    3: ["Star Wars3", "Adventure. Sci-fi", "1977", "$460935665"],
+                    4: ["Star Wars4", "Adventure. Sci-fi", "1977", "$460935665"],
                   }}
                 />
               </>,
               <>
-                <Iframe
-                  title="Iframe Test"
-                  src="https://player.vimeo.com/video/12860646"
-                />
+                <Iframe title="Iframe Test" src="https://player.vimeo.com/video/12860646" />
               </>,
               <>
                 <p>This table is using simple HTML to paint its content:</p>
@@ -178,18 +160,14 @@ export const Home = () => {
                 />
                 <span className="h4">Super Nice Title</span>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam praesentium non, neque facere, maiores doloremque
-                  aliquid illo eum ipsa officia placeat sapiente aspernatur
-                  numquam minus autem ea minima deleniti voluptate?{" "}
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam praesentium non, neque facere,
+                  maiores doloremque aliquid illo eum ipsa officia placeat sapiente aspernatur numquam minus autem ea
+                  minima deleniti voluptate?{" "}
                   <LinkSimple css="link-simple--1" href="https://google.com">
                     Read More...
                   </LinkSimple>
                 </p>
-                <List
-                  css="list--icons list--icons--xs"
-                  children={[["twitter", "Share on twiter"]]}
-                />
+                <List css="list--icons list--icons--xs" children={[["twitter", "Share on twiter"]]} />
               </Card>
             </li>
             <li data-col-sm="4">
@@ -205,18 +183,14 @@ export const Home = () => {
                 />
                 <span className="h4">Super Nice Title</span>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam praesentium non, neque facere, maiores doloremque
-                  aliquid illo eum ipsa officia placeat sapiente aspernatur
-                  numquam minus autem ea minima deleniti voluptate?{" "}
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam praesentium non, neque facere,
+                  maiores doloremque aliquid illo eum ipsa officia placeat sapiente aspernatur numquam minus autem ea
+                  minima deleniti voluptate?{" "}
                   <LinkSimple css="link-simple--1" href="https://google.com">
                     Read More...
                   </LinkSimple>
                 </p>
-                <List
-                  css="list--icons list--icons--xs"
-                  children={[["twitter", "Share on twiter"]]}
-                />
+                <List css="list--icons list--icons--xs" children={[["twitter", "Share on twiter"]]} />
               </Card>
             </li>
             <li data-col-sm="4">
@@ -232,18 +206,14 @@ export const Home = () => {
                 />
                 <span className="h4">Super Nice Title</span>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Aperiam praesentium non, neque facere, maiores doloremque
-                  aliquid illo eum ipsa officia placeat sapiente aspernatur
-                  numquam minus autem ea minima deleniti voluptate?{" "}
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam praesentium non, neque facere,
+                  maiores doloremque aliquid illo eum ipsa officia placeat sapiente aspernatur numquam minus autem ea
+                  minima deleniti voluptate?{" "}
                   <LinkSimple css="link-simple--1" href="https://google.com">
                     Read More...
                   </LinkSimple>
                 </p>
-                <List
-                  css="list--icons list--icons--xs"
-                  children={[["twitter", "Share on twiter"]]}
-                />
+                <List css="list--icons list--icons--xs" children={[["twitter", "Share on twiter"]]} />
               </Card>
             </li>
           </ul>
@@ -286,68 +256,37 @@ export const Home = () => {
               />
 
               <fieldset>
-                <legend className="h6">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit?
-                </legend>
+                <legend className="h6">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</legend>
                 <div className="form__group">
                   <BtnSwitch name="switcheroo" />
                 </div>
               </fieldset>
               <fieldset>
-                <legend className="h6">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit?
-                </legend>
+                <legend className="h6">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</legend>
 
-                <FormCheckboxSimple
-                  name="formu-input-checbox"
-                  label="Checkbox One"
-                  id="check1"
-                  value={1}
-                />
-                <FormCheckboxSimple
-                  name="formu-input-checbox"
-                  id="check2"
-                  value={2}
-                  label="Checkbox Two"
-                />
+                <FormCheckboxSimple name="formu-input-checbox" label="Checkbox One" id="check1" value={1} />
+                <FormCheckboxSimple name="formu-input-checbox" id="check2" value={2} label="Checkbox Two" />
               </fieldset>
               <fieldset>
-                <legend className="h6">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit?
-                </legend>
+                <legend className="h6">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</legend>
                 <BtnGroup>
-                  <BtnSimple
-                    type="toggle"
-                    name="toggles"
-                    id="toggle1"
-                    css="btn-simple--2"
-                    aria="Choose Option #1"
-                  >
+                  <BtnSimple type="toggle" name="toggles" id="toggle1" css="btn-simple--2" aria="Choose Option #1">
                     Option #1
                   </BtnSimple>
-                  <BtnSimple
-                    type="toggle"
-                    name="toggles"
-                    id="toggle2"
-                    css="btn-simple--2"
-                    aria="Choose Option #2"
-                  >
+                  <BtnSimple type="toggle" name="toggles" id="toggle2" css="btn-simple--2" aria="Choose Option #2">
                     Option #2
                   </BtnSimple>
                 </BtnGroup>
               </fieldset>
               <fieldset>
-                <legend className="h6">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit?
-                </legend>
+                <legend className="h6">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</legend>
                 <BtnGroup>
                   <BtnSimple
                     type="multiple"
                     name="multiple"
                     id="multiple1"
                     css="btn-simple--2"
-                    aria="Option Multiple #1"
-                  >
+                    aria="Option Multiple #1">
                     Option #1
                   </BtnSimple>
                   <BtnSimple
@@ -355,8 +294,7 @@ export const Home = () => {
                     name="multiple"
                     id="multiple2"
                     css="btn-simple--2"
-                    aria="Option Multiple #2"
-                  >
+                    aria="Option Multiple #2">
                     Option #2
                   </BtnSimple>
                   <BtnSimple
@@ -364,46 +302,28 @@ export const Home = () => {
                     name="multiple"
                     id="multiple3"
                     css="btn-simple--2"
-                    aria="Option Multiple #13"
-                  >
+                    aria="Option Multiple #13">
                     Option #3
                   </BtnSimple>
                 </BtnGroup>
               </fieldset>
               <fieldset>
-                <legend className="h6">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit?
-                </legend>
+                <legend className="h6">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</legend>
 
-                <FormRadioSimple
-                  name="radios"
-                  label="Option radio #1"
-                  id="option1"
-                />
-                <FormRadioSimple
-                  name="radios"
-                  label="Option radio #2"
-                  id="option2"
-                />
+                <FormRadioSimple name="radios" label="Option radio #1" id="option1" />
+                <FormRadioSimple name="radios" label="Option radio #2" id="option2" />
               </fieldset>
               <fieldset>
-                <legend className="h6">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit?
-                </legend>
+                <legend className="h6">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</legend>
 
-                <FormSelectSimple
-                  name="formu-inputa"
-                  label="Select your option"
-                >
+                <FormSelectSimple name="formu-inputa" label="Select your option">
                   <option value="1">Option #1</option>
                   <option value="2">Option #2</option>
                 </FormSelectSimple>
               </fieldset>
 
               <fieldset>
-                <legend className="h6">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit?
-                </legend>
+                <legend className="h6">Lorem, ipsum dolor sit amet consectetur adipisicing elit?</legend>
 
                 <ul className="list list--inline">
                   <li>
@@ -412,23 +332,14 @@ export const Home = () => {
                       text="Dropdown Menu"
                       direction="up"
                       ariaControls="dropdown-menu"
-                      ariaLabelled="dropdown"
-                    >
+                      ariaLabelled="dropdown">
                       <li role="none">
-                        <LinkSimple
-                          css="link-simple--1"
-                          href="https://google.com"
-                          role="menuitem"
-                        >
+                        <LinkSimple css="link-simple--1" href="https://google.com" role="menuitem">
                           Simple Link
                         </LinkSimple>
                       </li>
                       <li role="none">
-                        <LinkSimple
-                          css="link-simple--1"
-                          href="https://google.com"
-                          role="menuitem"
-                        >
+                        <LinkSimple css="link-simple--1" href="https://google.com" role="menuitem">
                           Simple Link
                         </LinkSimple>
                       </li>
@@ -490,10 +401,9 @@ export const Home = () => {
               <li>Option 5</li>
             </ul>
             <small className="small">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni
-              rem, aspernatur ullam fuga quisquam ex, excepturi, distinctio
-              repellendus accusamus nobis enim non natus tempore blanditiis
-              perspiciatis eum perferendis a unde.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni rem, aspernatur ullam fuga quisquam ex,
+              excepturi, distinctio repellendus accusamus nobis enim non natus tempore blanditiis perspiciatis eum
+              perferendis a unde.
             </small>
           </div>
         </footer>
