@@ -1,0 +1,16 @@
+.modal {
+  --modal-transition: 0.5s;
+  --modal-background: rgba(255, 255, 255, 0.1);
+  --modal-background-filter: blur(10px);
+  --modal-box-initial-position: -200vh;
+  --modal-box-background: #fff;
+  --modal-box-radius: 8px;
+  --modal-box-padding: 20px;
+  --modal-box-border: 1px solid #cbcbcb;
+  --modal-header-mb: 24px;
+  --modal-body-mb: 24px;
+  --modal-footer-align: center;
+  --modal-xs-width: 40vw;
+  --modal-xs-height: 80vh;
+  --modal-sm-width: 50vw;
+}

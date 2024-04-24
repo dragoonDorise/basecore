@@ -1,0 +1,102 @@
+//
+//
+// Hi there! Remember you are not suposed to be here.
+// All customization must be done in _custom_ files!!
+//
+//
+
+.modal {
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  transition: var(--modal-transition);
+  background-color: var(--modal-background);
+  backdrop-filter: var(--modal-background-filter);
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.is-shown {
+    opacity: 1;
+    transition: var(--modal-transition);
+    pointer-events: all;
+    .modal__box {
+      margin-bottom: 0;
+      transition: var(--modal-transition);
+    }
+  }
+
+  &__box {
+    -webkit-app-region: no-drag;
+    margin-bottom: var(--modal-box-initial-position);
+    background: var(--modal-box-background);
+    border-radius: var(--modal-box-radius);
+    padding: var(--modal-box-padding);
+    display: flex;
+    flex-direction: column;
+    border: var(--modal-box-border);
+  }
+
+  &__header {
+    margin-bottom: var(--modal-header-mb);
+    position: relative;
+  }
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 0;
+  }
+  &__body {
+    flex: 1;
+    max-height: 50vh;
+    overflow: auto;
+    margin-bottom: var(--modal-body-mb);
+  }
+  &__footer {
+    text-align: var(--modal-footer-align);
+    .btn-simple {
+      margin-bottom: 0;
+    }
+  }
+  &--xs {
+    .modal__box {
+      max-width: var(--modal-xs-width);
+      max-height: var(--modal-xs-height);
+    }
+  }
+  &--sm {
+    .modal__box {
+      width: var(--modal-sm-width);
+    }
+  }
+  &--full {
+    .modal__header {
+      display: none;
+    }
+    .modal__box {
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      border: 0;
+    }
+    .modal__body {
+      max-height: 100%;
+      overflow: hidden;
+    }
+    .modal__footer {
+      display: none;
+    }
+  }
+}
+
+@import "./modal.scss";
+
+@import "/src/components/molecules/Modal/modal.scss";
