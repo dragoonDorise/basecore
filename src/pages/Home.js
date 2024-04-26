@@ -1,5 +1,5 @@
 //import { useHistory } from "react-router-dom";
-import React, { useState } from "react";
+
 //Default BaseCore components
 import {
   BtnSimple,
@@ -18,7 +18,9 @@ import {
   FormInputRangeSimple,
 } from "getbasecore/Atoms";
 
-import { Pagination, Form, Alert, Table, Accordion, Breadcrumb, Dropdown, Tabs, Modal } from "getbasecore/Molecules";
+import { Pagination, Form, Alert, Accordion, Breadcrumb, Dropdown, Tabs } from "getbasecore/Molecules";
+
+import { Table } from "components/molecules/Table/Table";
 
 import { Card } from "getbasecore/Organisms";
 
@@ -28,25 +30,8 @@ import { Card } from "getbasecore/Organisms";
 export const Home = () => {
   //let history = useHistory();
 
-  const [statePage, setStatePage] = useState({
-    modal: false,
-  });
-
-  const handleModal = () => {
-    setStatePage({
-      ...statePage,
-      modal: {
-        active: true,
-        header: <span className="h4">Settings saved!</span>,
-        css: "modal--sm",
-        body: <p>Now go do something else :)</p>,
-      },
-    });
-  };
-
   return (
     <div className="wrapper">
-      <Modal modal={modal} />
       <main className="main">
         <section className="container">
           <Alert css="alert--info" close={false}>
@@ -65,8 +50,8 @@ export const Home = () => {
 
             <div>
               <BtnGroup>
-                <BtnSimple type="button" css="btn-simple--1" aria="Read" onClick={() => handleModal()}>
-                  Button #1 Modal
+                <BtnSimple type="button" css="btn-simple--1" aria="Read">
+                  Button #1
                 </BtnSimple>
                 <BtnSimple type="button" css="btn-simple--2" aria="Download">
                   Button #2
@@ -105,13 +90,13 @@ export const Home = () => {
                 <Table
                   css="table-reflow"
                   description="Table description"
-                  items={{
-                    0: ["Movie Title", "Genre", "Year", "Gross"],
-                    1: ["Star Wars1", "Adventure. Sci-fi", "1977", "$460935665"],
-                    2: ["Star Wars2", "Adventure. Sci-fi", "1977", "$460935665"],
-                    3: ["Star Wars3", "Adventure. Sci-fi", "1977", "$460935665"],
-                    4: ["Star Wars4", "Adventure. Sci-fi", "1977", "$460935665"],
-                  }}
+                  items={[
+                    ["Movie Title", "Genre", "Year", "Gross"],
+                    ["Star Wars1", "Adventure. Sci-fi", "1977", "$460935665"],
+                    ["Star Wars2", "Adventure. Sci-fi", "1977", "$460935665"],
+                    ["Star Wars3", "Adventure. Sci-fi", "1977", "$460935665"],
+                    ["Star Wars4", "Adventure. Sci-fi", "1977", "$460935665"],
+                  ]}
                 />
               </>,
               <>
@@ -354,16 +339,16 @@ export const Home = () => {
           <span className="h3">Read our FAQs</span>
 
           <Accordion
-            items={{
-              0: {
+            items={[
+              {
                 title: "Lorem ipsum dolor sit",
                 desc: "Sed est mi, pharetra quis tempor eu, tincidunt vel mi. Nam congue euismod neque ut ultricies. Fusce et ante eget massa vehicula auctor. Fusce aliquet, lorem sit amet varius lacinia, lectus tellus tempor orci, eget dignissim magna felis id ipsum.",
               },
-              1: {
+              {
                 title: "Pellentesque accumsan",
                 desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent auctor condimentum faucibus. Curabitur auctor, magna semper lobortis eleifend, turpis ante euismod orci, id sollicitudin ligula turpis nec turpis. ",
               },
-            }}
+            ]}
           />
         </section>
         <footer style={{ background: "#efefef", padding: "20px" }}>
