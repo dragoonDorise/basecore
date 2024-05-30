@@ -10,12 +10,14 @@ import {
   Img,
   Iframe,
   List,
+  ListIcons,
   ProgressBar,
   FormInputSimple,
   FormSelectSimple,
   FormRadioSimple,
   FormCheckboxSimple,
   FormInputRangeSimple,
+  Typography,
 } from "getbasecore/Atoms";
 
 import { Pagination, Form, Alert, Accordion, Breadcrumb, Dropdown, Tabs } from "getbasecore/Molecules";
@@ -152,7 +154,7 @@ export const Home = () => {
                     Read More...
                   </LinkSimple>
                 </p>
-                <List css="list--icons list--icons--xs" children={[["twitter", "Share on twiter"]]} />
+                <ListIcons css="list--icons list--icons--xs" items={[["twitter", "Share on twiter"]]} />
               </Card>
             </li>
             <li data-col-sm="4">
@@ -175,7 +177,7 @@ export const Home = () => {
                     Read More...
                   </LinkSimple>
                 </p>
-                <List css="list--icons list--icons--xs" children={[["twitter", "Share on twiter"]]} />
+                <ListIcons css="list--icons list--icons--xs" items={[["twitter", "Share on twiter"]]} />
               </Card>
             </li>
             <li data-col-sm="4">
@@ -198,7 +200,7 @@ export const Home = () => {
                     Read More...
                   </LinkSimple>
                 </p>
-                <List css="list--icons list--icons--xs" children={[["twitter", "Share on twiter"]]} />
+                <ListIcons css="list--icons list--icons--xs" items={[["twitter", "Share on twiter"]]} />
               </Card>
             </li>
           </ul>

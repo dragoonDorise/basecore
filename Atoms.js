@@ -13,3 +13,4 @@ export { FormSelectSimple } from "./dist/components/atoms/FormInputSimple/FormSe
 export { FormRadioSimple } from "./dist/components/atoms/FormRadioSimple/FormRadioSimple";
 export { FormCheckboxSimple } from "./dist/components/atoms/FormCheckboxSimple/FormCheckboxSimple";
 export { FormInputRangeSimple } from "./dist/components/atoms/FormInputRangeSimple/FormInputRangeSimple";
+export { Typography } from "./dist/components/atoms/Typography/Typography";

@@ -3,18 +3,21 @@ import { PropTypes } from "prop-types";
 import { ListItem } from "./ListItem";
 import { ListItemIcon } from "./ListItemIcon";
 import "./core_list.scss";
-export const List = ({ items, css }) => {
-  return (
-    <ul className={`list ${css}`}>
-      {items.map((item, i) => {
-        if (item.length >= 2) {
-          return <ListItemIcon key={i} icon={item[0]} text={item[1]} />;
-        } else {
-          return <ListItem key={i}>{item}</ListItem>;
-        }
-      })}
-    </ul>
-  );
+export const List = ({ type, children, css }) => {
+  let tag;
+  switch (type) {
+    case "ul":
+      tag = "ul";
+      break;
+    case "ol":
+      tag = "ol";
+      break;
+    default:
+      tag = "ul";
+      break;
+  }
+
+  return React.createElement(tag, { className: `list ${css}` }, children);
 };
 
 List.propTypes = {
