@@ -6,16 +6,7 @@
 //
 @import "~getbasecore/src/components/atoms/Btn/core_btn.scss";
 @import "/src/global.scss";
-@mixin generate-btn-simple(
-  $name,
-  $color,
-  $bg,
-  $color-hover,
-  $bg-hover,
-  $bg-active,
-  $color-disabled,
-  $bg-disabled
-) {
+@mixin generate-btn-simple($name, $color, $bg, $color-hover, $bg-hover, $bg-active, $color-disabled, $bg-disabled) {
   .btn-simple--#{$name} {
     fill: $color;
     color: $color;
@@ -160,5 +151,6 @@ label.btn-simple {
 .btn--block {
   padding-left: 0;
   padding-right: 0;
+  width: 100%;
 }
 @import "/src/components/atoms/BtnSimple/btn-simple.scss";

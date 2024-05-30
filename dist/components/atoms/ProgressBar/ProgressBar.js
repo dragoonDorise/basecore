@@ -5,10 +5,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.ProgressBar = void 0;
 require("core-js/modules/web.dom-collections.iterator.js");
-var _react = _interopRequireDefault(require("react"));
+var _react = require("react");
 var _propTypes = require("prop-types");
 require("./core_progress-bar.scss");
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const ProgressBar = _ref => {
   let {
     css,
@@ -17,31 +16,32 @@ const ProgressBar = _ref => {
     infinite
   } = _ref;
   let valueFinal;
-  if (infinite) {
-    const [counter, setCounter] = useState(0);
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCounter(prevCounter => {
-          if (prevCounter === 110) {
-            prevCounter = -10;
-          }
-          return prevCounter + 1;
-        });
-      }, 100);
-      return () => clearInterval(interval);
-    }, []);
-    valueFinal = counter;
-  } else {
-    valueFinal = value;
-  }
+  const [counter, setCounter] = (0, _react.useState)(0);
+  (0, _react.useEffect)(() => {
+    const interval = setInterval(() => {
+      setCounter(prevCounter => {
+        if (prevCounter === 110) {
+          prevCounter = -10;
+        }
+        return prevCounter + 1;
+      });
+    }, 100);
+    if (infinite) {
+      valueFinal = counter;
+    } else {
+      clearInterval(interval);
+      valueFinal = value;
+    }
+    return () => clearInterval(interval);
+  }, []);
   const percentage = value * 100 / max;
-  return /*#__PURE__*/_react.default.createElement("progress", {
+  return /*#__PURE__*/_react.React.createElement("progress", {
     className: "progress ".concat(css),
     value: valueFinal,
     max: max
-  }, /*#__PURE__*/_react.default.createElement("div", {
+  }, /*#__PURE__*/_react.React.createElement("div", {
     className: "progress"
-  }, /*#__PURE__*/_react.default.createElement("span", {
+  }, /*#__PURE__*/_react.React.createElement("span", {
     style: {
       width: percentage + "%"
     }
