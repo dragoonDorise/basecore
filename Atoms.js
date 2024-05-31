@@ -6,6 +6,7 @@ export { LinkSimple } from "./dist/components/atoms/LinkSimple/LinkSimple";
 export { Img } from "./dist/components/atoms/Img/Img";
 export { Iframe } from "./dist/components/atoms/Iframe/Iframe";
 export { List } from "./dist/components/atoms/List/List";
+export { ListIcons } from "./dist/components/atoms/ListIcons/ListIcons";
 export { LoaderCircle } from "./dist/components/atoms/LoaderCircle/LoaderCircle";
 export { ProgressBar } from "./dist/components/atoms/ProgressBar/ProgressBar";
 export { FormInputSimple } from "./dist/components/atoms/FormInputSimple/FormInputSimple";

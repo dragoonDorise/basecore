@@ -1,30 +1,32 @@
 import { React, useState, useEffect } from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import "./core_progress-bar.scss";
+
 export const ProgressBar = ({ css, value, max, infinite }) => {
-  let valueFinal;
   const [counter, setCounter] = useState(0);
+  const [valueFinal, setValueFinal] = useState(value);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCounter((prevCounter) => {
-        if (prevCounter === 110) {
-          prevCounter = -10;
-        }
-        return prevCounter + 1;
-      });
-    }, 100);
+    let interval;
     if (infinite) {
-      valueFinal = counter;
-    } else {
-      clearInterval(interval);
-      valueFinal = value;
+      interval = setInterval(() => {
+        setCounter((prevCounter) => (prevCounter === 110 ? -10 : prevCounter + 1));
+      }, 100);
     }
 
     return () => clearInterval(interval);
-  }, []);
+  }, [infinite]);
+
+  useEffect(() => {
+    if (infinite) {
+      setValueFinal(counter);
+    } else {
+      setValueFinal(value);
+    }
+  }, [counter, infinite, value]);
 
   const percentage = (value * 100) / max;
+
   return (
     <progress className={`progress ${css}`} value={valueFinal} max={max}>
       <div className="progress">
@@ -37,5 +39,6 @@ export const ProgressBar = ({ css, value, max, infinite }) => {
 ProgressBar.propTypes = {
   css: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  max: PropTypes.string.isRequired,
+  max: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  infinite: PropTypes.bool,
 };

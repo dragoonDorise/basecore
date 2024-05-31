@@ -3,14 +3,13 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ListIcon = void 0;
+exports.ListIcons = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = require("prop-types");
-var _ListItem = require("./ListItem");
 var _ListItemIcon = require("./ListItemIcon");
-require("./core_list.scss");
+require("./core_list-icons.scss");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-const ListIcon = _ref => {
+const ListIcons = _ref => {
   let {
     items,
     css
@@ -25,8 +24,8 @@ const ListIcon = _ref => {
     });
   }));
 };
-exports.ListIcon = ListIcon;
-ListIcon.propTypes = {
+exports.ListIcons = ListIcons;
+ListIcons.propTypes = {
   css: _propTypes.PropTypes.string,
   children: _propTypes.PropTypes.oneOfType([_propTypes.PropTypes.object, _propTypes.PropTypes.array, _propTypes.PropTypes.element])
 };

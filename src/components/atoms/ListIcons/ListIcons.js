@@ -1,9 +1,8 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import { ListItem } from "./ListItem";
 import { ListItemIcon } from "./ListItemIcon";
-import "./core_list.scss";
-export const ListIcon = ({ items, css }) => {
+import "./core_list-icons.scss";
+export const ListIcons = ({ items, css }) => {
   return (
     <ul className={`list ${css}`}>
       {items.map((item, i) => {
@@ -13,7 +12,7 @@ export const ListIcon = ({ items, css }) => {
   );
 };
 
-ListIcon.propTypes = {
+ListIcons.propTypes = {
   css: PropTypes.string,
   children: PropTypes.oneOfType([PropTypes.object, PropTypes.array, PropTypes.element]),
 };

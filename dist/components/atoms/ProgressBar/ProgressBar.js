@@ -6,8 +6,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.ProgressBar = void 0;
 require("core-js/modules/web.dom-collections.iterator.js");
 var _react = require("react");
-var _propTypes = require("prop-types");
+var _propTypes = _interopRequireDefault(require("prop-types"));
 require("./core_progress-bar.scss");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const ProgressBar = _ref => {
   let {
     css,
@@ -15,25 +16,24 @@ const ProgressBar = _ref => {
     max,
     infinite
   } = _ref;
-  let valueFinal;
   const [counter, setCounter] = (0, _react.useState)(0);
+  const [valueFinal, setValueFinal] = (0, _react.useState)(value);
   (0, _react.useEffect)(() => {
-    const interval = setInterval(() => {
-      setCounter(prevCounter => {
-        if (prevCounter === 110) {
-          prevCounter = -10;
-        }
-        return prevCounter + 1;
-      });
-    }, 100);
+    let interval;
     if (infinite) {
-      valueFinal = counter;
-    } else {
-      clearInterval(interval);
-      valueFinal = value;
+      interval = setInterval(() => {
+        setCounter(prevCounter => prevCounter === 110 ? -10 : prevCounter + 1);
+      }, 100);
     }
     return () => clearInterval(interval);
-  }, []);
+  }, [infinite]);
+  (0, _react.useEffect)(() => {
+    if (infinite) {
+      setValueFinal(counter);
+    } else {
+      setValueFinal(value);
+    }
+  }, [counter, infinite, value]);
   const percentage = value * 100 / max;
   return /*#__PURE__*/_react.React.createElement("progress", {
     className: "progress ".concat(css),
@@ -49,7 +49,8 @@ const ProgressBar = _ref => {
 };
 exports.ProgressBar = ProgressBar;
 ProgressBar.propTypes = {
-  css: _propTypes.PropTypes.string,
-  value: _propTypes.PropTypes.oneOfType([_propTypes.PropTypes.string, _propTypes.PropTypes.number]),
-  max: _propTypes.PropTypes.string.isRequired
+  css: _propTypes.default.string,
+  value: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]),
+  max: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]).isRequired,
+  infinite: _propTypes.default.bool
 };
