@@ -11,7 +11,6 @@ import {
   Iframe,
   List,
   ListIcons,
-  ProgressBar,
   FormInputSimple,
   FormSelectSimple,
   FormRadioSimple,
@@ -211,7 +210,7 @@ export const Home = () => {
         <section className="container container--grid">
           <Card>
             <span className="h3">Here are some forms</span>
-            <ProgressBar value="800" max="900" css="progress--success" />
+            <progress className="progress progress--success" value="800" max="900"></progress>
 
             <Form css="form form--simple">
               <FormInputSimple
