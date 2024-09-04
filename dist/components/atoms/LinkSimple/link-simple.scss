@@ -1,5 +1,5 @@
-@import "~getbasecore/src/components/atoms/Link/core_link.scss";
-@import "~getbasecore/src/components/atoms/LinkSimple/core_link-simple.scss";
+@import "/node_modules/getbasecore/src/components/atoms/Link/core_link.scss";
+@import "/node_modules/getbasecore/src/components/atoms/LinkSimple/core_link-simple.scss";
 
 .link-simple {
   --link-simple-transition: 0.5s;
