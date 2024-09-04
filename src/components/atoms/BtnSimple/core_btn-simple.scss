@@ -4,7 +4,7 @@
 // All customization must be done in _custom_ files!!
 //
 //
-@import "~getbasecore/src/components/atoms/Btn/core_btn.scss";
+@import "/node_modules/getbasecore/src/components/atoms/Btn/core_btn.scss";
 @import "/src/global.scss";
 @mixin generate-btn-simple($name, $color, $bg, $color-hover, $bg-hover, $bg-active, $color-disabled, $bg-disabled) {
   .btn-simple--#{$name} {
