@@ -25,12 +25,14 @@ const BtnSimple = _ref => {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, type === "button" && /*#__PURE__*/_react.default.createElement("button", {
     type: type,
     "aria-label": aria,
+    id: id,
     onClick: onClick,
     className: "btn-simple ".concat(css),
     disabled: disabled ? "disabled" : ""
   }, children), type === "link" && /*#__PURE__*/_react.default.createElement("a", {
     href: href,
     "aria-label": aria,
+    id: id,
     onClick: onClick,
     className: "btn-simple ".concat(css),
     target: !!target ? target : "_parent"
@@ -39,6 +41,7 @@ const BtnSimple = _ref => {
     name: name,
     type: "radio",
     "aria-label": aria,
+    id: id,
     autoComplete: "off",
     onChange: onChange
   }), /*#__PURE__*/_react.default.createElement("label", {
@@ -50,6 +53,7 @@ const BtnSimple = _ref => {
     name: name,
     type: "checkbox",
     "aria-label": aria,
+    id: id,
     autoComplete: "off"
   }), /*#__PURE__*/_react.default.createElement("label", {
     tabIndex: "0",

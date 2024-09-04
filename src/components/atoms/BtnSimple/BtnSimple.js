@@ -5,20 +5,32 @@ export const BtnSimple = ({ onClick, onChange, aria, type, css, children, href, 
   return (
     <>
       {type === "button" && (
-        <button type={type} aria-label={aria} onClick={onClick} className={`btn-simple ${css}`} disabled={disabled ? "disabled" : ""}>
+        <button
+          type={type}
+          aria-label={aria}
+          id={id}
+          onClick={onClick}
+          className={`btn-simple ${css}`}
+          disabled={disabled ? "disabled" : ""}>
           {children}
         </button>
       )}
 
       {type === "link" && (
-        <a href={href} aria-label={aria} onClick={onClick} className={`btn-simple ${css}`} target={!!target ? target : "_parent"}>
+        <a
+          href={href}
+          aria-label={aria}
+          id={id}
+          onClick={onClick}
+          className={`btn-simple ${css}`}
+          target={!!target ? target : "_parent"}>
           {children}
         </a>
       )}
 
       {type === "toggle" && (
         <>
-          <input id={id} name={name} type="radio" aria-label={aria} autoComplete="off" onChange={onChange} />
+          <input id={id} name={name} type="radio" aria-label={aria} id={id} autoComplete="off" onChange={onChange} />
           <label tabIndex="0" htmlFor={id} className={`btn-simple ${css}`}>
             {children}
           </label>
@@ -26,7 +38,7 @@ export const BtnSimple = ({ onClick, onChange, aria, type, css, children, href, 
       )}
       {type === "multiple" && (
         <>
-          <input id={id} name={name} type="checkbox" aria-label={aria} autoComplete="off" />
+          <input id={id} name={name} type="checkbox" aria-label={aria} id={id} autoComplete="off" />
           <label tabIndex="0" htmlFor={id} className={`btn-simple ${css}`}>
             {children}
           </label>

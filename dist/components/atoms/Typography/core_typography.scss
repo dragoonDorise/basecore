@@ -58,17 +58,6 @@ h6 {
   width: auto;
 }
 
-$body-font-size: 1.5rem;
-$body-font-family: "OpenSans";
-$body-text-color: var(--color-text-1);
-$body-selection-bg-color: #0653b6;
-$body-selection-color: white;
-$xs-adjustment: 20%; // 62.5 to match Desktop Size
-$p-mb: var(--margin3);
-$p-capitular-size: 6rem;
-$lead-font-size: 8rem;
-$small-font-size: 1.2rem;
-
 //  --------------------------------------------------
 //  Custom Fonts in html-start.html !
 //
@@ -95,14 +84,14 @@ html {
 
 body {
   margin: 0;
-  font-size: $body-font-size;
-  font-family: $body-font-family;
+  font-size: var(--body-font-size);
+  font-family: var(--body-font-family);
   font-weight: 400;
-  color: $body-text-color;
+  color: var(--body-text-color);
   letter-spacing: -0.2px;
   line-height: 140%;
   @media (max-width: $screen-sm-max) {
-    font-size: $body-font-size;
+    font-size: var(--body-font-size);
   }
 }
 
@@ -110,8 +99,8 @@ body {
 //  Text selection
 //  --------------------------------------------------
 ::selection {
-  color: $body-selection-color;
-  background: $body-selection-bg-color;
+  color: var(--body-selection-color);
+  background: var(--body-selection-bg-color);
 }
 
 //  --------------------------------------------------
@@ -123,14 +112,14 @@ hr {
 }
 
 p {
-  margin-bottom: $p-mb;
+  margin-bottom: var(--p-mb);
   line-height: 140%;
-  color: $body-text-color;
+  color: var(--body-text-color);
   &.capitular {
     &::first-letter {
       float: left;
-      font-size: $p-capitular-size;
-      margin: 0 $body-font-size 1rem 0;
+      font-size: var(--p-capitular-size);
+      margin: 0 var(--body-font-size) 1rem 0;
       vertical-align: bottom;
       margin-top: 10px;
     }
@@ -138,17 +127,17 @@ p {
 }
 
 .lead {
-  font-family: "Neuton";
-  font-size: $lead-font-size;
+  font-family: var(--body-font-family);
+  font-size: var(--lead-font-size);
   letter-spacing: 0;
   margin-bottom: var(--margin3);
 }
 
 small {
-  font-size: $small-font-size;
+  font-size: var(--small-font-size);
   display: inline-block;
   margin-bottom: var(--margin3);
-  line-height: $small-font-size * 1.5;
+  line-height: calc(var(--small-font-size) * 1.5);
   color: var(--grey2);
 }
 
