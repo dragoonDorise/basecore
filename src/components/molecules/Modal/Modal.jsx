@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { BtnSimple } from "getbasecore/Atoms";
+import { BtnSimple } from "../../atoms/BtnSimple/BtnSimple";
 import "./core_modal.scss";
 
 function Modal({ modal, modalActiveValue, modalHeaderValue, modalBodyValue, modalFooterValue, modalCSSValue }) {
