@@ -1,7 +1,7 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import { Td } from "./Td.js";
-import { Th } from "./Th.js";
+import { Td } from "./Td";
+import { Th } from "./Th";
 import "./core_table.scss";
 export const Table = ({ items, css, children, description }) => {
   let thead;

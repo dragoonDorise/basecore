@@ -7,8 +7,8 @@ exports.Table = void 0;
 require("core-js/modules/es.symbol.description.js");
 var _react = _interopRequireDefault(require("react"));
 var _propTypes = require("prop-types");
-var _Td = require("./Td.js");
-var _Th = require("./Th.js");
+var _Td = require("./Td");
+var _Th = require("./Th");
 require("./core_table.scss");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const Table = _ref => {

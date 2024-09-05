@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import { AccordionItem } from "./AccordionItem.js";
+import { AccordionItem } from "./AccordionItem";
 import "./core_accordion.scss";
 
 export const Accordion = ({ title, items }) => {
