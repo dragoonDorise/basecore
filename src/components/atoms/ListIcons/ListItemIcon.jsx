@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon } from "getbasecore/Atoms";
+import { Icon } from "../../atoms/Icon/Icon";;
 export const ListItemIcon = ({ text, icon }) => {
   return (
     <li>

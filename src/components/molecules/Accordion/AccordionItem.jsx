@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { PropTypes } from "prop-types";
-import { Icon } from "getbasecore/Atoms";
+import { Icon } from "../../atoms/Icon/Icon";;
 export const AccordionItem = ({ title, desc, id }) => {
   //Estado para determinar si está plegado o no
   const [state, setState] = useState(false);

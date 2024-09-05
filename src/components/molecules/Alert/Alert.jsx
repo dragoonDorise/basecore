@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PropTypes } from "prop-types";
 import "./core_alert.scss";
-import { Icon } from "getbasecore/Atoms";
+import { Icon } from "../../atoms/Icon/Icon";;
 export const Alert = ({ children, css, close = false }) => {
   const [state, setState] = useState({ active: false });
   const { active } = state;

@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import { Icon } from "getbasecore/Atoms";
+import { Icon } from "../../atoms/Icon/Icon";;
 import "./core_pagination.scss";
 export const Pagination = ({ onClick, onClickNext, onClickPrev, pages }) => {
   return (

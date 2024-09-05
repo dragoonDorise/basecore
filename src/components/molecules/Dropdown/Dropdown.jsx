@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { PropTypes } from "prop-types";
-import { Icon } from "getbasecore/Atoms";
+import { Icon } from "../../atoms/Icon/Icon";;
 import "./core_dropdown.scss";
 export const Dropdown = ({
   css,
