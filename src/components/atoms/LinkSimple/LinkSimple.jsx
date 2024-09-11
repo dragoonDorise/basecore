@@ -1,6 +1,6 @@
 import React from "react";
 import { PropTypes } from "prop-types";
-import "./link-simple.scss";
+import "./core_link-simple.scss";
 export const LinkSimple = ({ onClick, css, children, href, target, role }) => {
   return (
     <>

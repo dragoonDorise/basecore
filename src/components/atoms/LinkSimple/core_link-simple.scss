@@ -4,7 +4,8 @@
 // All customization must be done in _custom_ files!!
 //
 //
-
+@import "/node_modules/getbasecore/src/components/atoms/Link/core_link.scss";
+@import "/src/global.scss";
 @mixin generate-link-simple(
   $name,
   $color,
@@ -64,3 +65,5 @@
     }
   }
 }
+
+@import "/src/components/atoms/LinkSimple/link-simple.scss";

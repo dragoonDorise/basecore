@@ -3,9 +3,9 @@ import { PropTypes } from "prop-types";
 import "./core_icon.scss";
 
 const publicUrl =
-  typeof process !== "undefined" && process.env && process.env.PUBLIC_URL
-    ? process.env.PUBLIC_URL
-    : import.meta.env.VITE_PUBLIC_URL || "";
+typeof process !== "undefined" && process.env && process.env.PUBLIC_URL
+  ? process.env.PUBLIC_URL
+  : import.meta.env.VITE_PUBLIC_URL || "";
 
 export const Icon = ({ icon, css }) => {
   return (
